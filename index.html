@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke Schenker - Design Lead</title>
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'labil-grotesk-med';
+            src: url('fonts/LabilGrotesk-Regular.otf');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body { 
+            background-color: #242424; 
+            /* background-color: #1a1a1a;  */
+            color: #ffffff; font-family: 
+            'labil-grotesk-med', sans-serif; 
+        }
+        .text-muted { color: #A2A2A2; }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align content at the top of the container */
+            /* min-height: 100vh; Ensure container takes up the full viewport height */
+            padding-top: 28vh; /* Push the content down to the top third of the screen */
+            padding-bottom: 10vh;
+        }
+         #inner-container {
+            max-width: 850px;
+            margin: 0 8px 0 20px;
+         }
+         p {
+            font-size: 27px;
+            color: #A2A2A2;
+            margin-left:12px;
+         }
+         .highlight {
+            color: #FFFFFF;
+         }
+         img {
+            width: 31px;
+            filter: invert(64%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(91%);
+         }
+         a {
+            color: #A2A2A2;
+            text-decoration: none;
+            font-family: "labil-grotesk-med";
+            font-size: 27px;
+         }
+         #linkContainer {
+            display: flex;
+            margin-top: 23px;
+         }
+         .links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap; /* Allows wrapping */
+        }
+        .links a {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            color: #A2A2A2;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            /* background: rgba(255, 255, 255, 0.07); */
+            transition: 0.1s;
+        }
+        .links a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .links a:hover img {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="inner-container">
+            <p>Luke Schenker is a <span class="highlight">proactive design lead</span> of 7+ years, spearheading research and progress in complex problem spaces.</p>
+            <p>Previously leading design in health-tech at <span class="highlight">Anew</span>, autonomous vehicle mapping applications at <span class="highlight">Uber</span>, and trading applications at <span class="highlight">John Hancock Financial</span>.</p>
+            
+            <div id="linkContainer" class="links">
+                <a href="assets/portfolio.pdf" download="Luke-Schenker-Portfolio-Showcase.pdf" target="_blank"><img src="images/download-simple-bold.svg">Portfolio Showcase</a>
+                <a href="assets/cv.pdf" download="Luke-Schenker-Resume.pdf" target="_blank"><img src="images/download-simple-bold.svg">Resume</a>
+                <a href="https://www.linkedin.com/in/luke-schenker/" target="_blank"><img src="images/linkedin-logo-bold.svg">Linkedin</a>
+                <a href="mailto:luke@lukeschenker.com" ><img src="images/at-bold.svg">Email</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function adjustLayout() {
+            const container = document.getElementById("linkContainer");
+            const totalWidth = container.scrollWidth; // Full width of all items
+            const parentWidth = container.clientWidth; // Available width
+
+            if (totalWidth > parentWidth) {
+                container.style.flexDirection = "column"; // Stack vertically
+            } else {
+                container.style.flexDirection = "row"; // Keep in a row
+            }
+        }
+
+        window.addEventListener("resize", adjustLayout);
+        window.addEventListener("load", adjustLayout);
+    </script>
+</body>
+</html>
