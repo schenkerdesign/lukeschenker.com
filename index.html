@@ -5,80 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luke Schenker - Design Lead</title>
     <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
-    <style>
-        @font-face {
-            font-family: 'labil-grotesk-med';
-            src: url('fonts/LabilGrotesk-Regular.otf');
-            font-weight: normal;
-            font-style: normal;
-        }
-        body { 
-            background-color: #242424; 
-            /* background-color: #1a1a1a;  */
-            color: #ffffff; font-family: 
-            'labil-grotesk-med', sans-serif; 
-        }
-        .text-muted { color: #A2A2A2; }
-        #container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align content at the top of the container */
-            /* min-height: 100vh; Ensure container takes up the full viewport height */
-            padding-top: 28vh; /* Push the content down to the top third of the screen */
-            padding-bottom: 10vh;
-        }
-         #inner-container {
-            max-width: 850px;
-            margin: 0 8px 0 20px;
-         }
-         p {
-            font-size: 27px;
-            color: #A2A2A2;
-            margin-left:12px;
-         }
-         .highlight {
-            color: #FFFFFF;
-         }
-         img {
-            width: 31px;
-            filter: invert(64%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(91%);
-         }
-         a {
-            color: #A2A2A2;
-            text-decoration: none;
-            font-family: "labil-grotesk-med";
-            font-size: 27px;
-         }
-         #linkContainer {
-            display: flex;
-            margin-top: 23px;
-         }
-         .links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap; /* Allows wrapping */
-        }
-        .links a {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            color: #A2A2A2;
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 6px;
-            /* background: rgba(255, 255, 255, 0.07); */
-            transition: 0.1s;
-        }
-        .links a:hover {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.2);
-        }
-        .links a:hover img {
-            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="stripe.gradient.js"></script> -->
+    <script>
+
+
+    </script>
 </head>
 <body>
+    <canvas id="mesh-canvas" style="width:100vw; height:100vh; position:absolute; top: 0; z-index: 0;"></canvas>
+
     <div id="container">
         <div id="inner-container">
             <p>Luke Schenker is a <span class="highlight">proactive design lead</span> of 7+ years, spearheading research and progress in complex problem spaces.</p>
@@ -109,5 +45,40 @@
         window.addEventListener("resize", adjustLayout);
         window.addEventListener("load", adjustLayout);
     </script>
+
+    <script type="module">
+        import { Gradient } from './stripe.gradient.js';
+
+        const gradient = new Gradient();
+        const COLORS = [
+            // "#eb75b6",
+            // "#ddf3ff",
+            // "#6e3deb",
+            // "#c92f3c"
+             "#242424", "#585858", "#000000", "#1f1f1f"
+
+        ];
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize gradient
+            gradient.initGradient("#" + "mesh-canvas", COLORS);
+            // gradient?.changePosition(780); 
+
+            // document.getElementById("mesh-canvas").addEventListener("click", function () {
+            //     const value = Math.floor(Math.random() * 1000);
+            //     gradient.changePosition(value);
+            // });
+
+            var x = 0;
+            setInterval(function () {
+                console.log("gay")
+                gradient?.changePosition(x);
+                x += 0.01;
+            }, 10); // 250 milliseconds = 0.25 seconds
+
+        });
+
+    </script>
+
 </body>
 </html>
