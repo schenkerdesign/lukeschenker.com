@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anew OS | Luke Schenker</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/project-styles.css">
+
+    <!-- Scripts -->
+    <script src="/assets/js/animations.js"></script>
+
+    <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/">Home</a>
+        <a href="/#testimonials">Testimonials</a>
+        <a href="/about/">About</a>
+    </div>
+
+    <div class="header-image-container">
+        <img src="/assets/images/commercial-product/banner.png" class="header-image border">
+    </div>
+
+    <div class="content-container">
+        <h1>Refining Pilot Findings into Expanded Commercial Product</h1>
+
+        <div class="info-container">
+            <a class="info-box" href="/anew/">
+                <p class="info-header">COMPANY & PRODUCT</p>
+                <div class="link">
+                    <p class="info-content">ANEW<br/>ANEW OS</p>
+                    <i class="ph ph-arrow-square-out" style="font-size: 24px; color: #929292;"></i>
+                </div>
+            </a>
+
+            <a class="info-box" href="/anew/">
+                <p class="info-header">ROLE</p>
+                <p class="info-content">FOUNDER</p>
+            </a>
+            <a class="info-box" href="/anew/">
+                <p class="info-header">TEAM</p>
+                <p class="info-content">7 INTERNS<br/>5 ADVISORS</p>
+            </a>
+
+            <div class="info-box">
+                <p class="info-header">YEARS</p>
+                <p class="info-content">2023 - 2025</p>
+            </div>
+            <div class="info-box">
+                <p class="info-header">FOCUS</p>
+                <p class="info-content">USER TESTING, DESIGN SYSTEMS, ENGINEERING</p>
+            </div>
+        </div>
+
+       <div class="info-container">
+            <div class="info-box tldr light-card">
+                 <a href="#problem" class="tldr-section light">
+                    <p class="tldr-title">Context & Problem: Pilot to Commercial product design</p>
+                    <p class="tldr-bullets">- Pilot confirmed efficacy (49% anxiety reduction), but UX split (desktop and mobile) caused major friction.
+                        <br/>- App blocking and routines drove outcomes; next step was validating market appetite under tight runway.
+                    </p>
+                </a>
+                <a href="#mvp" class="tldr-section light">
+                    <p class="tldr-title">MVP Launch & Feedback: Early validation and hard lessons</p>
+                    <p class="tldr-bullets">- Shipped mobile-only MVP in 3 months with core blocking and routines.
+                        <br/>- 5k visitors in 24h via 65k-member forum partnership validated unmet need.
+                        <br/>- Candid feedback: value prop was strong, but MVP flopped; missing polish, features, and stability assumed in this product category.
+                    </p>
+                </a>
+                <a href="#constraints" class="tldr-section light">
+                    <p class="tldr-title">New Constraints & Execution: Pivot to parity maintaining differentiation</p>
+                    <p class="tldr-bullets">- Re-scoped product to deliver product category parity, and treatment features together, while strategically reducing technical/design debt.
+                        <br/>- Brought on engineering advisor (5M+ user founder) and hosted CS/design internships to accelerate proof-of-concepts and validation.
+                    </p>
+                </a>
+                <a href="#validation" class="tldr-section light">
+                    <p class="tldr-title">Validation & Iteration: De-risking before engineering investment</p>
+                    <p class="tldr-bullets">- 5-month design cycle: lofi and hifi design docs tested with waitlist users, peers, and advisors.
+                        <br/>- Ran closed beta (30 users) to stage bug fixes and refine core experience before public release.
+                    </p>
+                </a>
+                <a href="#features" class="tldr-section light">
+                    <p class="tldr-title">Feature Adaptation From Pilot: Tradeoffs and refinement</p>
+                    <p class="tldr-bullets">- Mindsets: Simplified setup to reduce onboarding friction while preserving treatment impact.
+                        <br/>- Aesthetic Editor: Photo-editor-like mobile UX replaced tedious pilot customization flow.
+                        <br/>- Strategies App: Moved goal-setting from mandatory onboarding to optional and self-guided.
+                        <br/>- Wellness/Recommendations: Added data-driven guidance and therapist-approved model to assist user reflection and suggest high-impact changes.
+                    </p>
+                </a>
+                <a href="#impact" class="tldr-section light">
+                    <p class="tldr-title">Impact & Outcome: Strategic wind-down, lasting value</p>
+                    <p class="tldr-bullets">- Built and shipped a commercial-grade app on Google Play, validated by early adopters; product remains free and publicly accessible.
+                        <br/>- Runway expired before monetization features could be released; engineering overhead further extended timelines.
+                        <br/>- Proved: smartphone interventions can reduce anxiety, users will adopt them, and effective solutions can be built under extreme constraints.
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <div id="article">
+
+            <h2 id="problem" class="fade">Context & Problem</h2>
+
+            <h3 class="fade">Pilot product and study confirmed treatment efficacy (49% anxiety reduction), and illustrated clear areas of improvement for the product experience.</h3>
+
+            <p class="fade">The pilot was designed to be built as quickly as possible, while being able to rigorously test treatment strategy. As a result, UX tradeoffs for engineering speed came up clearly in the research findings of the study.</p> 
+
+            <img src="/assets/images/commercial-product/participants.png" class="fade sample border">
+            <p class="subtext fade">PILOT STUDY USER FEEDBACK OVERVIEW</p>
+
+            <img src="/assets/images/commercial-product/before-after.png" class="fade sample border">
+            <p class="subtext fade">ANONYMOUS STUDY PARTICIPANT BEFORE/AFTER QUOTES</p>
+
+            <i class="ph ph-clipboard-text section-icon fade"></i>
+
+            <h3 class="fade">Key pilot insights: the user experience must be consolidated to a single mobile experience, and treatment success was based on application blocking within a routine.</h3>
+
+            <p class="fade">There were a significant number of issues that arose in the pilot study due to splitting the user journey across desktop (for user customization experience) and mobile (for using the configured OS). Issues were both technical and UX. Given that using the desktop didn't necessarily impact the user's ultimate success in treatment, the same experience could be unified on mobile.</p>
+
+            <p class="fade">There were a number of secondary features that played a role in reducing user anxiety - education, goal setting, and homescreen icon editing. However, these feature-sets increased solution effectiveness, rather than caused it. App blocking based on the user's routine, represented on a routine-specific homescreen, is what catalyzed and sustained behavioral change quickly and consistently over time. This ultimately caused the observed anxiety reduction.</p>
+
+            <i class="ph ph-storefront section-icon fade"></i>
+
+            <h3 class="fade">Given resource constraints, market validation was the next priority.</h3>
+
+            <p class="fade">To monetize the product based on its treatment strategy, a publicly usable product needed to be released as soon as possible. Treatment efficacy was a good first signal helping to de-risk moving forward, but the next priority to de-risk further investment was to engage with a user base that would find a high value in solving these problems, and validate their appetite for this solution and product.</p>
+
+            <p class="fade">Funding via bootstrapping was still tight, so any further investment of time and resources had to be based confidently on further real world findings.</p>
+
+            <h2 id="mvp" class="fade">MVP Launch & Feedback</h2>
+
+            <h3 class="fade">With a focus on essential treatment features, a mobile-only MVP was designed and engineered in 3 months.</h3>
+
+            <p class="fade">Validation was the priority, so something usable needed to be shipped publicly as soon as possible. With a focus on key features, and leveraging learnings from the pilot, I designed the information architecture for an MVP quickly.</p>
+
+            <p class="fade">Engineering was expedited by leveraging the pilot product's original codebase.</p>
+
+            <img src="/assets/images/commercial-product/MVP-lofi.png" class="fade sample border">
+            <p class="subtext fade">IMAGE OF LOFI SYSTEM DIAGRAM FOR MVP</p>
+
+            <!-- <i class="ph ph-exclude-square section-icon fade"></i> -->
+
+            <h3 class="fade">What was cut from the MVP, and why?</h3>
+
+            <p class="fade">The MVP provided pilot product features, such as:</p>
+
+            <ul class="fade">
+                <li>
+                    <p>Customizable routine, to set when the OS would change to have different custom settings.</p>
+                </li>
+                <li>
+                    <p>App blocking, to determine access based on routines, which was essential in addressing anxiety.</p>
+                </li>
+                <li>
+                    <p>Homescreens based on routine, as users associated a uniquely digital “space” with what applications were blocked, and what weren't.</p>
+                </li>
+            </ul>
+
+            <p class="fade">What the MVP cut, were a number of pilot features and standard homescreen features, including:</p>
+
+            <ul class="fade">
+                <li>
+                    <p>Homescreen widgets, as they greatly increased engineering complexity and production time.</p>
+                </li>
+                <li>
+                    <p>Complex homescreen interactions, such as animated drag-drop, app and widget menus, additional dashboard creation, and other “product category standards”.</p>
+                </li>
+                <li>
+                    <p>Icon editing, as it was a “nice to have” to improve treatment efficacy.</p>
+                </li>
+                <li>
+                    <p>Website blocking, as it would address holes in app blocking strategy, but wasn't necessary upon first launch.</p>
+                </li>
+                <li>
+                    <p>Educational resources and goal setting guidance, as these also greatly improve efficacy, but do not enable outcomes by themselves. Adapting this strategy to mobile would take additional time and testing.</p>
+                </li>
+            </ul>
+
+            <i class="ph ph-user-plus section-icon fade"></i>
+
+            <h3 class="fade">Due to limited design resources, I brought on Anew's first intern who defined the product's brand.</h3>
+
+            <p class="fade">Even for a public MVP, our product was changing large aspects of the user's daily OS experience. Design consistency and polish would be beneficial not only because we'd be more attractive on release. Style guides, type stack, color guidelines, and brand tone allow design and production to move much more quickly - they greatly speed up high fidelity design processes by standardizing common design decisions, especially as UI systems scale.</p>
+
+            <p class="fade">See the internships case study for more on intern contributions.</p>
+
+            <img src="/assets/images/commercial-product/brand-guidelines.png" class="fade sample border">
+            <p class="subtext fade">WEIYI'S BRAND GUIDELINES SAMPLE</p>
+
+            <h3 class="fade">Anew's marketing advisor, in charge of a 65,000 user forum, supported our MVP launch.</h3>
+
+            <p class="fade">Jose Briones, who had been a partner for months advising on product strategy and features for our target market, gave us access and credibility with his significant audience.</p>
+
+            <p class="fade">We gained 5k visitors in under 24 hours, and got a lot of feedback very quickly.</p>
+
+            <i class="ph ph-users-four section-icon fade"></i>
+
+            <h3 class="fade">Users were highly attracted to our value proposition, and illustrated clear expectations for product improvement.</h3>
+
+            <p class="fade">Our launch informed users of our approach, why it was novel, why it was more effective than competitors - and that excited our new base. However, the MVP was now competing in the “Android launcher” market, which are essentially installable homescreens. The players in this market are Samsung and Google. As a result, users are used to a high degree of visual and usability polish with this product category - something Anew's MVP did not prioritize.</p>
+
+            <p class="fade">Beyond the missing features and polish, the MVP also had bugs. Android phones come in a range of performance tiers and screen form factors - which was not heavily considered in the MVP.</p>
+
+            <i class="ph ph-star-half section-icon fade"></i>
+
+            <h3 class="fade">The lessons: The value proposition was validated by MVP launch, but to compete in this market the design scope had to increase to meet expectations.</h3>
+
+            <p class="fade">This confirmed the market was hungry not only for a solution - but for our type of solution. It validated we were meeting an unmet user need, in a way users understood and were excited to engage with. This reduced risk of further investment, as we had a glimpse of the response of a much larger market.</p>
+
+            <h2 id="constraints" class="fade">New Constraints & Execution</h2>
+
+            <!-- <i class="ph ph-strategy section-icon fade"></i> -->
+
+            <h3 class="fade">Production strategy required a complete pivot.</h3>
+
+            <p class="fade">Prior to MVP release, the plan was to work with users to identify feature priority, and roadmap based on efficacy improvement and user interest. This would build gradually on the existing MVP.</p>
+
+            <p class="fade">The MVP showed it had major shortcomings based on user feedback, that wouldn't just require gradual improvements. </p>
+
+            <i class="ph ph-code-block section-icon fade"></i>
+
+            <h3 class="fade">Engineering would be significant to deliver market parity meeting user needs, so the design approach was adapted to mitigate design and technical debt of the resulting product scale.</h3>
+
+            <p class="fade">Early consideration on how the required core features of homescreen standards, and our additional treatment features, would be represented was critical. </p>
+
+            <p class="fade">Many product features weren't isolated into independent feature-specific UI. They had many codependencies. The risk of designing the feature set one-feature-at-a-time, is that they would not be integrated as cleanly as if their design was considered up front. </p>
+
+            <p class="fade">At the same time, on-feature-at-a-time implementation would risk “spaghetti code” and mounting technical debt with each new feature. </p>
+
+            <p class="fade">The gradual feature by feature design and engineering approach would work in the short term, but given the necessary product scope it would make design and implementation extremely costly beyond even a 6 month horizon. All this, while hampering usability and product experience which is essential in this product category.</p>
+
+            <i class="ph ph-smiley section-icon fade"></i>
+
+            <h3 class="fade">A new engineering advisor, the founder of a 5M+ user base homescreen app, helped steer the pivot.</h3>
+
+            <p class="fade">Peter Huber joined as an advisor, guiding everything from technology stack selection and rationale, to implementation strategy. His lessons as a current engineering founder expedited production immensely.</p>
+
+            <p class="fade">One key change he recommended was shifting UI development from XML to Jetpack Compose, which accelerated UI development and testing by over 5x.</p>
+
+            <i class="ph ph-student section-icon fade"></i>
+
+            <h3 class="fade">Additional internships were hosted to expedite design and development.</h3>
+
+            <p class="fade">Internships were hosted to add resources towards speeding up design validation and engineering. Computer science interns focused on technical proof-of-concepts for critical features, while design and research interns focused on feature validation and user testing.</p>
+
+            <h2 id="validation" class="fade">Validation & Iteration</h2>
+
+            <h3 class="fade">A 5 month design and research cycle was executed to ultimately expedite production, and de-risk engineering.</h3>
+
+            <p class="fade">The question was, how can this product be brought to market as quickly as possible? The value proposition was validated. The design standards of the homescreen product category were low risk, as users were already familiar. And our treatment feature set strategy was validated in the pilot.</p>
+
+            <p class="fade">The biggest unknown, and risk, was how to adapt our effective features into a mobile-only product.</p>
+
+            <i class="ph ph-chat-circle-dots section-icon fade"></i>
+
+            <h3 class="fade">Waitlist users from the MVP launch and advisors provided feedback on prospective design mock-ups prior to engineering.</h3>
+
+            <p class="fade">After the MVP launch, I was consistently getting emails from interested users on more than a weekly basis. I created a list of them combined with the MVP early adopters to get feedback on prospective design approaches for our feature set.</p>
+
+            <p class="fade">I sent them design docs with short explanations to solicit feedback. What were their thoughts, what made sense, what was confusing, what was helpful?</p>
+
+            <img src="/assets/images/commercial-product/anew-2024-feedback.png" class="fade sample border">
+            <p class="subtext fade">EXAMPLE FEEDBACK DOCUMENT TO SOLICIT USER & ADVISOR IMPRESSIONS OF DESIGN</p>
+
+            <p class="fade">Advisors across development, design, psychology, and marketing were also probed at each step of the way via multi-hour video chat critiques and email correspondence.</p>
+
+            <i class="ph ph-google-play-logo section-icon fade"></i>
+
+            <h3 class="fade">Once the product was ready for launch, a closed beta was released and limited to 30 users.</h3>
+
+            <p class="fade">The priority at this stage was expediting product improvement. With a public launch, there would be a deluge of repeated feedback on bugs and usability. The goal of a smaller closed beta was to allow a manageable volume of bugs and feedback, and be able to address them, before making the product fully publicly accessible.</p>
+
+            <p class="fade">Further, it would take time to get publishing approvals on Google Play, which would slow us gaining feedback. Approvals were not required for closed beta releases.</p>
+
+            <i class="ph ph-list-plus section-icon fade"></i>
+
+            <h3 class="fade">After launch, non-critical features were gauged with users, prioritized, and gradually implemented.</h3>
+
+            <p class="fade">Bug fixes, quality of life improvements, adoption efficiency, and product content were all gradually improved and expanded in collaboration with early users.</p>
+
+            <h2 id="features" class="fade">Feature Adaptation From Pilot</h2>
+
+            <h3 class="fade">Design principles were defined based on findings from the pilot, to help govern commercial design production.</h3>
+
+            <p class="fade">There were a few larger learnings, that influenced the whole product:</p>
+
+            <ul class="fade">
+                <li>
+                    <p>Adoption must be simplified; the pilot had prohibitive onboarding overhead.</p>
+                </li>
+                <li>
+                    <p>Free exploration, with available guidance; users want to try features, but enjoy learning and receiving help at their own pace.</p>
+                </li>
+                <li>
+                    <p>Significant customization is required for treatment outcomes; recommendations and automation, reducing manual setup, can improve user experience, retention, and treatment efficacy.</p>
+                </li>
+            </ul>
+
+            <!-- <img src="/assets/images/commercial-product/product-aspects.png" class="fade sample border">
+            <p class="subtext fade">UI SAMPLES OF HOMESCREEN, MINDSET APP, AND WELLNESS APP</p> -->
+
+            <hr>
+
+            <i class="ph ph-calendar-blank section-icon fade"></i>
+
+            <h3 class="fade">Mindsets Feature: Routine-based versions of the phone for treatment consistency.</h3>
+
+            <p class="fade">Mindsets let users create different versions of their phone and schedule them on a daily routine. Each version consisted of a custom homescreen, blocking preferences, and other customizations. This duplicated the pilot's most effective treatment strategy - curating the phone to user's needs based on routine. But now with a simplified setup designed for mobile.</p>
+
+            <img src="/assets/images/commercial-product/routines-comparison.png" class="fade sample border">
+            <p class="subtext fade">EXAMPLES OF PILOT ISSUES AND HOW THEY ARE ADDRESSED</p>
+
+            <img src="/assets/images/commercial-product/mindsets-hifi.png" class="fade sample border">
+            <p class="subtext fade">KEY UI OF MINDSETS APP, BUILT INTO ANEW</p>
+
+            <img src="/assets/images/commercial-product/wellness-hifi.png" class="fade sample border">
+            <p class="subtext fade">A SINGLE MINDSET'S WELLNESS SETTINGS UI SAMPLE</p>
+
+            <!-- <i class="ph ph-question section-icon fade"></i> -->
+
+            <h3 class="fade">Why design changed: reducing friction, preserving impact</h3>
+
+            <p class="fade">The pilot showed Mindsets were critical, but setup was clunky. To simplify onboarding and adoption, I prioritized simplicity over full customization upfront: fewer steps to create a routine, Mindset presets for common use cases, and a weekly routine for more flexible scheduling. This way, users could make a Mindset in seconds, play around with customization at their own pace, and discover supplementary features gradually.</p>
+
+            <img src="/assets/images/commercial-product/mindsets-lofi.png" class="fade sample border">
+            <p class="subtext fade">ITERATION 2 LOW FIDELITY DESIGN OF MINDSETS (WITH DEVELOPER INTERACTION/STATES SPEC)</p>
+
+            <p class="fade">In the process of creating the commercial product, design drafts were sent out to our most active users in the waitlist, and to relevant design advisors. They noted particular areas of improvement in:</p>
+
+            <ul class="fade">
+                <li>
+                    <p>Information density of the Mindset Library, which muddled the main purpose of the UI.</p>
+                </li>
+                <li>
+                    <p>Usability concerns of the Routine interface, with non-obvious affordances.</p>
+                </li>
+                <li>
+                    <p>Information hierarchy and clarity on Mindset Preset description pages.</p>
+                </li>
+            </ul>
+
+            <p class="fade">Based on this feedback, the Mindset Library was simplified in both function and information. Various design options were tested with users to improve the Routine interfaces affordances to be more intuitive. Mindset Presets underwent 2 iterations of user feedback to refine them to a point where they were simple, helpful, and showed they improved new user onboarding.</p>
+
+            <img src="/assets/images/commercial-product/mindsets-hifi-samples.png" class="fade sample border">
+            <p class="subtext fade">HIGH FIDELITY SAMPLES USED IN USER TESTING FEEDBACK SESSIONS</p>
+
+            <i class="ph ph-user-check section-icon fade"></i>
+
+            <h3 class="fade">Upon beta release, users leaned into app blocking, and later website blocking.</h3>
+
+            <p class="fade">One user in particular had a work Mindset with over 20 apps and websites blocked - from social media to eBay. This illustrated not only the value of the blocking features, but the scale of their problems previously unaddressed before using Anew.</p>
+
+            <hr>
+
+            <i class="ph ph-palette section-icon fade"></i>
+
+            <h3 class="fade">Aesthetic Editor: Editing icon and homescreen visual representation helped change user habits and normalize new ones, reinforced by consistent visual environment.</h3>
+
+            <p class="fade">In the pilot findings, users indicated that changing the icons for apps they had trouble overusing helped them break habits. And by picking new iconography for apps, they were able to be more intentional about opening them, as they had to re-identify what apps corresponded to what icons they picked.</p>
+
+            <h3 class="fade">Why design changed: simplified controls, less “tedious” process</h3>
+
+            <p class="fade">Creating a custom homescreen UI that reflected the users needs, both in regard to function, and visual mood, was a communicated value add. However, many users found the pilot's UI creation to be tedious, and allowed too much flexibility in some aspects.</p>
+
+            <p class="fade">Key takeaways were:</p>
+
+            <ul class="fade">
+                <li>
+                    <p>Users wanted a background and icons that had a unified color palette (aesthetically pleasing).</p>
+                </li>
+                <li>
+                    <p>Users prefer sampling options over custom curation tools.</p>
+                </li>
+            </ul>
+
+            <p class="fade">In discussing these issues with Anew's brand designer during early critique, she pointed out that users are likely familiar with the photo editing app user experiences, both in regards to visual experimentation and UI patterns.</p>
+
+            <img src="/assets/images/commercial-product/aesthetic-comparison.png" class="fade sample border">
+            <p class="subtext fade">EXAMPLES OF PILOT ISSUES AND HOW THEY ARE ADDRESSED</p>
+
+            <p class="fade">Given a tight timeline release timeline, I hedged the risk of not user testing this direction, with the knowledge that mobile photo-editing UI standards were consistent across that market. And fundamentally, a user editing a homescreen to be aesthetically pleasing is a very similar goal to editing a photo to be aesthetically pleasing.</p>
+
+            <p class="fade">I also cut the scope of the editor by omitting custom icons initially. Users indicated in the pilot that both changing the color and icon for apps helped them change their behavior. Because the engineering cost of changing app colors on the homescreen is much lower than engineering custom icon features, those icon features were backlogged out of initial launch scope.</p>
+
+            <p class="fade">The editor provides homescreen visual presets (much like a “filter” preset in a social media photo editor) to allow for quick sampling, as well as specific controls for color tint, brightness, and saturation to get the feeling just right.</p>
+
+            <img src="/assets/images/commercial-product/competetive-analysis.png" class="fade sample border">
+            <p class="subtext fade">PHOTO EDITING APPLICATIONS UI MECHANICS COMPARISONS</p>
+
+            <img src="/assets/images/commercial-product/aesthetic-lofi.png" class="fade sample border">
+            <p class="subtext fade">LOW FIDELITY SAMPLES OF ANEW EDITOR FEATURES REPRESENTED BY COMMON INTERACTION PATTERNS</p>
+
+            <img src="/assets/images/commercial-product/aesthetic-hifi.png" class="fade sample border">
+            <p class="subtext fade">HIGH FIDELITY AESTHETIC EDITOR DESIGN SPEC</p>
+
+            <img src="/assets/images/commercial-product/aesthetic-ad.png" class="fade sample border">
+            <p class="subtext fade">GOOGLE PLAYSTORE MARKETING SHOT</p>
+
+            <hr>
+
+            <i class="ph ph-book-open-text section-icon fade"></i>
+
+            <h3 class="fade">Education Feature: The “Strategies App” provided access to guided goal setting and targeted advice on how to use Anew to address specific mental health concerns.</h3>
+
+            <p class="fade">In the pilot, goal setting was the “mental scaffold” around which decisions about app limitations, and routine organization, was based. Many users of the pilot product indicated they had never even gone through a personal goal-setting process. Doing so made them feel empowered and in control of their outcomes, which then gave them the confidence to make decisions about their routine and lifestyle.</p>
+
+            <h3 class="fade">Why design changed: high manual overhead, unnecessary requirement for use</h3>
+
+            <p class="fade">In the pilot, educational content was mandatory during setup. New users who weren't yet convinced of Anew's value wanted to try the core features first, then decide whether to invest time in goal setting and education.</p>
+
+            <img src="/assets/images/commercial-product/strategies-comparison.png" class="fade sample border">
+            <p class="subtext fade">EXAMPLES OF PILOT ISSUES AND HOW THEY ARE ADDRESSED</p>
+
+            <p class="fade">The Strategies App was taken through feedback rounds with beta users and design peers. Most notable findings included:</p>
+
+            <ul class="fade">
+                <li>
+                    <p>Poor visual hierarchy on the Strategies homescreen left users unsure where to start.</p>
+                </li>
+                <li>
+                    <p>Different fonts, prioritized for long-form content readability, made the app feel disconnected from the rest of the Anew brand.</p>
+                </li>
+            </ul>
+
+            <p class="fade">To address hierarchy, peer-suggested design patters from Robinhood were reviewed, and aspects were leveraged in design improvements. Similar to Anew, Robinhood has a specialized product that provides optional, but conceptually dense, learning resources that can improve user outcomes. Their strategy to enable gentle exploration without overwhelming users was leveraged in the Strategy App's design improvement. This design update was later tested for feedback with the user waitlist, who reported that the new flow felt more approachable and easier to explore.</p>
+
+            <img src="/assets/images/commercial-product/strategies-home-feedback.png" class="fade sample border">
+            <p class="subtext fade">BEFORE/AFTER USER TESTING OF STRATEGIES APP HOMEPAGE</p>
+
+            <img src="/assets/images/commercial-product/strategies-hifi.png" class="fade sample border">
+            <p class="subtext fade">KEY UI OF STRATEGIES APP, BUILT INTO ANEW</p>
+
+            <p class="fade">Users did benefit from some initial understanding of Anew upfront, so a limited onboarding tutorial was designed to allow users to learn about critical features, to allow them to easily explore the app on first use. This sequence's design underwent testing and critique with several beta users - see iteration 3 below.</p>
+
+            <img src="/assets/images/commercial-product/onboarding-hifi.png" class="fade sample border">
+            <p class="subtext fade">ONBOARDING ITERATION 3 BASED ON BETA USER TESTING FEEDBACK</p>
+
+            <hr>
+
+            <i class="ph ph-brain section-icon fade"></i>
+            <!-- <i class="ph ph-cpu section-icon fade"></i> -->
+
+            <h3 class="fade">Recommendations Feature: Setup required significant personal reflection about lifestyle and phone use, which could be expedited with automation and data-based guidance.</h3>
+
+            <p class="fade">The pilot was able to achieve a 49% reduction in anxiety, in a large part due to the accuracy of user decisions to their personal needs. However, this required significant upfront effort. </p>
+
+            <p class="fade">To reduce the load on users creating parts of their routine, and defining their settings, we could instead leverage existing usage data on the phone. Usage data tells us what apps were used when, and for how long.</p>
+
+            <p class="fade">Pilot users asked about this type of functionality in exit interviews, suggesting it would be helpful to see analysis of their use to help them make decisions and understand their progress.</p>
+
+            <h3 class="fade">Why design changed: achieving value proposition required significant user effort</h3>
+
+            <p class="fade">Recommendations require technical and strategic overhead, but have significant upside improving both efficacy and ease of use. Initial consideration consisted of:</p>
+
+            <ul class="fade">
+                <li>
+                    <p>What is the methodology to take user data, generate recommendations, and evaluate their impact?</p>
+                </li>
+                <li>
+                    <p>How will recommendations be framed to the user?</p>
+                </li>
+                <li>
+                    <p>How will recommendations be represented in the product experience?</p>
+                </li>
+            </ul>
+
+            <p class="fade">To make recommendations easier to understand for the user, and more accurate, a model was created for assessing user risk of anxiety based on their usage patterns of behavior with their phone.</p>
+
+            <p class="fade">This model allows us to estimate what apps have the highest risk of increasing user anxiety, and surface them more strongly as recommendations. All of these recommendations are then available in the “Wellness” app.</p>
+
+            <img src="/assets/images/commercial-product/risk-model.png" class="fade sample border">
+            <p class="subtext fade">SUBSET OF TECHNICAL OUTLINE CONTENT (ANXIETY RISK INDEXING AND MODEL RATIONALE)</p>
+
+            <p class="fade">To ensure recommendations were not only effective in improving treatment outcomes, and easy to understand for users, I worked with a practicing therapist who focuses on anxiety disorder treatment. He, along with design peers and advisors, helped to establish how to represent recommendations in the product UI, and how to communicate their impact.</p>
+
+            <ul class="fade">
+                <li>
+                    <p>Any limit set in Anew to block an app, website, or app notifications, could be measured (anxiety risk index) based on how it's omission would impact the user's daily phone use.</p>
+                </li>
+                <li>
+                    <p>Based on this measurement, we could display settings recommendations with highest impact on the user's estimated anxiety risk. Users could open the Wellness app and immediately see 2-3 simple, high-impact changes suggested for their routine.</p>
+                </li>
+            </ul>
+
+            <img src="/assets/images/commercial-product/wellness-subbrand.png" class="fade sample border">
+            <p class="subtext fade">TREATMENT OF WELLNESS SUB-BRAND VISUAL LANGUAGE</p>
+
+            <img src="/assets/images/commercial-product/wellness-app.png" class="fade sample border">
+            <p class="subtext fade">KEY UI OF WELLNESS APP, BUILT INTO ANEW</p>
+
+            <p class="fade">This recommendation system was strategically important not only because it addressed a core flaw in the product - high manual onboarding overhead - but also allowed users to quantify how their behavior and health were improving based on our models.</p>
+
+            <p class="fade">Quantified feedback allows users to understand benefits, especially for long-running changes. Just as weight-loss doesn't feel different day-to-day, improving phone use doesn't have that “wow” moment, unless you quantify the change over time. </p>
+
+            <!-- <hr> -->
+
+            <h2 id="impact" class="fade">Impact & Outcome</h2>
+
+            <!-- <i class="ph ph-checks section-icon fade"></i> -->
+
+            <h3 class="fade">Commercial product launched and validated.</h3>
+
+            <p class="fade">We successfully built and launched a commercial-grade product, integrating core treatment features from the pilot into a unified mobile app. Anew received Google Play approval and reached a global audience, with early adopters confirming its ability to reduce unwanted use and improve wellbeing.</p>
+
+            <i class="ph ph-currency-circle-dollar section-icon fade"></i>
+
+            <h3 class="fade">Monetization strategy tested, but runway insufficient to integrate.</h3>
+
+            <p class="fade">Working with advisors, I tested pricing models and mapped a path to monetization. However, forecasts showed we would need 6-9 additional months of marketing and growth runway to reach profitability. At the same time, deep Android integrations created higher-than-expected engineering overhead, making stability across devices and versions costly.</p>
+
+            <i class="ph ph-pause section-icon fade"></i>
+
+            <h3 class="fade">Strategic wind-down, product remains accessible.</h3>
+
+            <p class="fade">Given these factors, I made the strategic decision to wind down operations at launch rather than overextend. Anew remains free on Google Play to continue helping users self-treat overuse and mental health challenges.</p>
+
+            <p class="fade">Since release, I've received acquisition interest from startups manufacturing “health phones,” but I've chosen to keep the product open and accessible.</p>
+
+            <i class="ph ph-heart section-icon fade"></i>
+
+            <h3 class="fade">Proved treatment efficacy and purpose.</h3>
+
+            <p class="fade">Ultimately, while Anew did not become a sustainable business, it demonstrated that following research, exploring the problem deeply, and iterating under extreme constraints could lead to a solution that provided real, measurable treatment. </p>
+
+            <p class="fade">The product showed that a smartphone-based intervention can reduce anxiety, that users are motivated to adopt it, and that such solutions can be made publicly accessible at scale. I turned research into a product creating significant real-world impact.</p>
+
+            <p class="fade">I achieved what I ultimately set out to do, and today Anew is being used all over the world to help users who need help.</p>
+
+            <i class="ph ph-book section-icon fade"></i>
+            
+            <h3 class="fade">To complete the wind-down of Anew, I distilled its research, findings, and expanded upon its theory in a book.</h3>
+
+            <p class="fade">For more information about Anew's treatment and design strategy, request a copy of my book “The Nonobvious Fix” currently in peer review. Request via email luke@anew.so, or read a summary of the book on this website.</p>
+
+            <img src="/assets/images/commercial-product/book-cover.png" class="fade sample border">
+            <p class="subtext fade">BOOK COVER RENDER</p>
+
+        </div>
+
+        <hr>
+
+        <h1 id="footer-title">Related work</h1>
+
+        <a class="fade grow" style="display: block; text-decoration: none;" href="/anew/">
+            <div class="image-wrapper border">
+                <img src="/assets/images/home/anew-header.png" class="related-work-header-img">
+            </div>
+            
+            <h3 style="margin: 15px 0 9px 0;">Anew Smartphone OS Overview</h3>
+            
+            <div class="link-and-arrow">
+                <span>More info</span>
+                <i class="ph-bold ph-arrow-right" style="font-size: 21px;"></i>
+            </div>
+        </a>
+
+        <div class="related-work-container">
+            <a class="fade grow case-study" href="/anew/pilot-study/">
+                <div class="image-wrapper border">
+                    <img src="/assets/images/home/pilot-case.png" class="case-study-hero">
+                </div>
+                <h3>Pilot Product & User Study</h3>
+                <p>The first version of Anew was tested at Carnegie Mellon in a 30 day study, yielding the initial average 49% anxiety reduction findings.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #000"></i>
+                </div>
+            </a>
+
+            <a class="fade grow case-study" href="/anew/internships/">
+                <div class="image-wrapper border">
+                    <img src="/assets/images/home/intern-case.png" class="case-study-hero">
+                </div>
+                <h3>Hosting Master's Internships</h3>
+                <p>During design and engineering of the commercial product, Anew hosted 6 Masters internships from recent CMU MIIPS graduates, and one undergraduate internship.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #000"></i>
+                </div>
+            </a>
+
+            <a class="fade grow case-study" href="/anew/book/">
+                <div class="image-wrapper border">
+                    <img src="/assets/images/home/book-case.png" class="case-study-hero">
+                </div>
+        
+                <h3>Anew Book</h3>
+                <p>The book is a 255 page deep dive into the foundational research, treatment, and design strategy of Anew.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #000"></i>
+                </div>
+            </a>
+
+        </div>
+
+    
+    </div>
+</body>
+</html>

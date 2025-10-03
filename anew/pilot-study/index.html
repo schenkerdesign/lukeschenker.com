@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anew OS | Luke Schenker</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/project-styles.css">
+
+    <!-- Scripts -->
+    <script src="/assets/js/animations.js"></script>
+
+    <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/">Home</a>
+        <a href="/#testimonials">Testimonials</a>
+        <a href="/about/">About</a>
+    </div>
+
+    <div class="header-image-container">
+        <img src="/assets/images/pilot-study/banner.png" class="header-image border">
+    </div>
+
+    <div class="content-container">
+        <h1>Smartphone OS Pilot Product & Research Study at Carnegie Mellon</h1>
+
+        <div class="info-container">
+            <a class="info-box" href="/anew/">
+                <p class="info-header">COMPANY & PRODUCT</p>
+                <div class="link">
+                    <p class="info-content">ANEW<br/>ANEW OS</p>
+                    <i class="ph ph-arrow-square-out" style="font-size: 24px; color: #929292;"></i>
+                </div>
+            </a>
+
+            <a class="info-box" href="/anew/">
+                <p class="info-header">ROLE</p>
+                <p class="info-content">FOUNDER</p>
+            </a>
+            <a class="info-box" href="/anew/">
+                <p class="info-header">TEAM</p>
+                <p class="info-content">5 ADVISORS</p>
+            </a>
+
+            <div class="info-box">
+                <p class="info-header">YEAR</p>
+                <p class="info-content">2022</p>
+            </div>
+            <div class="info-box">
+                <p class="info-header">FOCUS</p>
+                <p class="info-content">BEHAVIORAL & USER RESEARCH, ENGINEERING</p>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <div class="info-box tldr light-card ">
+                 <a href="#problem" class="tldr-section light">
+                    <p class="tldr-title">Context & Problem: Rising screentime correlated to worsening mental health</p>
+                    <p class="tldr-bullets">- 50+ interviews and US national data showed sustained correlation with anxiety, depression, self-harm
+                        <br/>- Existing tools (screen time, blockers, meditation apps) had high churn and failed long-term
+                        <br/>- Market size and appetite showed a significant unmet need
+                    </p>
+                </a>
+                <a href="#strategy" class="tldr-section light">
+                    <p class="tldr-title">Strategy & Collaboration: Advisory board and design principles shaped approach</p>
+                    <p class="tldr-bullets">- Built cross-disciplinary advisory board (psych, design, engineering, business)
+                        <br/>- Modeled user/phone engagement relationship to frame hypotheses and design principles
+                        <br/>- Competitive analysis showed why Headspace failed and why Noom's behavior-change model worked
+                        <br/>- Defined guiding principles: environment shapes habits, disruption required, tradeoffs must be user-directed
+                    </p>
+                </a>
+                <a href="#constraints" class="tldr-section light">
+                    <p class="tldr-title">Constraints & Execution: Lean MVP and go/no-go framing</p>
+                    <p class="tldr-bullets">- Learned from NIMH, NSF, VCs that theory alone wouldn't raise capital
+                        <br/>- Bootstrapped pilot as a go/no-go study; would kill company if impact wasn't significant
+                        <br/>- Scoped lean MVP (desktop setup, mobile delivery) to cut infra cost and design overhead
+                        <br/>- Prioritized only potentially highest-impact features (blocking, notification filtering, routine-based homescreens)
+                    </p>
+                </a>
+                <a href="#solution" class="tldr-section light">
+                    <p class="tldr-title">Solution: MVP product, evaluated with comprehensive user study</p>
+                    <p class="tldr-bullets">- Built curated smartphone experience with goal-setting and educational onboarding
+                        <br/>- Recruited 5 participants (from 60 applicants) at Carnegie Mellon for 30-day pilot study
+                        <br/>- Combined UX research (interviews, journals) with clinical self-evaluation (BDI-II, GAD-7)
+                    </p>
+                </a>
+                <a href="#impact" class="tldr-section light">
+                    <p class="tldr-title">Impact: Pilot de-risked commercialization with clear efficacy</p>
+                    <p class="tldr-bullets">- 49% average anxiety reduction; every participant dropped a severity category
+                        <br/>- Validated treatment model (education, user-directed goals, routine-based restrictions)
+                        <br/>- Created a clear case for commercialization: solvable UX issues, with ~50M addressable market in US/EU
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <div id="article">
+
+            <h2 id="problem" class="fade">Context & Problem</h2>
+
+            <h3 class="fade">The initial indicators of a potential problem were evident - smartphone adoption and usage time increases correlated with national mental health issues.</h3>
+
+            <p class="fade">To identify if a potential problem really existed, I conducted over 50 interviews with phone users, across age and lifestyle demographics. I reviewed APHA and NIH mental health downstream metrics such as rates of teen self-harm and national suicide rate, along with smartphone screen time statistics on the same timeframe.</p>
+
+            <p class="fade">Even considering COVID-19, the 2008 financial crisis, and other systemic factors with scale, the trends following adoption are sustained. While these correlations cannot on their own prove causation, the persistence and scale of the patterns suggest they warrant deeper, more formal research.</p>
+
+            <img src="/assets/images/pilot-study/graph.png" class="fade sample border">
+            <p class="subtext fade">SIMPLIFIED STATISTICS FROM US DHHS, APHA, AND DR. JEAN TWENGE</p>
+
+            <i class="ph ph-smiley-nervous section-icon fade"></i>
+
+            <h3 class="fade">In user interviews, no users had found a lasting and effective solution for themselves.</h3>
+
+            <p class="fade">They could outline their own specific problems clearly, which followed the pattern of “I use X app at Y time of day too much”. However, no interventions they tried worked, from built in screentime monitoring to custom blocking apps. They also did not understand why these solutions failed.</p>
+
+            <i class="ph ph-binoculars section-icon fade"></i>
+
+            <h3 class="fade">Competitive analysis painted a picture of what wasn't working, but what could work.</h3>
+
+            <p class="fade">Meditation apps like Headspace were the go-to for users, however with a 93% 30-day churn they were an ineffective long-term solution. These solutions had fundamental problems, as illustrated by their CPO.</p>
+
+            <img src="/assets/images/pilot-study/headspace.png" class="fade sample border">
+            <p class="subtext fade">QUOTING A 2022 LECTURE FROM LESLIE WITT, HEADSPACE CHIEF PRODUCT OFFICER</p>
+
+            <p class="fade">However, in other markets products like Noom (market cap $3.7B) painted a picture of how positive health outcomes could be achieved through a digital service, using education and behavioral change.</p>
+
+            <i class="ph ph-currency-circle-dollar section-icon fade"></i>
+
+            <h3 class="fade">The case for initial investment was strong.</h3>
+
+            <p class="fade">The scale of the problem, the reasonable potential for a novel and effective solution, and the appetite consumers displayed were all signals that this was worth pursuing.</p>
+
+            <h2 id="strategy" class="fade">Strategy & Collaboration</h2>
+
+            <h3 class="fade">I assembled an advisory board over time, consisting of CMU professors, successful entrepreneurs, and venture capitalists.</h3>
+
+            <p class="fade">The advisory board spanned psychology, design, engineering, and business. The Carnegie Mellon Swartz Center, within the Tepper Business School, partnered with my company early on to provide us with office space, connections, and resources. Advisors were instrumental in steering research and product development at every juncture.</p>
+
+            <p class="fade">Early on, psychology advisors were instrumental on refining problem definition and intervention approach. In particular, the initial design strategy shifted greatly after a discussion with the Chair of the Psychology Department. This discussion explored the question: “What is a reasonable to expect the user to be capable of, in regards to shaping a solution for themselves, and what is unreasonable?”</p>
+
+            <p class="fade">Beyond psychology, business and VC advisors challenged whether a product was viable, and guided defining markets and strategy. Design advisors at CMU and in industry were involved in critique at each iteration.</p>
+
+            <i class="ph ph-git-diff section-icon fade"></i>
+
+            <h3 class="fade">To formalize the problem, I first created a simple model of how screentime influenced mental health over time. </h3>
+
+            <p class="fade">The model looks at the phone and user as a symbiotic relationship. The user engages the phone, and the phone responds. The phone engages the user, and the user responds. The sum of both of these engagement avenues constitutes the total screentime for a user. </p>
+
+            <p class="fade">Therefore, as the phone engages the user more, use increases. As the user engages the phone more with a growing number of habits, use increases.</p>
+
+            <p class="fade">As use increases, two general categories of problems arise which contribute to anxiety and depression:</p>
+
+            <ul class="fade">
+                <li>
+                    <p>Users spend less time present in real life, reducing opportunities to adjust, process and adapt to situations, and self-regulate.</p>
+                </li>
+                <li>
+                    <p>Increased screentime gradually exposes them to more emotionally intense content, distorting self-image and creating an exaggerated negative view of the world.</p>
+                </li>
+            </ul>
+
+            <p class="fade">This explanation is heavily simplified for this case study - request my book for greater depth.</p>
+
+            <i class="ph ph-question section-icon fade"></i>
+
+            <h3 class="fade">Based on that model, I identified a number of hypotheses on how to address negative mental health influence.</h3>
+
+            <p class="fade">We hypothesize that problems arise from increased screentime. However, reducing smartphone features can also negatively impact the users ability to function in daily life. So, the questions we have are: </p>
+
+            <ol class="fade">
+                <li>
+                    <p>“How can we reduce unwanted overuse, while not impeding utility?”</p>
+                </li>
+                <li>
+                    <p>“Does reducing unwanted use measurably impact mental health?”</p>
+                </li>
+            </ol>
+
+            <i class="ph ph-strategy section-icon fade"></i>
+
+            <h3 class="fade">Based on our model of the problem and our hypotheses, I created a product strategy and underlying design principles.</h3>
+
+            <p class="fade">Design principles:</p>
+
+            <ul class="fade">
+                <li>
+                    <p>User habits are shaped by consistent environmental influence.</p>
+                </li>
+                <li>
+                    <p>Users do not clearly understand how phone use negatively effects mental health over time.</p>
+                </li>
+                <li>
+                    <p>Users are willing to sacrifice if they gain something they value more.</p>
+                </li>
+                <li>
+                    <p>Unwanted use was defined by a specific app, at a specific part of the user's routine.</p>
+                </li>
+                <li>
+                    <p>Unwanted use's definition is specific to the individual, and varies widely.</p>
+                </li>
+                <li>
+                    <p>Deep understanding of user need cannot be automated, and must be user-directed.</p>
+                </li>
+                <li>
+                    <p>Habits are automatic once established, and need to be disrupted to be changed.</p>
+                </li>
+            </ul>
+
+            <p class="fade">Based on these ideas, the product strategy took shape as a number of features that reflected these principles, and could be used to reduce unwanted overuse.</p>
+
+            <p class="fade">Solution features:</p>
+            
+            <ul class="fade">
+                <li>
+                    <p>Apps, websites, and notifications could be blocked at specific times of day.</p>
+                </li>
+                <li>
+                    <p>User homescreen interface would change the appearance of icons to break engagement habits.</p>
+                </li>
+                <li>
+                    <p>Users would set goals for their lifestyle that they valued, which would inform what apps detracted from that lifestyle.</p>
+                </li>
+                <li>
+                    <p>Users would be educated on how their phone can influence negative mental health outcomes over time, to inform their decisions on what to limit.</p>
+                </li>
+                <li>
+                    <p>Environmental consistency changes behavior over time, so the user's ability to change their phone settings and limits requires friction and intermittent inaccessibility.</p>
+                </li>
+            </ul>
+
+            <h2 id="constraints" class="fade">Constraints & Execution</h2>
+
+            <h3 class="fade">Due to a potential solution's minimal scope being significant, I targeted government, foundations, and venture capital to raise a seed round.</h3>
+
+            <p class="fade">I pitched a panel of doctors at the National Institute of Mental Health, sent grant proposals to the National Science Foundation and additional private institutions, and applied to and pitched venture capital firms. I discovered varying interest in the problems I illustrated, but ultimately it was clear that a product would be needed to raise capital.</p>
+
+
+            <i class="ph ph-magnifying-glass section-icon fade"></i>
+
+            <!-- <i class="ph ph-clipboard-text section-icon fade"></i> -->
+
+            <h3 class="fade">Without funding, I outlined an MVP and a research study which would act as a go/no-go point.</h3>
+
+            <p class="fade">Given the potential in the solution's approach, there was a strong case to bootstrap the production of an MVP. To make the case beyond an MVP, it had to have measurable positive mental health outcomes. This meant it required a study that used clinically recognized measurements of mental health conditions, specifically anxiety and depression.</p>
+
+            <p class="fade">If results were not significant, the project would be killed.</p>
+
+            <i class="ph ph-exclude-square section-icon fade"></i>
+
+            <h3 class="fade">Due to significant constraints, the MVP feature set and implementation balanced highest impact features, with survivable tradeoffs.</h3>
+
+            <p class="fade">Given the model we established for the user-phone relationship, there were a number of features that could be impactful towards enabling a user to modify their device to change their usage habits.</p>
+
+            <p class="fade">For example:</p>
+            
+            <ul class="fade">
+                <li>
+                    <p>Feature parity with homescreen usability standards (drag/drop apps)</p>
+                </li>
+                <li>
+                    <p>Homescreen support of widgets.</p>
+                </li>
+                <li>
+                    <p>Modifying UI patterns in existing websites that triggered unwanted overuse.</p>
+                </li>
+            </ul>
+
+            <p class="fade">These features may have had an influence on treatment outcomes, but did not have as strong of a basis as the core features chosen, which mapped directly to findings in interviews and research.</p>
+
+            <i class="ph ph-code-block section-icon fade"></i>
+
+            <h3 class="fade">Tight constraints also influenced the design and engineering strategy.</h3>
+
+            <p class="fade">I designed the setup user experience on desktop, which allowed the user to then use their customized device on mobile. This expedited the design process, and designing for desktop provided a larger form factor which required less states/nesting than mobile design. This sped up development as well, as I had a stronger familiarity with web front/backend than mobile application development.</p>
+
+            <h2 id="solution" class="fade">Solution</h2>
+
+            <h3 class="fade">The solution's initial design was a smartphone accurately curated to the user's daily routines.</h3>
+
+            <p class="fade">The phone would have different homescreens, and different apps available or unavailable during different parts of their daily routine. In essence they'd be using what felt like a different phone during the workday, a different phone during the evening, sleep, etc.</p>
+
+            <p class="fade">This design and treatment strategy was based on interviewee feedback, and input from advisors in Carnegie Mellon's psychology and design schools.</p>
+
+            <img src="/assets/images/pilot-study/mindsets.png" class="fade sample border">
+            <p class="subtext fade">RENDERS OF PRODUCTION UI SCREENSHOTS</p>
+
+            <i class="ph ph-list-checks section-icon fade"></i>
+
+            <h3 class="fade">The user would go through a linear goal setting and decision making process. This would establish what the phone could be used for, and when, aligning with their routine needs.</h3>
+
+            <p class="fade">Users were easily able to identify what apps caused their unwanted overuse, and when that overuse took place. So, making decisions to omit those applications from different parts of the routine was simple.</p>
+
+            <p class="fade">This decision making process was paired with education about phone influence and mental health.</p>
+
+            <img src="/assets/images/pilot-study/education.png" class="fade sample border">
+            <p class="subtext fade">SAMPLES OF THE PILOT PRODUCT'S ORIGINAL ONBOARDING</p>
+
+            <h3 class="fade">The MVP was lean, but designed to provide high integrity study results.</h3>
+
+            <p class="fade">To measure the MVP's performance, I deployed a study at Carnegie Mellon with the student body, in which I partnered with Counseling and Psychological Services (CaPS) to advertise the study. </p>
+
+            <p class="fade">Applicants for a spot in the study first filled out a survey, which I designed to identify their severity of need, interest, and applicability. Out of 60 applications received in just the first week, I selected 5 to participate in the study.</p>
+
+            <img src="/assets/images/pilot-study/survey.png" class="fade sample border">
+            <p class="subtext fade">SURVEY RESULT SAMPLE FROM STUDENTS AT CARNEGIE MELLON</p>
+
+            <h3 class="fade">Students used the product for a month, completing numerous assessments measuring changes in behavior and mental health.</h3>
+
+            <p class="fade">A blend of research methods were used to learn as much as possible about the users' experience.</p>
+
+            <p class="fade">UX and behavioral research methods:</p>
+            
+            <ul class="fade">
+                <li>
+                    <p>Targeted questionnaires on different aspects of the product experience.</p>
+                </li>
+                <li>
+                    <p>Interviews about their experience.</p>
+                </li>
+                <li>
+                    <p>Daily Journals users completed outlining how they felt, and their perceived changes.</p>
+                </li>
+            </ul>
+
+            <p class="fade">Mental health research methods:</p>
+            
+            <ul class="fade">
+                <li>
+                    <p>Assessing depression and anxiety indexes as the start and end of the study (BDI-II, GAD-7)</p>
+                </li>
+            </ul>
+
+            <i class="ph ph-chats-circle section-icon fade"></i>
+
+            <h3 class="fade">Throughout the study, I actively supported and interviewed participants.</h3>
+
+            <p class="fade">All users were able to contact me easily with questions and issues. Many times unplanned conversations became interviews in which we'd discuss how their lifestyle was changing, and how they felt.</p>
+
+            <i class="ph ph-flask section-icon fade"></i>
+
+            <h3 class="fade">At the closure of the study, I distilled psychological and product research findings.</h3>
+
+            <p class="fade">Given the significant volume of content produced by my study design methods, I created a “research atlas” that organized the findings categorically, and identified patterns in findings and outcomes.</p>
+
+            <p class="fade">The atlas was designed to make further product design simple by making findings accessible, but also allow new team members to easily explore the research and understand the users.</p>
+
+            <h2 id="impact" class="fade">Impact</h2>
+
+            <h3 class="fade">Findings illustrated what was effective, why, and provided a confident path forward.</h3>
+            
+            <p class="fade">The most dramatic finding was a 49% decrease in anxiety on average across all users, with one user achieving a 66% decrease. Every study participant’s anxiety severity dropped categorically - users with severe anxiety now had moderate, users with moderate anxiety now had mild, and users with mild anxiety had minimal. Those degrees of change have dramatically beneficial implications over time.</p>
+
+            <img src="/assets/images/pilot-study/reduction.png" class="fade sample border">
+            <p class="subtext fade">GAD-7 SELF ASSESSMENT AVERAGE ACROSS STUDY PARTICIPANTS</p>
+
+            <img src="/assets/images/pilot-study/quotes.png" class="fade sample border">
+            <p class="subtext fade">USER INTERVIEW QUOTES AND ANONYMIZED STUDY RESULTS</p>
+
+
+            <i class="ph ph-crosshair section-icon fade"></i>
+
+            <h3 class="fade">That decrease along with qualitative user input provided a clear picture of how that result was achieved.</h3>
+
+            <p class="fade">There were plenty of issues with the pilot product's approach, but the fundamental treatment and design strategy had significant wins.</p>
+            
+            <ul class="fade">
+                <li>
+                    <p>Education and goal setting were extremely favorable and effective.</p>
+                </li>
+                <li>
+                    <p>User-directed and informed decision making resulted in effective self-treatment.</p>
+                </li>
+                <li>
+                    <p>Planned app and notification restriction based on routine was effective at behavioral change.</p>
+                </li>
+                <li>
+                    <p>Altered homescreen interface supported breaking existing habits.</p>
+                </li>
+            </ul>
+
+            <p class="fade">Even these wins did have issues. Education and onboarding felt too long, homescreen customization user experience was clunky, changing app restrictions had too much friction which sometimes compromised benefit, and more. Importantly, all these issues were largely product experience problems that could be addressed. There were no significant issues with the fundamental treatment strategy.</p>
+
+            <p class="fade">The largest problems stemmed from splitting the user experience across desktop and mobile, both in regards to user experience and technical issues. While this was a necessary tradeoff to expedite the MVP, the product would need to be unified on mobile to be viable commercially.</p>
+
+            <i class="ph ph-android-logo section-icon fade"></i>
+
+            <h3 class="fade">These results de-risked further investment, which in combination with other signals made a confident case to move forward to commercialization.</h3>
+            
+            <ul class="fade">
+                <li>
+                    <p>We're aiming at a recently emergent problem in the market.</p>
+                </li>
+                <li>
+                    <p>We have a novel product with established high treatment efficacy.</p>
+                </li>
+                <li>
+                    <p>We have a motivated potential user base actively searching for solutions to the high-value problem the product addresses.</p>
+                </li>
+                <li>
+                    <p>The market size of our potential base is favorable, at 29M in the US, and 21M in the EU (users who have diagnosed anxiety disorders, and use Android devices in accessible markets)</p>
+                </li>
+                <li>
+                    <p>Even without funding, operating costs (research, design, deployment) could be managed to enable commercial production.</p>
+                </li>
+            </ul>
+
+            <p class="fade">Based on these factors, and the research findings, the case was made to improve the product and expand the team. </p>
+
+            <p class="fade">Read the commercialization case study to learn more about how this product strategy was taken forward, and the internships case study which outlines the building and management of the team.</p>
+
+        </div>
+
+        <hr>
+
+        <h1 id="footer-title">Related work</h1>
+
+        <a class="fade grow" style="display: block; text-decoration: none;" href="/anew/">
+            <div class="image-wrapper">
+                <img src="/assets/images/home/anew-header.png" class="related-work-header-img">
+            </div>
+            <h3 style="margin: 15px 0 9px 0;">Anew Smartphone OS Overview</h3>
+            
+            <div class="link-and-arrow">
+                <span>More info</span>
+                <i class="ph-bold ph-arrow-right" style="font-size: 21px;"></i>
+            </div>
+        </a>
+
+        <div class="related-work-container">
+            <a class="fade grow case-study" href="/anew/commercial-product/">
+                <div class="image-wrapper border">
+                    <img src="/assets/images/home/commercializing-case.png" class="case-study-hero">
+                </div>
+                
+                <h3>Commercializing Product</h3>
+                <p>Based on the significant amount of findings on the pilot's successes and shortcomings, a commercial product was designed and developed.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #000"></i>
+                </div>
+            </a>
+            <a class="fade grow case-study" href="/anew/internships/">
+                <div class="image-wrapper border">
+                    <img src="/assets/images/home/intern-case.png" class="case-study-hero">
+                </div>
+                <h3>Hosting Master's Internships</h3>
+                <p>During design and engineering of the commercial product, Anew hosted 6 Masters internships from recent CMU MIIPS graduates, and one undergraduate internship.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #000"></i>
+                </div>
+            </a>
+            <a class="fade grow case-study" href="/anew/book/">
+                <div class="image-wrapper border">
+                    <img src="/assets/images/home/book-case.png" class="case-study-hero">
+                </div>
+                <h3>Anew Book</h3>
+                <p>The book is a 255 page deep dive into the foundational research, treatment, and design strategy of Anew.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #000"></i>
+                </div>
+            </a>
+        </div>
+
+    
+    </div>
+</body>
+</html>

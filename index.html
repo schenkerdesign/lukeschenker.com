@@ -3,81 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luke Schenker - Design Lead</title>
-    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <!-- <script src="stripe.gradient.js"></script> -->
-    <script>
+    <title>Luke Schenker | Product Designer</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    
+    <!-- Scripts -->
+    <script src="/assets/js/animations.js"></script>
+    <script type="module" src="/assets/js/gradient.js"></script>
 
+    <!-- Jakarta and Open Sans Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
-    </script>
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
 </head>
 <body>
-    <canvas id="mesh-canvas" style="width:100vw; height:100vh; position:fixed; top: 0; z-index: 0;"></canvas>
-
-    <div id="container">
-        <div id="inner-container">
-            <p>Luke Schenker is a <span class="highlight">proactive design lead</span> of 7+ years, spearheading research and progress in complex problem spaces.</p>
-            <p>Previously leading design in health-tech at <span class="highlight">Anew</span>, autonomous vehicle mapping applications at <span class="highlight">Uber</span>, and trading applications at <span class="highlight">John Hancock Financial</span>.</p>
-            
-            <div id="linkContainer" class="links">
-                <a href="assets/Luke-Schenker-Portfolio-Samples.pdf" download="Luke-Schenker-Portfolio-Showcase.pdf" target="_blank"><img src="images/download-simple-bold.svg">Portfolio Showcase</a>
-                <a href="assets/Luke-Schenker-CV.pdf" download="Luke-Schenker-Resume.pdf" target="_blank"><img src="images/download-simple-bold.svg">Resume</a>
-                <a href="https://www.linkedin.com/in/luke-schenker/" target="_blank"><img src="images/linkedin-logo-bold.svg">Linkedin</a>
-                <a href="mailto:luke@lukeschenker.com" ><img src="images/at-bold.svg">Email</a>
-            </div>
-        </div>
+    <div id="header">
+        <a href="">Home</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="/about/">About</a>
     </div>
 
-    <script>
-        function adjustLayout() {
-            const container = document.getElementById("linkContainer");
-            const totalWidth = container.scrollWidth; // Full width of all items
-            const parentWidth = container.clientWidth; // Available width
+    <div id="mesh-container">
+        <canvas id="mesh-canvas"></canvas>
+    </div>
 
-            if (totalWidth > parentWidth) {
-                container.style.flexDirection = "column"; // Stack vertically
-            } else {
-                container.style.flexDirection = "row"; // Keep in a row
-            }
-        }
+    <div class="column">
+        
+        <div class="fade header-container">
+            <div class="header-content">
+                <h1>Hello, I'm Luke</h1>
+                <h1>Senior Product Designer</h1>
+                <h1>Ex-Uber, Fintech, and Founder</h1>
+                <span style="font-size: 25px; color: #A5A5A5">Open to US relocation</span>
+            </div>
+            <a href="/about/">
+                <div class="header-image"></div>
+            </a>
+        </div>
 
-        window.addEventListener("resize", adjustLayout);
-        window.addEventListener("load", adjustLayout);
-    </script>
+        <p class="quote" id="header-bottom" style="max-width: 782px; margin: 0 auto">“I thrive in ambiguity - building strategy from research, shaping design principles and systems, and shipping products that create measurable outcomes for users and businesses.”</p>
 
-    <script type="module">
-        import { Gradient } from './stripe.gradient.js';
+        <div id="companies-container">
+            <img src="assets/images/home/previous-companies.png">
+        </div>
+        
+         <hr>
 
-        const gradient = new Gradient();
-        const COLORS = [
-            // "#eb75b6",
-            // "#ddf3ff",
-            // "#6e3deb",
-            // "#c92f3c"
-             "#242424", "#3A3A3A", "#000000", "#1f1f1f"
+        <div class="fade project-header">
+            <h2 class="project-title">Anew Smartphone Operating System</h2>
+            <p class="project-description">Founded and led research, design, and development of a smartphone product that reduced chronic anxiety by 49% in research trials.</p>
+            <p class="project-dates">Anew.so<br/>2020 - 2025</p>
+        </div>
 
-        ];
+        <a href="/anew/">
+            <div class="fade image-wrapper">
+                <img src="/assets/images/home/anew-header.png" alt="Example">
+                <div class="badge">
+                    <span>Product and Team Overview</span>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px;"></i>
+                </div>
+            </div>
+        </a>
 
-        document.addEventListener("DOMContentLoaded", function () {
-            // Initialize gradient
-            gradient.initGradient("#" + "mesh-canvas", COLORS);
-            // gradient?.changePosition(780); 
+        <div class="fade case-studies-container">
+            <a href="/anew/pilot-study/">
+            <div class="case-study">
+                <div class="image-wrapper" style="margin-bottom:0">
+                    <img src="/assets/images/home/pilot-case.png" class="case-study-hero">
+                </div>
+                <h3>Pilot Product & User Study</h3>
+                <p>The first version of Anew was tested at Carnegie Mellon in a 30 day study, yielding the initial average 49% anxiety reduction findings.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                </div>
+            </div>
+            </a>
 
-            // document.getElementById("mesh-canvas").addEventListener("click", function () {
-            //     const value = Math.floor(Math.random() * 1000);
-            //     gradient.changePosition(value);
-            // });
+            <a href="/anew/commercial-product/">
+            <div class="case-study">
+                <div class="image-wrapper" style="margin-bottom:0">
+                    <img src="/assets/images/home/commercializing-case.png" class="case-study-hero">
+                </div>
+                <h3>Commercializing Product</h3>
+                <p>Based on the significant amount of findings on the pilot's successes and shortcomings, a commercial product was designed and developed.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                </div>
+            </div>
+            </a>
 
-            var x = 0;
-            setInterval(function () {
-                gradient?.changePosition(x);
-                x += 0.01;
-            }, 10); // 250 milliseconds = 0.25 seconds
+            <a href="/anew/internships/">
+            <div class="case-study">
+                <div class="image-wrapper" style="margin-bottom:0">
+                    <img src="/assets/images/home/intern-case.png" class="case-study-hero">
+                </div>
+                <h3>Hosting Master's Internships</h3>
+                <p>During design and engineering of the commercial product, Anew hosted 6 Masters internships from recent CMU MIIPS graduates, and one undergraduate internship.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                </div>
+            </div>
+            </a>
+        </div>
 
-        });
+        <hr>
 
-    </script>
+        <div class="quote-container fade">
 
+            <i class="ph ph-chart-bar section-icon" style="font-size: 51px; color:#e3e3e3; display: block;"></i>
+
+            <p class="quote vanitha-quote">“<i>Ridiculously efficient…</i> scrappy when needed, rigorous in research, and made a dramatic difference in productivity and user trust.”</p>
+
+            <p style="color: #8D8D8D;">— Senior Engineering Manager, Uber</p>
+
+        </div>
+
+        <hr>
+
+        <div class="fade project-header">
+            <h2 class="project-title">Uber Mapping<br/>Suite</h2>
+            <p class="project-description">Led as sole designer on the Map Maker internal application, improving usability, expanding features, and increasing overall output efficiency by 27%.</p>
+            <p class="project-dates">Uber<br/>2018 - 2020</p>
+        </div>
+
+        <a href="/uber/">
+            <div class="fade image-wrapper">
+                <img src="/assets/images/home/uber-header.png" alt="Example">
+                <div class="badge">
+                    <span>Product and Team Overview</span>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px;"></i>
+                </div>
+            </div>
+        </a>
+
+        <div class="fade case-studies-container">
+            <a href="/uber/portions/">
+                <div class="case-study">
+                    <div class="image-wrapper" style="margin-bottom:0">
+                        <img src="/assets/images/home/portions-case.png" class="case-study-hero">
+                    </div>
+                    <h3>Reusable Geometries</h3>
+                    <p>Drawing efficiency improved by up to 60% across polyline map features.</p>
+                    <div class="read-link">
+                        <p>Read case study</p>
+                        <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                    </div>
+                </div>
+            </a>
+            
+        
+            <a href="/uber/conflicts/">
+                <div class="case-study">
+                    <div class="image-wrapper" style="margin-bottom:0">
+                        <img src="/assets/images/home/conflicts-case.png" class="case-study-hero">
+                    </div>
+                    <h3>Improved Visualization and Annotation</h3>
+                    <p>Creation efficiency of mission-critical map annotation increased by 70%.</p>
+                    <div class="read-link">
+                        <p>Read case study</p>
+                        <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/uber/hotkeys/">
+                <div class="case-study">
+                    <div class="image-wrapper" style="margin-bottom:0">
+                        <img src="/assets/images/home/hotkeys-case.png" class="case-study-hero">
+                    </div>
+                    <h3>Drastically Improved Ease-Of-Use</h3>
+                    <p>Redesigned and unified input schema increased overall output efficiency by 27%.</p>
+                    <div class="read-link">
+                        <p>Read case study</p>
+                        <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <hr>
+
+        <div class="fade project-header">
+            <h2 class="project-title">Finance<br/>Applications</h2>
+            <p class="project-description">Led research and design on: an internal forex hedging application for traders, an insurance shopping platform, and a backend service monitoring system for engineers.</p>
+            <p class="project-dates">John Hancock Financial<br/>2016 - 2018</p>
+        </div>
+
+        <hr>
+
+        <div class="fade project-header">
+            <h2 class="project-title">Carnegie Mellon University</h2>
+            <p class="project-description">Led capstone HCII team to create an application that would later be used to raise $1.5M. Then cofounded a startup which raised a $125k angel round.</p>
+            <p class="project-dates">Carnegie Mellon University<br/>2011 - 2015</p>
+        </div>
+
+        <h1 id="testimonials" style="margin-top: 120px">Testimonials</h1>
+
+        <h2 style="text-align: center; margin-top: 49px;">Managers & Stakeholders</h2>
+
+        <div class="fade testimonials-container">
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="/assets/images/home/jared.png">
+                    <div>
+                        <h3>Jared Fagan</h3>
+                        <h3 style="opacity: 70%; margin: 2px 0;">Senior Program Manager</h3>
+                        <h3 style="opacity: 70%">Amazon, Ex-Uber</h3>
+                    </div>
+                </div>
+                <p>Luke was a motivated, forward thinking and intelligent designer with lots of knowledge in his field. He understands complex issues even when outside of his direct area of expertise.</p>
+                <br/>
+                <p>For Luke the user is one of the most important parts of the solution. Thanks to his awesome interpersonal skills he had great relationships with all the team members. Always the energetic and broad-minded designer and a detail orientated team player. On account of his mature approach to his responsibilities, I often thought of Luke as a professional I could always rely upon to get the job done. Experiencing his fast and sharp mind at work was most impressive.</p>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="/assets/images/home/vanitha.png">
+                    <div>
+                        <h3>Vanitha Sengal Rao</h3>
+                        <h3 style="opacity: 70%; margin: 2px 0;">Senior Engineering Manager</h3>
+                        <h3 style="opacity: 70%">Aurora, Ex-Uber</h3>
+                    </div>
+                </div>
+                <p>“Ridiculously efficient” is the phrase that comes to mind when I think about Luke. Luke expertly filled the role of a designer for my team for over a year.</p>
+                <br/>
+                <p>Luke's ability to be initially scrappy as we discover and learn more about product requirements and then perform more thoughtful user research to come up with a UX design that made a dramatic difference in the productivity level of my team and uplifted the user's trust. </p>
+                <br/>
+                <p>Unlike any I've seen before and no matter how tense a day is, Luke brings forward his honest empathy and makes each one on the team feel important and good.</p>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; margin-top: 49px;">Direct Reports</h2>
+
+        <div class="fade testimonials-container">
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="/assets/images/home/taru.png">
+                    <div>
+                        <h3>Taru Jain</h3>
+                        <h3 style="opacity: 70%; margin: 2px 0;">Technical Product Manager</h3>
+                        <h3 style="opacity: 70%">Inpleo, Ex-Anew</h3>
+                    </div>
+                </div>
+                <p>Luke is a great manager. He sets realistic goals and sets reasonable deadlines for achieving those goals. But he always pays attention to details, his understanding of people's needs is outstanding, and he makes everyone who works under him feel comfortable and heard.</p>
+                <br/>
+                <p>As a leader, Luke deserves my highest recommendation.</p>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="/assets/images/home/yee-kit.png">
+                    <div>
+                        <h3>Yee Kit Chan</h3>
+                        <h3 style="opacity: 70%; margin: 2px 0;">Software Engineer</h3>
+                        <h3 style="opacity: 70%">Ebay, Ex-Anew</h3>
+                    </div>
+                </div>
+                <p>Luke's thoroughness across all areas—product development, design, ethics, and mentorship—was truly inspiring. He was incredibly responsive and understanding of my level of experience, always treating my questions as valid and important.</p>
+                <br/>
+                <p>Luke also provided me with unique opportunities to grow in any area I expressed interest in, whether it was research, decision-making, design, or implementation. His leadership style and dedication to fostering a growth-oriented environment during the internship period and beyond make him an exceptional CEO and mentor.</p>
+            </div>
+        </div>
+
+        <a href="https://www.linkedin.com/in/luke-schenker/details/recommendations/?detailScreenTabIndex=0" class="testimonials-link">
+            <h2 style="margin-right: 7px;">See more testimonials on LinkedIn</h2>
+            <i class="ph-bold ph-arrow-right" style="font-size: 38px;"></i>
+        </a>
+
+        <h1 style="margin: 100px 0 36px 0">Additional contributions</h1>
+
+        <div class="fade testimonials-container">
+            <div class="no-padding testimonial">
+                <img src="/assets/images/home/wake-forest.png" class="banner">
+                <h2>Wake Forest Guest Speaker On Leadership & Communication</h2>
+                <p style="padding: 0 20px 20px 20px">Luke has been invited several times by professors at Wake Forest to give talks on how to present ideas to leadership, and sell them on strategy.</p>
+            </div>
+            <div class="no-padding testimonial">
+                <img src="/assets/images/home/tepper.png" class="banner">
+                <h2>Ongoing Mentorship</h2>
+                <p style="padding: 0 20px 20px 20px">Luke continues to mentor prior interns, in addition to CMU students.</p>
+            </div>
+        </div>
+
+      
+    </div>
+
+    <hr style="margin-top: 100px">
+
+    <div id="footer">
+
+        <div style="display: flex;">
+            <span style="font-weight: 500;">Luke Schenker</span>
+            <span style="margin: 0 20px;">|</span>
+            <span style="font-weight: 100;">Product Designer</span>
+        </div>
+
+        <div class="right-container">
+            
+            <a href="https://www.linkedin.com/in/luke-schenker/" target="_blank" class="connect-button" style="background-color: #446BBA;">
+            <i class="ph-bold ph-linkedin-logo" style="font-size: 21px; color: #fff"></i>
+            LinkedIn
+        </a>
+
+        <a href="/assets/downloads/Luke-Schenker-CV.pdf" download class="connect-button">
+            <i class="ph-bold ph-read-cv-logo" style="font-size: 21px; color: #fff"></i>
+            Resume
+        </a>
+
+        <a class="connect-button" id="copy-email">
+            <i class="ph-bold ph-copy" style="font-size: 21px; color: #fff"></i>
+            <p id="copy-text" style="font-weight: 500;">Copy email</p>
+        </a>
+
+        </div>
+    </div>
 </body>
 </html>

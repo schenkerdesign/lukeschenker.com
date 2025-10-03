@@ -1,0 +1,133 @@
+:root {
+  --background-color: #050505;
+  --text-color: #FFFFFF;
+  --subtext-color: #A0A0A0;
+  --border-color: #969696;
+  --nav-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+/* Animation styles */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease-out, transform 0.6s ease-out;
+}
+
+.fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Type stack */
+h1 {
+    font-family: 'Plus Jakarta Sans';
+    font-size: 36px;
+    font-weight: 600;
+
+    margin: 32px 0 24px 0;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+
+    margin-top: 16px;
+}
+
+h1, p {
+    color: var(--text-color);
+    max-width: 744px;
+}
+
+.image-grid {
+    display: flex;
+    gap: 14px;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+
+    margin: 100px 0;
+}
+
+.content-container {
+    margin: 0 auto;
+    max-width: 855px;
+
+    /* For mobile padding */
+    padding: 0 10px; 
+}
+
+#header {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    
+    background: var(--nav-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 13px;
+    padding: 9px 60px;
+    display: flex
+;
+    gap: 60px;
+    justify-content: space-around;
+
+}
+
+#header.hidden {
+    opacity: 0;
+    /* transform: translateY(-100%); */
+}
+#header > a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Plus Jakarta Sans";
+
+    transition: all 0.2s ease;
+}
+#header > a:hover {
+    color: #b1b1b1;
+}
+
+
+.right-container {
+    display: flex;
+    gap: 27px;
+}
+
+.connect-button {
+  background-color: #363636; /* or blue, green, etc */
+  color: white;
+  border-radius: 7px;
+  padding: 11px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Open Sans';
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.connect-button:hover {
+  filter: brightness(1.2);  /* 20% brighter */
+  /* transform: translateY(-2px); */
+}

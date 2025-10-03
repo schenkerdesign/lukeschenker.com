@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber | Luke Schenker</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/project-styles.css">
+
+    <!-- Scripts -->
+    <script src="/assets/js/animations.js"></script>
+
+    <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/">Home</a>
+        <a href="/#testimonials">Testimonials</a>
+        <a href="/about/">About</a>
+    </div>
+
+    <div class="header-image-container">
+        <img src="/assets/images/portions/banner.png" class="header-image">
+    </div>
+
+    <div class="content-container">
+        <h1>Added Drawing Features to Improve Accuracy & Creation Efficiency of Map Annotation</h1>
+
+        <div class="info-container">
+            <a class="info-box" href="/uber/">
+                <p class="info-header">COMPANY & PRODUCT</p>
+                <div class="link">
+                    <p class="info-content">UBER ATG<br/>MAP MAKER</p>
+                    <i class="ph ph-arrow-square-out" style="font-size: 24px; color: #929292;"></i>
+                </div>
+            </a>
+
+            <a class="info-box" href="/uber/">
+                <p class="info-header">ROLE</p>
+                <p class="info-content">SENIOR INTERACTION DESIGNER (LEAD)</p>
+            </a>
+            <a class="info-box" href="/uber/">
+                <p class="info-header">TEAM</p>
+                <p class="info-content">4 ENGINEERS<br/>1 PRODUCT MANAGER</p>
+            </a>
+
+            <div class="info-box">
+                <p class="info-header">YEAR</p>
+                <p class="info-content">2019</p>
+            </div>
+            <div class="info-box">
+                <p class="info-header">FOCUS</p>
+                <p class="info-content">TOOL DESIGN, USER WORKFLOWS</p>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <div class="info-box tldr">
+                 <a href="#problem" class="tldr-section">
+                    <p class="tldr-title">Problem: Polyline drawing was error-prone, tedious, and threatened scaling</p>
+                    <p class="tldr-bullets">- Dominated much of mapper daily work
+                        <br/>- Required 10cm accuracy; overlapping features had to be redrawn perfectly
+                        <br/>- $250k/mo team costs set to increase with a $1.2M/mo India expansion planned
+                    </p>
+                </a>
+                <a href="#strategy" class="tldr-section">
+                    <p class="tldr-title">Strategy & Collaboration: Constraints, user insight, and data integrity alignment</p>
+                    <p class="tldr-bullets">- Having just joined the team, engineers were blocked until design specs were delivered
+                        <br/>- Leveraged 40+ users during problem identification and validation
+                        <br/>- Identified overlapping polyline tracing as the biggest efficiency gap
+                        <br/>- Collaborated with PM and engineer to address data integrity risks
+                    </p>
+                </a>
+                <a href="#solution" class="tldr-section">
+                    <p class="tldr-title">Solution: Portions and Snapping Tools</p>
+                    <p class="tldr-bullets">- Portions: annotate existing polylines in two clicks, eliminating retracing errors
+                        <br/>- Snapping: quickly trace and align with existing polylines to reduce errors
+                        <br/>- Both features validated with production managers and downstream stakeholders
+                    </p>
+                </a>
+                <a href="#impact" class="tldr-section">
+                    <p class="tldr-title">Impact: Up to 60%+ faster polyline creation and safer scaling</p>
+                    <p class="tldr-bullets">- Speed limit annotations became 60% more efficient
+                        <br/>- Driving path drawing gained 11% efficiency with continuity improvements
+                        <br/>- Users avoided hours of tedious tracing work; less stress, more trust in my team
+                        <br/>- De-risked India expansion by proving scalable, reliable mechanics early
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <div id="article">
+
+            <h2 id="problem" class="fade">Context & Problem</h2>
+
+            <h3 class="fade">A central use of the Map Maker application was to draw polylines on city maps Uber planned to operate in. These lines represented everything from road edges, to driving paths, to road paint, to speed limits.</h3>
+
+            <p class="fade">Polyline drawing itself compromised the majority of a user's daily work, both in drawing annotation on new regions of the map, and updating and fixing existing regions. All polyline features were required to have “military-grade accuracy”, which allowed a 10cm margin of error.</p>
+
+            <img src="/assets/images/portions/imagery.png" class="fade sample border">
+            <p class="subtext fade">EXAMPLE OF DRAWING POLYLINES OVER FLATNESS-SCANNED GROUND IMAGERY IN USER TASK AREA</p>
+
+            <i class="ph ph-currency-circle-dollar section-icon fade"></i>
+
+            <h3 class="fade">The business wanted a unified and efficient design for polyline tool mechanics, as map specialists heavily relied on it for daily work. </h3>
+
+            <p class="fade">The map production team at that point was $250k/mo to run, and were using only basic polyline drawing functionality which was prime for optimization. There were also more polyline features that were going to be added to Map Maker based on stakeholder teams’ needs, so polyline efficiency would only become more impactful. On top of that, Map Maker was planned to be scaled out to a new India team that would 12x the size of our current map production user base.</p>
+
+            <h2 id="strategy" class="fade">Strategy & Collaboration</h2>
+
+            <h3 class="fade">Constraints were apparent. I was just recently brought onto the team, so engineering was blocked until it received design specifications for improvements.</h3>
+
+            <p class="fade">Engineering needed to be unblocked as soon as possible, but the design solutions needed to be deeply considered such that they wouldn’t have unforeseen aftereffects when scaled out across polyline workflows.</p>
+
+            <i class="ph ph-users-three section-icon"></i>
+
+            <h3 class="fade">The process of designing a solution involved tight collaboration with our internal 40+ user base.</h3>
+
+            <p class="fade">I consistently checked in with users for thoughts and opinions. We'd have discussions throughout the problem's identification phase, throughout design ideation, and I'd gain team approval on final designs.</p>
+
+            <i class="ph ph-warning section-icon"></i>
+
+            <h3 class="fade">Early on, working with users I identified that how polylines were being drawn was error prone and unnecessarily labor intensive. </h3>
+
+            <p class="fade">I spent a significant amount of time early on in discussion with users, understanding their work, how they used polyline tools, where they saw problems, and discussing ideas of how their work could be made better. What I found was, these problems cost the business more, and lowered the satisfaction of Map Maker users. </p>
+
+            <p class="fade">Many polyline features overlapped. For example, speed limit polylines had to be drawn on top of driving path polylines nearly perfectly for the the autonomy stack to read them correctly. This is one of dozens of examples of required overlapping of polyline annotation. Users then had to zoom very close to trace lines perfectly. And if the whole line was off, users would have to redraw all overlapping lines.</p>
+
+            <img src="/assets/images/portions/icons.png" class="fade sample ">
+            <p class="subtext fade">SUBSET OF ICONS OF AVAILABLE POLYLINE FEATURE TOOLS</p>
+
+            <p class="fade">An easy win would be a simple feature - allowing tracing of existing paths by other features. Quickly snapping to existing lines, and editing a snapped line would move all traced lines that shared affected points.</p>
+
+            <h3 class="fade">Polyline tracing was conceptually simple, but had significant implications with stakeholders for data integrity and requirements.</h3>
+
+            <p class="fade">After validating the approach’s strengths with users, I collaborated with my PM and engineers first to gauge feasibility and engineering cost in comparison to potential user efficiency gains. My engineer in charge of implementation was sold on the solution after about 20 minutes of discussion.</p>
+
+            <p class="fade">My PM was understandably very hesitant about data integrity implications. As such, my PM, engineer, and I spent hours at a nearby whiteboard fleshing out the advantages, design options, and how it could be built to maintain data integrity. We arrived at a solution that enabled both data integrity and significant user efficiency gains, with low engineering overhead to implement.</p>
+
+            <img src="/assets/images/portions/whiteboard.png" class="fade sample">
+            <p class="subtext fade">EARLY WHITEBOARD FROM AN ENGINEER COLLABORATION SESSION</p>
+
+            <h2 id="solution" class="fade">Solution</h2>
+
+            <h3 class="fade">After identifying these issues, I designed  tools and interactions that allowed users to easily reuse geometries of existing features. Speeding up delivery, reducing reworking, and eliminating tracing errors.</h3>
+
+            <p class="fade">This resulted in two feature sets, for different use cases of polylines. The first was called “portions”, which were polylines traced on subset sections of existing polylines. The second feature was snapping interactions. Both features were validated for different polyline feature use cases with users and production managers.</p>
+
+            <img src="/assets/images/portions/interactions-1.png" class="fade sample border">
+            <p class="subtext fade">STATE DIAGRAM FOR POLYLINE DRAWING WITH PORTION OPTIONS</p>
+
+            <h3 class="fade">Portions allowed users to annotate any existing polylines in two clicks, allowing them to generate new polyline annotations tracing previous ones exactly.</h3>
+
+            <p class="fade">This eliminated time spent by users tracing polylines, and eliminated errors caused by lines not overlapping properly.</p>
+
+            <img src="/assets/images/portions/interactions-2.png" class="fade sample border">
+            <p class="subtext fade">STATE DIAGRAM FOR POLYLINE SNAPPING</p>
+
+            <h3 class="fade">Snapping interactions allowed tracing of existing annotations to be much less error prone.</h3>
+
+            <p class="fade">Intersection annotation and parking area annotation - which partially follow other existing polylines, but not always - were able to be created more quickly and with lower rework rates.</p>
+
+            <img src="/assets/images/portions/intersection.png" class="fade sample border">
+            <p class="subtext fade">SAMPLE OF INTERSECTION TRACING DESIGN SPEC</p>
+
+            <h2 id="impact" class="fade">Impact</h2>
+
+            <h3 class="fade">These changes drastically sped up creation across polyline annotations, and provided universal mechanics the business could rely on as they planned scaling up.</h3>
+
+            <p class="fade">The coming expansion to India was significantly de-risked, as our product was immediately showing efficiency gains on critical tool usability. These gains would only scale with the expansion.</p>
+
+            <p class="fade">Users were able to produce more, and their work was less stressful by omitting hours tedious tracing tasks. Further, users felt heard through our discussions, and with this first significant set of features delivered I also build a good deal of trust with stakeholders right from the start.</p>
+
+            <img src="/assets/images/portions/stats.png" class="fade sample">
+            <p class="subtext fade">IMPACT METRICS OF PORTION AND SNAPPING FEATURE SET ADDITIONS</p>
+
+            <h3 class="fade">Traced existing driving path polylines sped up significantly, with Speed Limit annotation of driving paths becoming 60% more efficient.</h3>
+
+            <p class="fade">Speed limit annotation is another ubiquitous annotation, which traces all driving paths. Efficiency gains here were a significant win. </p>
+
+            <i class="ph ph-speedometer section-icon fade"></i>
+
+            <h3 class="fade">Original polyline drawing tasks sped up as well, with driving path drawing becoming 11% more efficient.</h3>
+
+            <p class="fade">Snapping made a big impact here in regard to data quality, as mappers had to maintain continuity of features across adjacent workspaces. Snapping made that fast and easy, and this showed in the efficiency gains of driving paths which required precise continuity.</p>
+
+        </div>
+
+        <hr>
+
+        <h1 id="footer-title">Related work</h1>
+
+        <a class="fade grow" style="display: block; text-decoration: none;" href="/uber/">
+            <div class="image-wrapper">
+                <img src="/assets/images/home/uber-header.png" class="related-work-header-img">
+            </div>
+            <h3 style="margin: 15px 0 9px 0;">Uber ATG Map Maker Application Overview</h3>
+            
+            <div class="link-and-arrow">
+                <span>More info</span>
+                <i class="ph-bold ph-arrow-right" style="font-size: 21px;"></i>
+            </div>
+        </a>
+
+        <div class="related-work-container">
+            <a class="fade grow case-study" href="/uber/conflicts/">
+                <div class="image-wrapper">
+                    <img src="/assets/images/home/conflicts-case.png" class="case-study-hero">
+                </div>
+                <h3>Improved Visualization and Annotation</h3>
+                <p>Creation efficiency of mission-critical map annotation increased by 70%.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                </div>
+            </a>
+            <a class="fade grow case-study" href="/uber/hotkeys/">
+                <div class="image-wrapper">
+                    <img src="/assets/images/home/hotkeys-case.png" class="case-study-hero">
+                </div>
+                <h3>Drastically Improved Ease-Of-Use</h3>
+                <p>Redesigned and unified input schema increased overall output efficiency by 27%.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                </div>
+            </a>
+        </div>
+
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber | Luke Schenker</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/project-styles.css">
+
+    <!-- Scripts -->
+    <script src="/assets/js/animations.js"></script>
+
+    <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
+
+</head>
+<body>
+
+    <div id="header">
+        <a href="/">Home</a>
+        <a href="/#testimonials">Testimonials</a>
+        <a href="/about/">About</a>
+    </div>
+
+    <div class="header-image-container">
+        <img src="/assets/images/conflicts/banner.png" class="header-image">
+    </div>
+
+    <div class="content-container">
+        <h1>Drastically Improved Collision Logic Annotation Workflow</h1>
+
+        <div class="info-container">
+            <a class="info-box" href="/uber/">
+                <p class="info-header">COMPANY & PRODUCT</p>
+                <div class="link">
+                    <p class="info-content">UBER ATG<br/>MAP MAKER</p>
+                    <i class="ph ph-arrow-square-out" style="font-size: 24px; color: #929292;"></i>
+                </div>
+            </a>
+
+            <a class="info-box" href="/uber/">
+                <p class="info-header">ROLE</p>
+                <p class="info-content">SENIOR INTERACTION DESIGNER (LEAD)</p>
+            </a>
+            <a class="info-box" href="/uber/">
+                <p class="info-header">TEAM</p>
+                <p class="info-content">4 ENGINEERS<br/>1 PRODUCT MANAGER</p>
+            </a>
+
+            <div class="info-box">
+                <p class="info-header">YEAR</p>
+                <p class="info-content">2019</p>
+            </div>
+            <div class="info-box">
+                <p class="info-header">FOCUS</p>
+                <p class="info-content">DATA VISUALIZATION, USER WORKFLOWS</p>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <div class="info-box tldr">
+                <!-- <p class="info-header">TLDR</p> -->
+                 <a href="#problem" class="tldr-section">
+                    <p class="tldr-title">Problem: Conflict annotations were slow, error-prone, and a scaling risk</p>
+                    <p class="tldr-bullets">- Users had overhead of unnecessary manual actions
+                        <br/>- Auditing was tedious and inefficient, with no visual representation of data
+                        <br/>- Inefficiency added risk to $1.2M/mo India scale-out and production deadlines
+                    </p>
+                </a>
+                <a href="#strategy" class="tldr-section">
+                    <p class="tldr-title">Strategy & Collaboration: Fast cycles under tight constraints</p>
+                    <p class="tldr-bullets">- Balanced speed and accuracy goals with limited engineering resources
+                        <br/>- Reused existing visualizations to deliver solutions quickly
+                        <br/>- Ran very tight feedback cycles with local users
+                        <br/>- Weekly reviews and complete specs kept engineers, stakeholders, and QA aligned
+                    </p>
+                </a>
+                <a href="#solution" class="tldr-section">
+                    <p class="tldr-title">Solution: Conflict Lenses and Hotkeys</p>
+                    <p class="tldr-bullets">- Visualized all conflicts at once
+                        <br/>- Hotkeys to cycle and assign conflicts; click actions for user flexibility
+                        <br/>- Zoom-level simplification for dense maps
+                        <br/>- User-driven refinements: yellow “to-do” state, dual input methods
+                    </p>
+                </a>
+                <a href="#impact" class="tldr-section">
+                    <p class="tldr-title">Impact: 70% faster annotation with accuracy maintained</p>
+                    <p class="tldr-bullets">- $80k/mo projected savings once scaled to India
+                        <br/>- QA teams audited more easily
+                        <br/>- Reduced mapper cognitive load and removed unnecessary friction
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <div id="article">
+
+            <h2 id="problem" class="fade">Context & Problem</h2>
+
+            <h3 class="fade">Any point in which driving paths on the map intersect, or get too close, must be assigned a “conflict” annotation.</h3>
+
+            <p class="fade">This annotation tells the autonomous car whether or not it has the right of way when another vehicle approaches its projected path. In even a simple intersection, there can be dozens of conflict annotations that need to be created and audited for accuracy.</p>
+
+            <img src="/assets/images/conflicts/window.png" class="fade sample border">
+            <p class="subtext fade">EXAMPLE OF DRIVING PATHS VISUALIZED IN MAP MAKER APPLICATION</p>
+
+            <i class="ph ph-currency-circle-dollar section-icon"></i>
+
+            <h3 class="fade">The business recognized that inefficient conflict creation was a mounting problem. As we scaled up mapping efforts, the inefficiency of creating conflicts had a growing negative impact on production cost.</h3>
+
+            <p class="fade">Of all features, conflicts was the clearest bottleneck in map production. The business was also planning on spinning up a team in India in the next few quarters, with an operational cost of $1.2M/mo for that team. This would be added on top of the Pittsburgh mapping team's $250k/mo operational cost. </p>
+
+            <p class="fade">More importantly, we couldn't as easily retrain and collaborate with users in India on the fly as we improved product and features. So a significant change and improvement to conflict annotation had to be done before the scale out.</p>
+
+
+            <h3 class="fade">Conflict annotations were incredibly slow to produce for our production team using Map Maker, while also requiring no errors in annotation.</h3>
+
+            <p class="fade">Due to the business requiring perfect accuracy, and production's struggle to meet deadlines, I assessed the existing workflow for conflict annotations. I conducted interviews with users and stakeholders to see their understanding of the problems.</p>
+
+            <i class="ph ph-warning section-icon"></i>
+
+            <h3 class="fade">The initial problems were clear: a lack of any visualization of conflicts slowed auditing them for accuracy. The process of creation and modification of conflicts was also surprisingly inefficient.</h3>
+
+            <p class="fade">To create or change any conflict relationship between two driving paths, users had to click both of them to view their state in a menu. There also existed no way to visualize states on the map - they had to be individually selected to check if they were accurate.</p>
+
+            <h2 id="strategy">Strategy & Collaboration</h2>
+
+            <h3 class="fade">I first established baseline constraints. The business wanted greater efficiency while maintaining perfect accuracy, and needed a solution as soon as possible.</h3>
+
+            <p class="fade">This required me to balance research and testing, with a tighter timeline. I didn't have the breathing room to create multiple larger design options to test. So, after initial interviews of users and stakeholders to outline the problem space, I decided to execute very small design feedback cycles and shape the design quickly. </p>
+
+
+            <i class="ph ph-strategy section-icon"></i>
+
+            <h3 class="fade">Rapid iteration: identifying constraints and needs, designed a few options to meet those needs, run it by my users to validate the best direction, identify further design goals and options, and repeat.</h3>
+
+            <p class="fade">This way, I had a design that evolved in the direction of user needs every 2 days or so. I didn't put together any large demos or studies. I simply did lots of small design across tons of short interviews and feedback sessions.</p>
+
+
+            <i class="ph ph-handshake section-icon"></i>
+
+            <h3 class="fade">Despite rapid change, frequent reviews surfaced disagreements early, when they were easiest to resolve across users, stakeholders, and engineers. This is due to my collaboration style.</h3>
+
+            <p class="fade">I maintained weekly reviews with stakeholders, along with on the fly testing and conversation with my local user base. Through keeping them in discussion early when things are evolving, they are able to voice concerns and opinions at points where they are easily addressed. </p>
+
+            <p class="fade">I had the same approach with my engineers. For the engineer who would be assigned with the design of a feature in user testing, I would keep them consistently in the loop to gauge feasibility, technical constraints, and options. One of these constraints in particular shaped the visualization of conflicts - by reusing shader assets we didn't have resources to develop ourselves.</p>
+
+            <img src="/assets/images/conflicts/whiteboard.png" class="fade sample ">
+            <p class="subtext fade">EARLY WHITEBOARD FROM COLLABORATIVE DISCUSSION WITH CONFLICTS ENGINEER</p>
+
+            <h3 class="fade">When problems did arise, they were easily addressed.</h3>
+
+            <p class="fade">Problems in design reviews were caught early due to the frequency I updated users and stakeholders. When issues came up later, they were mitigated easily because I ensure design specs are complete. In one case, an engineer was concerned with the zoom functionality, but after a follow up discussion and review of the spec he was comfortable in how the issue would be addressed.</p>
+
+            <h2 id="solution">Solution</h2>
+
+            <h3 class="fade">Due to these issues, there was a strong case for custom visualization and interaction patterns for this specific annotation.</h3>
+
+            <p class="fade">Working with users, I went through several iterations of design for visualization and input mechanics. We landed on an approach I called “lenses”.</p>
+
+            <img src="/assets/images/conflicts/intersection.png" class="fade sample border">
+            <p class="subtext fade">EXAMPLE OF LENSES VISUALIZING CONFLICT STATES</p>
+
+            <h3 class="fade">Conflict lenses allowed users to easily visualize all conflict relationships on a map, or within their workspace.</h3>
+
+            <p class="fade">Conflicts that needed a relationship assigned would be yellow. Right-of-way relationships visually indicated the dominant path. To assign relationships quickly, users could use hotkeys to quickly cycle through conflicts in their view, and use additional hotkeys to assign relationships.</p>
+
+            <img src="/assets/images/conflicts/lenses.png" class="fade sample border">
+            <p class="subtext fade">SAMPLES OF CONFLICT LENS STATE VISUALIZATIONS</p>
+
+            <h3 class="fade">Due to the visual density of conflicts in a given area, I designed alternate visualizations based on zoom level.</h3>
+
+            <p class="fade">At higher zoom levels, actionable and more detailed information was provided to the user. At lower zoom levels, when no actions could be done by the user, the visualization gradually becomes more simplified.</p>
+
+            <img src="/assets/images/conflicts/zoom-levels.png" class="fade sample border">
+            <p class="subtext fade">SAMPLES OF CONFLICT LENS STATE VISUALIZATIONS</p>
+
+            <h3 class="fade">Two user-driven refinements stood out: a yellow “to-do” state for unfinished conflicts, and hotkeys to expedite assignment.</h3>
+
+            <p class="fade">In both cases, these feature ideas came from collaborative discussion of user needs and thoughts on the fly, and throwing out design ideas to see what sparks a user's interest.</p>
+
+            <h2 id="impact">Impact</h2>
+
+            <h3 class="fade">After implementing these changes, map production was able to deliver conflicts 70% faster while maintaining accuracy.</h3>
+
+            <p class="fade">The combination of hotkeys, visualization, and the reduction of user actions to constantly select map features allowed the product team to work more easily and quickly.</p>
+
+            <img src="/assets/images/conflicts/stat.png" class="fade sample">
+            <p class="subtext fade"></p>
+
+            <h3 class="fade">That equates to significant savings to the business, and better retention of mapping staff.</h3>
+
+            <p class="fade">As conflict annotation is roughly 8% of the requires total map features for any city, that equates to a projected total $80k/mo in savings based on the efficiency improvement of this feature alone once we scaled out to India.</p>
+
+            <p class="fade">Further, users were extremely relieved to have this improvement to conflict workflows. Q/A teams no longer needed to struggle to audit. Mappers also now could easily leverage the new visualizations and hotkeys to do work more easily, and increase their output metrics (used in their annual review). A more enjoyable job is one you stick with.</p>
+
+        </div>
+
+        <hr>
+
+        <h1 id="footer-title">Related work</h1>
+
+        <a class="fade grow" style="display: block; text-decoration: none;" href="/uber/">
+            <div class="image-wrapper">
+                <img src="/assets/images/home/uber-header.png" class="related-work-header-img">
+            </div>
+            <h3 style="margin: 15px 0 9px 0;">Uber ATG Map Maker Application Overview</h3>
+            
+            <div class="link-and-arrow">
+                <span>More info</span>
+                <i class="ph-bold ph-arrow-right" style="font-size: 21px;"></i>
+            </div>
+        </a>
+
+        <div class="related-work-container">
+            <a class="fade grow case-study" href="/uber/portions/">
+                <div class="image-wrapper">
+                    <img src="/assets/images/home/portions-case.png" class="case-study-hero">
+                </div>
+                <h3>Reusable Geometries</h3>
+                <p>Drawing efficiency improved by up to 60% across polyline map features.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                </div>
+            </a>
+            <a class="fade grow case-study" href="/uber/hotkeys/">
+                <div class="image-wrapper">
+                    <img src="/assets/images/home/hotkeys-case.png" class="case-study-hero">
+                </div>
+                <h3>Drastically Improved Ease-Of-Use</h3>
+                <p>Redesigned and unified input schema increased overall output efficiency by 27%.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                </div>
+            </a>
+        </div>
+
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,372 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Light and dark theme colors */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --subtext-color: #a0a0a0;
+    --border-color: #e5e5e5;
+    --nav-color: rgba(235, 235, 235, 0.2);
+
+    --h3-weight: 500;
+}
+
+:root.dark {
+    --background-color: #050505;
+    --text-color: #ffffff;
+    --subtext-color: #a0a0a0;
+    --border-color: #525252;
+    --nav-color: rgba(0, 0, 0, 0.2);
+
+    --h3-weight: 500;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+/* Animation styles */
+.fade {
+    opacity: 0;
+    transition: opacity 0.4s ease-out, transform 0.6s ease-out;
+}
+
+.fade.visible {
+    opacity: 1;
+}
+
+/* Type stack */
+h1 {
+    margin: 32px 0 24px 0;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 60px;
+    font-weight: 600;
+}
+
+h2 {
+    padding-top: 50px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #5d5d5d;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 34px;
+    font-weight: 500;
+}
+
+h3 {
+    margin-top: 36px;
+    line-height: 28px;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 20px;
+    font-weight: 600;
+    font-weight: var(--h3-weight);
+}
+
+p {
+    margin-top: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+p,
+li {
+    color: var(--text-color);
+}
+
+/* Top page styling */
+.header-image-container {
+    margin: 32px 8px;
+}
+
+.header-image {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.content-container {
+    max-width: 744px;
+    margin: 0 auto;
+
+    /* For mobile padding */
+    padding: 0 10px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 17px;
+    width: 100%;
+    margin-bottom: 48px;
+}
+
+.info-box {
+    flex: 1 1 120px;
+    border-top: 1px solid var(--border-color);
+    text-decoration: none;
+}
+
+.light-card {
+    background-color: #ffffff !important;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08), /* small sharp shadow */
+        0 4px 12px rgba(0, 0, 0, 0.06); /* wider, softer shadow */
+}
+
+.info-box.tldr {
+    padding: 8px 8px;
+    background-color: #161616;
+    border-top: none;
+    border-radius: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.tldr-section {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 18px;
+    transition: all 0.3s ease;
+}
+
+.tldr-section:hover {
+    background-color: #1c1c1c;
+}
+
+.tldr-section.light:hover {
+    background-color: #f3f3f3;
+}
+
+.tldr-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--text-color);
+    font-family: 'Ubuntu Mono', monospace !important;
+    font-size: 14px;
+}
+
+.tldr-bullets {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: var(--subtext-color);
+    font-family: 'Ubuntu Mono', monospace !important;
+    font-size: 14px;
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.info-box.small {
+    flex: 0 0 120px;
+}
+
+.info-box.large {
+    flex: 2 1 350px;
+}
+
+.info-header {
+    color: var(--text-color);
+    font-family: 'Ubuntu Mono', monospace !important;
+    font-size: 14px;
+}
+
+.info-content {
+    margin: 0;
+    color: var(--subtext-color);
+    font-family: 'Ubuntu Mono', monospace !important;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    .info-container {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+}
+
+/* Article styling */
+.sample {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 24px;
+    border-radius: 10px;
+}
+
+.border {
+    border: 1px solid var(--border-color);
+}
+
+.subtext {
+    margin: 13px 0;
+    color: var(--subtext-color);
+    font-family: 'Ubuntu Mono', monospace !important;
+    font-size: 14px;
+}
+
+.section-icon {
+    display: block;
+    width: 100%;
+    margin: 50px 0 -21px 0;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 51px;
+}
+
+hr {
+    margin: 60px 0;
+    border: 1px solid var(--border-color);
+}
+
+/* Footer content */
+#footer-title {
+    margin-bottom: 32px;
+}
+
+.related-work-header-img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.link-and-arrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.link-and-arrow:hover {
+    opacity: 0.7;
+}
+
+.link-and-arrow > span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.related-work-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px 0 100px 0;
+}
+
+/* Reused case study from homepage */
+.case-study {
+    display: flex;
+    flex: 0 0 305px;
+    flex-direction: column;
+    max-width: 305px;
+    text-decoration: none;
+}
+
+.case-study > h3 {
+    margin: 8px 0;
+}
+
+.case-study > p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.case-study-hero {
+    border-radius: 30px;
+}
+
+.read-link {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.read-link > p {
+    margin-right: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.read-link:hover {
+    opacity: 0.7;
+}
+
+#header {
+    position: fixed;
+    z-index: 1000;
+    top: 16px;
+    left: 50%;
+    display: flex;
+    gap: 60px;
+    justify-content: space-around;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: var(--nav-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 13px;
+    padding: 9px 60px;
+}
+
+#header.hidden {
+    opacity: 0;
+}
+
+#header > a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+#header > a:hover {
+    color: #b1b1b1;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 560px;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: transform 0.4s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.03);
+}
