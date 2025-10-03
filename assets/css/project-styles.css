@@ -6,6 +6,7 @@ html {
 :root {
     --background-color: #ffffff;
     --text-color: #000000;
+    --text-color-mobile: #222222;
     --subtext-color: #a0a0a0;
     --border-color: #e5e5e5;
     --nav-color: rgba(235, 235, 235, 0.2);
@@ -16,6 +17,7 @@ html {
 :root.dark {
     --background-color: #050505;
     --text-color: #ffffff;
+    --text-color-mobile: #E5E5E5;
     --subtext-color: #a0a0a0;
     --border-color: #525252;
     --nav-color: rgba(0, 0, 0, 0.2);
@@ -266,7 +268,7 @@ a {
 
     p {
         font-weight: 400;
-        color: #222222;
+        color: var(--text-color-mobile)
     }
 }
 
