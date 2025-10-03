@@ -263,6 +263,11 @@ a {
         border-radius: 13px;
         padding: 9px 50px !important; 
     }
+
+    p {
+        font-weight: 400;
+        color: #222222;
+    }
 }
 
 /* Article styling */
