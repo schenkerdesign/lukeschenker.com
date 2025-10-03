@@ -431,6 +431,10 @@ p {
         gap: 20px;
     }
 
+    .case-studies-container {
+        flex-direction: column;
+    }
+
     .column {
         width: 95%;
     }
@@ -451,5 +455,15 @@ p {
     #footer {
         flex-direction: column;
         gap: 24px;
+    }
+
+    .right-container {
+        flex-direction: column;
+    }
+
+    #header {
+        gap: 0px;
+        justify-content: space-around;
+        padding: 9px 50px !important; 
     }
 }
