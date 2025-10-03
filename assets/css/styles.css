@@ -466,4 +466,12 @@ p {
         justify-content: space-around;
         padding: 9px 50px !important; 
     }
+
+    .header-container {
+        margin-top: 120px;
+    }
+
+    .header-content > h1 {
+        font-size: 28px;
+    }
 }
