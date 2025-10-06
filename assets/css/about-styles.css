@@ -158,5 +158,11 @@ h1, p {
 
     .right-container {
         flex-direction: column;
+        gap: 10px;
+    }
+
+    .image-grid > img {
+        width: 100%;
+        height: auto !important;
     }
 }
