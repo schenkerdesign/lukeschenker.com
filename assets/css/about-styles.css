@@ -55,6 +55,10 @@ h1, p {
     margin: 100px 0;
 }
 
+/* .image-grid > img {
+    max-width: 100%;
+} */
+
 .content-container {
     margin: 0 auto;
     max-width: 855px;
@@ -63,41 +67,41 @@ h1, p {
     padding: 0 10px; 
 }
 
+.connect-button:hover {
+    filter: brightness(1.2);
+}
+
 #header {
     position: fixed;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 1000;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 1;
-    
-    background: var(--nav-color);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border-radius: 13px;
-    padding: 9px 60px;
-    display: flex
-;
+    top: 20px;
+    left: 50%;
+    display: flex;
     gap: 60px;
     justify-content: space-around;
-
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 13px;
+    padding: 9px 60px;
 }
 
 #header.hidden {
     opacity: 0;
-    /* transform: translateY(-100%); */
 }
+
 #header > a {
-    text-decoration: none;
     color: var(--text-color);
+    font-family: 'Plus Jakarta Sans';
     font-size: 12px;
     font-weight: 500;
-    font-family: "Plus Jakarta Sans";
-
+    text-decoration: none;
     transition: all 0.2s ease;
 }
+
 #header > a:hover {
     color: #b1b1b1;
 }
@@ -130,4 +134,40 @@ h1, p {
 .connect-button:hover {
   filter: brightness(1.2);  /* 20% brighter */
   /* transform: translateY(-2px); */
+}
+
+
+
+@media (max-width: 700px) {
+    #header {
+        position: fixed;
+        width: 60%;
+        z-index: 1000;
+        top: 16px;
+        left: 50%;
+        display: flex;
+        gap: 0px;
+        justify-content: space-around;
+        transform: translateX(-50%);
+        opacity: 1;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        background: var(--nav-color);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 13px;
+        padding: 9px 50px !important; 
+    }
+
+    p {
+        font-weight: 400;
+        color: #E5E5E5
+    }
+
+    .content-container {
+        width: 95%;
+    }
+
+    .right-container {
+        flex-direction: column;
+    }
 }
