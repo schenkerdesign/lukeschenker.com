@@ -1,8 +1,13 @@
-// Making sure the animated gradient on the homepage is always the right height.
+// Making sure the animated gradient on the homepage is always the right height: from the top of the page to
+// 20px below the top of the company logos. The logos took the anchor over from the header quote when the
+// quote was removed (2026-10-27); they land exactly where the quote started, so the gradient is unchanged.
+// Measured in page coordinates (+ scrollY): a viewport-relative top went negative on a refresh while
+// scrolled down, the browser rejected the negative height, and the gradient never showed.
 function syncHeight() {
-  const headerBottom = document.querySelector("#header-bottom");
+  const anchor = document.querySelector("#companies-container");
   const meshContainer = document.querySelector("#mesh-container");
-  const offset = headerBottom.getBoundingClientRect().top;
+  if (!anchor || !meshContainer) return; // only the homepage has the gradient
+  const offset = anchor.getBoundingClientRect().top + window.scrollY;
   meshContainer.style.height = offset + 20 + "px"; // or "+ 150" for bigger gradient background
 }
 
@@ -25,11 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.fade').forEach(el => observer.observe(el));
     }
 
-    // If on homescreen, resize dynamic gradient.
-    if (window.location.pathname === "/" || window.location.pathname.endsWith("index.html")) {
-        syncHeight();
-        window.addEventListener("resize", syncHeight);
-    }
+    // Size the homepage's dynamic gradient (a no-op on pages without it). Keyed on the elements, not the URL:
+    // the old pathname check also matched /shrp/index.html, where it threw and skipped the setup below.
+    syncHeight();
+    window.addEventListener("resize", syncHeight);
 
     // Nav bar fade in/out
     let lastScrollTop = 0;
@@ -51,23 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Email copy functionality
-    const button = document.getElementById("copy-email");
-    const email = "luke@lukeschenker.com";
-    const successMsg = document.getElementById("copy-text");
-
-    if (button){
-        button.addEventListener("click", () => {
-            // Use the Clipboard API
-            navigator.clipboard.writeText(email)
-                .then(() => {
-                    successMsg.textContent = "Copied!"
-                })
-                .catch(err => {
-                    console.error("Failed to copy email: ", err);
-                });
-        });
-    }
+    // Copy-email buttons: /assets/js/copy-email.js (shared with the password gate, 2026-10-28)
 
     // Little last touch :)
     console.log("%cWebsite made by Luke with %c❤️", 

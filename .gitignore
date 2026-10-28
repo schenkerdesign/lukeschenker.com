@@ -1,0 +1,5 @@
+
+# Local preview of the encrypted case studies (node _tools/encrypt-case-studies.mjs _gate-preview). Never committed.
+_gate-preview/
+# Link-preview image candidates for review (local only)
+_og-candidates/

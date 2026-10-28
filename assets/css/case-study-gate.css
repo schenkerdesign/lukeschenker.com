@@ -1,0 +1,249 @@
+/* Password gate for the protected case studies (Luke 2026-10-28), built by /assets/js/case-study-gate.js.
+   One look in two places: the modal over the homepage on desktop, and the gate page itself (direct visits, phones).
+   Desktop: dark backdrop, the case study's video close to full screen, then the title and copy beside the password
+   field and the two email buttons. Phones: text and form only; the homepage already plays the video full width. */
+.cs-gate {
+    position: fixed;
+    z-index: 2000; /* above the site's nav bar (1000) */
+    inset: 0;
+    display: flex;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 40px 32px;
+    background: rgba(5, 5, 5, 0.92);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.cs-gate.is-open {
+    opacity: 1;
+}
+
+.cs-gate--page {
+    background: #050505;
+}
+
+.cs-gate-panel {
+    width: min(1100px, 100%);
+    margin: auto;
+}
+
+.cs-gate-video {
+    display: flex;
+    justify-content: center;
+}
+
+.cs-gate-video .video-scrub {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.cs-gate-video video {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100vh - 320px); /* room for the form row below without scrolling at common laptop sizes */
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+.cs-gate-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 20px 48px;
+    align-items: start;
+    margin-top: 28px;
+}
+
+/* Scoped under .cs-gate so the case-study pages' own h2 / p styles (rules, padding) can't leak into the gate page */
+.cs-gate .cs-gate-title {
+    margin: 0 0 10px 0;
+    padding: 0;
+    border: none;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.cs-gate .cs-gate-lead {
+    margin: 0;
+    color: #bdbdbd;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* The starred parts of the copy: how to ask, and how fast the reply comes [Luke 2026-10-28] */
+.cs-gate .cs-gate-em {
+    color: #ffffff;
+}
+
+.cs-gate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+}
+
+.cs-gate-input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #2c2c2c;
+    border-radius: 14px;
+    outline: none;
+    background-color: #161616;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 16px; /* 16px stops iOS from zooming in on focus */
+}
+
+.cs-gate-input:focus {
+    border-color: #5a5a5a;
+}
+
+.cs-gate-submit {
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    background-color: #ffffff;
+    color: #050505;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.cs-gate-submit:hover {
+    opacity: 0.9;
+}
+
+.cs-gate-submit:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.cs-gate .cs-gate-error {
+    margin: 0;
+    color: #e08a7a;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+}
+
+/* Under the copy; on desktop the buttons keep their natural width, on phones they share the row */
+.cs-gate-email {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cs-gate-email > a,
+.cs-gate-email > button {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-sizing: border-box;
+    padding: 11px 18px;
+    border: 1px solid #2c2c2c;
+    border-radius: 14px;
+    background: transparent;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.cs-gate-email > a:hover,
+.cs-gate-email > button:hover {
+    border-color: #4a4a4a;
+    background-color: #161616;
+}
+
+/* Phones only: a short rule and a label above the field [Luke 2026-10-28] */
+.cs-gate-rule,
+.cs-gate-label {
+    display: none;
+}
+
+.cs-gate-close {
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #2c2c2c;
+    border-radius: 50%;
+    background: rgba(21, 21, 21, 0.9);
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cs-gate-close:hover {
+    border-color: #4a4a4a;
+}
+
+@media (max-width: 700px) {
+    .cs-gate {
+        padding: 80px 20px 32px 20px;
+    }
+
+    .cs-gate-panel {
+        margin: 0 auto;
+    }
+
+    .cs-gate-video {
+        display: none;
+    }
+
+    .cs-gate-body {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-top: 0;
+    }
+
+    .cs-gate-email > a,
+    .cs-gate-email > button {
+        flex: 1;
+        padding: 12px;
+    }
+
+    /* Centered, 80% of the column [Luke 2026-10-28] */
+    .cs-gate-rule {
+        display: block;
+        width: 80%;
+        height: 0;
+        margin: 26px auto 16px auto;
+        border: none;
+        border-top: 1px solid #3a3a3a;
+    }
+
+    .cs-gate-label {
+        display: block;
+        margin-bottom: 2px;
+        text-align: center;
+        color: #a5a5a5;
+        font-family: 'Plus Jakarta Sans';
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Org | Luke Schenker</title>
+
+    <meta property="og:title" content="My custom AI Organization and practices that shipped SHRP | Luke Schenker">
+    <!-- Link previews (Luke 2026-10-28): image = images/ai-org/og-image.jpg, 1200 x 630 -->
+    <meta name="description" content="How I shipped a product solo in five months with a custom AI org: defined roles, shared memory, and feedback loops.">
+    <meta property="og:description" content="How I shipped a product solo in five months with a custom AI org: defined roles, shared memory, and feedback loops.">
+    <meta property="og:image" content="https://lukeschenker.com/assets/images/ai-org/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Diagram of how an AI org session works: boot up, the session, wind down, and the org it reads and writes">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://lukeschenker.com/ai-org/">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Product Design Portfolio | Luke Schenker">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/video-scrub.css?v=2026-10-28-live">
+
+    <!-- Scripts -->
+    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/ai-org-diagram.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/section-index.js?v=2026-10-28-live" defer></script>
+
+    <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"/>
+
+</head>
+<body class="ai-org">
+
+    <div id="header">
+        <a href="/">Home</a>
+        <a href="/#testimonials">Testimonials</a>
+        <a href="/about/">About</a>
+    </div>
+
+    <!-- Header loop: AI-org motion piece (built in motion/ai-org, PS session 2026-10-23). 1500 px wide MP4, muted autoplay loop. -->
+    <div class="header-image-container">
+        <video src="/assets/images/ai-org/ai-org-loop.mp4?v=2112" poster="/assets/images/ai-org/ai-org-poster.jpg" class="header-image border" data-scrub autoplay muted loop playsinline aria-label="What I did and what AI did, across six stages: Problem, Design, Build, Ship, Learn, Operate"></video>
+    </div>
+
+    <div class="content-container">
+        <h1>My custom AI Organization and practices that shipped SHRP</h1>
+
+        <div class="info-container">
+            <div class="info-box">
+                <p class="info-header">Company</p>
+                <p class="info-content">Personal work</p>
+            </div>
+            <div class="info-box">
+                <p class="info-header">Built by</p>
+                <p class="info-content">Me, solo</p>
+            </div>
+            <div class="info-box">
+                <p class="info-header">Team</p>
+                <p class="info-content">3 AI roles: Product Strategist, Developer, Org Strategist</p>
+            </div>
+            <div class="info-box">
+                <p class="info-header">Timeline</p>
+                <p class="info-content">May-September 2026</p>
+            </div>
+            <div class="info-box">
+                <p class="info-header">Focus</p>
+                <p class="info-content">Automating practice, defining AI roles, building new workflows</p>
+            </div>
+        </div>
+
+        <div id="article" data-index-sections-only>
+
+            <!-- Body generated from the AI-org lofi (59:614) by tools/gen-ai-org-body.mjs. Special elements are placeholders for now. -->
+            <!-- EXPERIMENT 2026-10-27: What is it / Why build it / What came of it as the SHRP-style 3-card summary row (copy unchanged except dropped trailing periods on the leads). Revert this commit to restore the stacked h3s. -->
+            <div class="summary-row fade">
+                <div class="summary-col">
+                    <p class="summary-label">What is it?</p>
+                    <p class="summary-lead">AI team with defined roles, a shared memory, and a self-optimizing feedback loop to assist my work</p>
+                    <p>I wanted a closed-loop system in which AI could navigate, manage, and improve over time, optimizing for collaborating with me and assisting me.</p>
+                </div>
+                <div class="summary-col">
+                    <p class="summary-label">Why build it?</p>
+                    <p class="summary-lead">Expedite production while maintaining total ownership</p>
+                    <p>The production process prior to AI had many aspects that could be automated, based on AI’s current strengths today. I wanted to build a system that allowed me complete control, while handling rule-based work for which my own decisions are not as critical.</p>
+                </div>
+                <div class="summary-col">
+                    <p class="summary-label">What came of it?</p>
+                    <p class="summary-lead">A 0→1 product in five months, and a new way of working</p>
+                    <p>I integrated AI into every step of my production process, and found advantages across all of them. Some advantages were speed, some were regarding how thoroughly I could inform decisions, and many areas saw advantages in both.</p>
+                </div>
+            </div>
+            <!-- Phones only: contents card under the summary card (Luke 2026-10-27, as on SHRP). Filled by /assets/js/section-index.js. -->
+            <nav class="section-index-inline fade" data-section-index-inline aria-label="Contents"></nav>
+            <h3 class="centered-title fade">AI Impact Summary</h3>
+            <div class="stage-grid fade">
+                <div class="stage-card">
+                    <div class="stage-head">
+                        <h3>Discovery</h3>
+                        <div class="stage-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                        <p class="stage-rating">Accelerated</p>
+                    </div>
+                    <div class="stage-points">
+                        <div>
+                            <p class="stage-point-label">Competitive analysis</p>
+                            <p>AI ran it from my questions across every company in the space.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Design precedent</p>
+                            <p>AI analyzed design mechanics across UI with similar goals.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Problem scope</p>
+                            <p>AI helped size the problem from global and US screen-time data and health research.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-head">
+                        <h3>Lofi design</h3>
+                        <div class="stage-stars"><i class="ph-fill ph-star"></i></div>
+                        <p class="stage-rating">Assisted</p>
+                    </div>
+                    <div class="stage-points">
+                        <div>
+                            <p class="stage-point-label">Critique</p>
+                            <p>AI critiqued UI and flows from the perspective of our defined users.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Collaboration</p>
+                            <p>Weighed in on both high and low level product strategy through discussion.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">No actual AI design</p>
+                            <p>AI struggled to design collaboratively via Figma at acceptable speed and consideration quality.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-head">
+                        <h3>Prototyping</h3>
+                        <div class="stage-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                        <p class="stage-rating">Transformed</p>
+                    </div>
+                    <div class="stage-points">
+                        <div>
+                            <p class="stage-point-label">Straight from lofi</p>
+                            <p>AI was able to combine my style guidance and lofi spec into working prototypes. No hifi mocks.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Fully functional on device</p>
+                            <p>Prototypes could be tested and felt on device, speeding up evaluation and improvements.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Inside the product codebase</p>
+                            <p>AI built to my development standards in the product repo, so the final version was the product, with nothing to rebuild.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Designing through play</p>
+                            <p>Features could be improvised live in the running prototype, speeding up the feedback-iteration loop.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-head">
+                        <h3>Build</h3>
+                        <div class="stage-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                        <p class="stage-rating">Transformed</p>
+                    </div>
+                    <div class="stage-points">
+                        <div>
+                            <p class="stage-point-label">AI produced all code</p>
+                            <p>I provided architecture, modularization, commenting, documentation, and style guidelines. AI built and reviewed everything within those bounds.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Decision documentation system</p>
+                            <p>PRDs, ADRs, in-file comments, and the code itself all act as a documentation system, with guidelines of what is logged and linked where.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Git and tests</p>
+                            <p>AI followed my established guidelines for Git management and testing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-head">
+                        <h3>Shipping</h3>
+                        <div class="stage-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                        <p class="stage-rating">Transformed</p>
+                    </div>
+                    <div class="stage-points">
+                        <div>
+                            <p class="stage-point-label">Release channels</p>
+                            <p>AI assisted me to build out protocols for Dev, Canary, Staging, and Production channels in half a day.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Gated release management</p>
+                            <p>AI runs a series of scripts to ensure the release pipeline is followed. Failed tests or misconfigs can’t make it out.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Store-specific pipelines</p>
+                            <p>AI runs the iOS and Android release pipelines end-to-end, enabling 30 releases in 3 months.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">I own every release</p>
+                            <p>Nothing reaches users or proceeds down the pipeline without my sign-off.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-head">
+                        <h3>User testing</h3>
+                        <div class="stage-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                        <p class="stage-rating">Accelerated</p>
+                    </div>
+                    <div class="stage-points">
+                        <div>
+                            <p class="stage-point-label">Research methods unchanged</p>
+                            <p>I established strategy, designed the study, ran every interview in my style, and decided what the findings meant.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Automated intake pipeline</p>
+                            <p>AI took 18 hours of audio and screen recordings and transcribed and attributed them.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Affinity generation</p>
+                            <p>AI broke down user interview content into over a thousand  usable affinity notes.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Surfacing research in discussion</p>
+                            <p>AI provided relevant affinity findings on-the-fly during design discussion.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-head">
+                        <h3>Measurement &amp; monitoring</h3>
+                        <div class="stage-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                        <p class="stage-rating">Accelerated</p>
+                    </div>
+                    <div class="stage-points">
+                        <div>
+                            <p class="stage-point-label">What counts as success</p>
+                            <p>I defined the criteria, qualitative and quantitative, before testing began.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Stack selection</p>
+                            <p>AI assisted me in evaluating analytics and crash-reporting options against our stage and budget, and helped set them up.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">What to measure</p>
+                            <p>AI helped define the telemetry events and metrics against my success criteria.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Answering questions with data</p>
+                            <p>AI pulls data from our measured metrics live to inform product discussion.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Daily health check</p>
+                            <p>An AI heartbeat watches production and alerts me when something needs addressed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-head">
+                        <h3>Policy &amp; compliance</h3>
+                        <div class="stage-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                        <p class="stage-rating">Transformed</p>
+                    </div>
+                    <div class="stage-points">
+                        <div>
+                            <p class="stage-point-label">Privacy policy and terms</p>
+                            <p>AI drafted against the requirements of both stores. I verified every claim against the product before signing-off.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Data hosting compliance</p>
+                            <p>AI mapped GDPR and US rules to inform my infrastructure choices: where data lives, and what stays out of the MVP.</p>
+                        </div>
+                        <div>
+                            <p class="stage-point-label">Store compliance</p>
+                            <p>AI derived Google and Apple’s data-handling requirements and evaluated our compliance throughout production.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="fade">The Question: Could one designer ship a whole product with AI?</h2>
+            <h3 class="fade">Solo practitioner startups were previously unrealistic</h3>
+            <p class="fade">After bootstrapping my last startup for multiple years, I knew the limitations and costs of the full production process, even for a smaller app. When I wound down that product, I was certain I’d never attempt a startup by myself again. The sheer scale of work, decisions, and knowledge is a tremendous amount to keep top of mind across all job functions.</p>
+            <h3 class="fade">The math recently changed, significantly</h3>
+            <p class="fade">In Q2 2026, I began reading about the advantages of Claude Code, and after understanding what it was capable of at a high level, it looked like it could be the answer to the challenges of work and knowledge scale of independent production.</p>
+            <p class="fade">In particular, AI could search for relevant information, organize it, reference it, and store it on your file system as a knowledge base. And it could be taught custom ways of operating.</p>
+            <p class="fade">Having no experience prior to this with AI beyond using a chat interface like ChatGPT for debugging work, this was both exciting and relevant. So, I set out to figure out if it was really possible to ship a high quality product independently, supported by a custom AI-org and custom agent team.</p>
+            <h3 class="fade">Design goals for the org</h3>
+            <p class="fade">Based on what AI was proficient at at a glance, I specced out my intentions for the org.</p>
+            <ul class="fade">
+                <li><p>It would be a closed-loop org, as espoused by Diana Hu of YC. All assets and decisions would be recorded and available to the AI.</p></li>
+                <li><p>I would not write any code this time - all code would be written by AI.</p></li>
+                <li><p>The org would be self-improving based on how I worked.</p></li>
+                <li><p>AI would be leveraged in every aspect of production.</p></li>
+                <li><p>The design of the org would be iterative through observed need and friction.</p></li>
+            </ul>
+            <h2 class="fade">Designing the org around the limits of AI</h2>
+            <p class="fade">Over the first few months, most of the org’s practices took shape based on observed limitations and friction of working with AI within the org.</p>
+            <h3 class="fade">Collaborative session lifecycle: The backbone of the org</h3>
+            <p class="fade">Below is a diagram of how AI is used in the org, from the start of a collaborative work session with the org, to its completion. These processes are designed from observing the limitations of AI in practice.</p>
+            <!-- Generated from the lofi geometry by tools/gen-session-diagram.mjs (figma snapshot 2026-10-22) -->
+            <div id="session-diagram" class="diagram-wrap fade">
+                <div class="diagram-scroll">
+                    <svg class="session-diagram" viewBox="0 3040 1512 640" role="img" aria-label="How a session works: boot up, the session, wind down, and the org filesystem layer they read from and save to"><rect data-part="B" transform="matrix(1 0 0 1 202.25 3399.5)" width="894" height="254.5" rx="24" class="sd-org"/><rect data-part="B" transform="matrix(1 0 0 1 243.75 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="B" transform="matrix(1 0 0 1 234 3493.816)" width="153" height="107.736083984375" rx="14" class="sd-group"/><rect data-part="B" transform="matrix(1 0 0 1 400.375 3493.816)" width="667.75" height="107.736083984375" rx="14" class="sd-group"/><rect data-part="B" transform="matrix(1 0 0 1 413.25 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="C" transform="matrix(1 0 0 1 582.75 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="B" transform="matrix(1 0 0 1 752.25 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="B" transform="matrix(1 0 0 1 921.75 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><ellipse data-part="D" transform="matrix(1 0 0 1 963.125 3181)" cx="21.25" cy="21.25" rx="21.25" ry="21.25" class="sd-badge"/><ellipse data-part="C" transform="matrix(1 0 0 1 628 3511.223)" cx="21.25" cy="21.25" rx="21.25" ry="21.25" class="sd-badge"/><ellipse data-part="B" transform="matrix(1 0 0 1 790.563 3417.183)" cx="21.25" cy="21.25" rx="21.25" ry="21.25" class="sd-badge"/><ellipse data-part="A" transform="matrix(1 0 0 1 276.875 3068.25)" cx="21.25" cy="21.25" rx="21.25" ry="21.25" class="sd-badge"/><text data-part="D" transform="matrix(1 0 0 1 977.375 3188.25)" class="sd-letter"><tspan x="0" y="20.5">D</tspan></text><text data-part="C" transform="matrix(1 0 0 1 642.25 3518.473)" class="sd-letter"><tspan x="0" y="20.5">C</tspan></text><text data-part="B" transform="matrix(1 0 0 1 804.813 3424.433)" class="sd-letter"><tspan x="0" y="20.5">B</tspan></text><text data-part="A" transform="matrix(1 0 0 1 291.125 3075.5)" class="sd-letter"><tspan x="0" y="20.5">A</tspan></text><text transform="matrix(1 0 0 1 963.125 3066.868)" class="sd-title"><tspan x="0" y="20.5">Wind down</tspan></text><text data-part="A" transform="matrix(1 0 0 1 262.125 3116.789)" class="sd-title"><tspan x="0" y="20.5">Boot up</tspan></text><text data-part="B" transform="matrix(1 0 0 1 839.438 3429.433)" class="sd-body"><tspan x="0" y="12.5">Org filesystem layer</tspan></text><text data-part="B" transform="matrix(1 0 0 1 235 3606.052)" class="sd-body"><tspan x="0" y="12.5">Code knowledge graphs</tspan></text><text data-part="B" transform="matrix(1 0 0 1 665.75 3606.052)" class="sd-body"><tspan x="0" y="12.5">Org knowledge graph</tspan></text><text data-part="B" transform="matrix(1 0 0 1 278.625 3540.723)" class="sd-body"><tspan x="0" y="12.5">Codebases</tspan></text><text data-part="B" transform="matrix(1 0 0 1 437.125 3540.723)" class="sd-body"><tspan x="0" y="12.5">Product docs</tspan></text><text data-part="C" transform="matrix(1 0 0 1 610.125 3556.723)" class="sd-body"><tspan x="0" y="12.5">Agent roles </tspan></text><text data-part="B" transform="matrix(1 0 0 1 790.625 3540.723)" class="sd-body"><tspan x="0" y="12.5">Org docs</tspan></text><text data-part="B" transform="matrix(1 0 0 1 945.625 3540.723)" class="sd-body"><tspan x="0" y="12.5">Company docs</tspan></text><text transform="matrix(1 0 0 1 10.125 3157)" class="sd-body"><tspan x="0" y="12.5">Session starts with user </tspan><tspan x="0" y="28.5">defined task, and goal </tspan><tspan x="0" y="44.5">criteria, and AI role</tspan></text><text data-part="A" transform="matrix(1 0 0 1 262.125 3157)" class="sd-body"><tspan x="0" y="12.5">Boots up AI role, and gains </tspan><tspan x="0" y="28.5">context from org based on </tspan><tspan x="0" y="44.5">task</tspan></text><text transform="matrix(1 0 0 1 562.188 3157)" class="sd-body"><tspan x="0" y="12.5">Session proceeds </tspan><tspan x="0" y="28.5">collaboratively</tspan></text><text transform="matrix(1 0 0 1 773.688 3165)" class="sd-body"><tspan x="0" y="12.5">Session completes </tspan><tspan x="0" y="28.5">stated goal</tspan></text><text transform="matrix(1 0 0 1 963.125 3106.747)" class="sd-body"><tspan x="0" y="12.5">AI logs full discussion, </tspan><tspan x="0" y="28.5">distills it, finishes pending </tspan><tspan x="0" y="44.5">writes, and pushes to Git</tspan></text><text data-part="D" transform="matrix(1 0 0 1 963.125 3229)" class="sd-body"><tspan x="0" y="12.5">AI walks through personal retro </tspan><tspan x="0" y="28.5">with me, discussing and logging </tspan><tspan x="0" y="44.5">friction points, what went </tspan><tspan x="0" y="60.5">well, what should improve, and </tspan><tspan x="0" y="76.5">themes.</tspan></text><text data-part="D" transform="matrix(1 0 0 1 1276 3229)" class="sd-body"><tspan x="0" y="12.5">Retro logs are used later to </tspan><tspan x="0" y="28.5">inform more significant changes </tspan><tspan x="0" y="44.5">to the org and roles.</tspan></text><text transform="matrix(1 0 0 1 1276 3119.789)" class="sd-body"><tspan x="0" y="12.5">Following session</tspan></text><text transform="matrix(1 0 0 1 1211.133 3079.868)" class="sd-body"><tspan x="0" y="12.5">optional </tspan><tspan x="0" y="28.5">handoff</tspan></text><text transform="matrix(1 0 0 1 668.094 3291.75)" class="sd-body"><tspan x="0" y="12.5">AI role gains </tspan><tspan x="0" y="28.5">additional context </tspan><tspan x="0" y="44.5">as needed</tspan></text><text data-part="D" transform="matrix(1 0 0 1 1049.25 3344.556)" class="sd-body"><tspan x="0" y="12.5">All saved durably </tspan><tspan x="0" y="28.5">in the org</tspan></text><text transform="matrix(1 0 0 1 447.313 3286.75)" class="sd-body"><tspan x="0" y="12.5">AI updates code, </tspan><tspan x="0" y="28.5">docs, etc according </tspan><tspan x="0" y="44.5">to instruction and </tspan><tspan x="0" y="60.5">defined practices.</tspan></text><text data-part="A" transform="matrix(1 0 0 1 177.492 3292.25)" class="sd-body"><tspan x="0" y="12.5">Subagent navigates </tspan><tspan x="0" y="28.5">the org and surfaces </tspan><tspan x="0" y="44.5">relevant context</tspan></text><path transform="matrix(1 0 0 1 197.75 3182)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 197.75 3182)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 473.625 3182)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 473.625 3182)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 705.5 3182)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 705.5 3182)" d="" class="sd-line"/><path data-part="D" transform="matrix(1 0 0 1 1212.5 3258)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="D" transform="matrix(1 0 0 1 1212.5 3258)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 1212.5 3130.789)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L2.04 1.00 L2.04 0.00 L2.04 -1.00 L0.00 -1.00 L0.00 0.00 Z M6.13 0.00 L6.13 1.00 L10.21 1.00 L10.21 0.00 L10.21 -1.00 L6.13 -1.00 L6.13 0.00 Z M14.29 0.00 L14.29 1.00 L18.38 1.00 L18.38 0.00 L18.38 -1.00 L14.29 -1.00 L14.29 0.00 Z M22.46 0.00 L22.46 1.00 L26.54 1.00 L26.54 0.00 L26.54 -1.00 L22.46 -1.00 L22.46 0.00 Z M30.63 0.00 L30.63 1.00 L34.71 1.00 L34.71 0.00 L34.71 -1.00 L30.63 -1.00 L30.63 0.00 Z M38.79 0.00 L38.79 1.00 L42.88 1.00 L42.88 0.00 L42.88 -1.00 L38.79 -1.00 L38.79 0.00 Z M46.96 0.00 L46.96 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L46.96 -1.00 L46.96 0.00 Z M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L2.04 1.00 L2.04 0.00 L2.04 -1.00 L0.00 -1.00 L0.00 0.00 Z M6.13 0.00 L6.13 1.00 L10.21 1.00 L10.21 0.00 L10.21 -1.00 L6.13 -1.00 L6.13 0.00 Z M14.29 0.00 L14.29 1.00 L18.38 1.00 L18.38 0.00 L18.38 -1.00 L14.29 -1.00 L14.29 0.00 Z M22.46 0.00 L22.46 1.00 L26.54 1.00 L26.54 0.00 L26.54 -1.00 L22.46 -1.00 L22.46 0.00 Z M30.63 0.00 L30.63 1.00 L34.71 1.00 L34.71 0.00 L34.71 -1.00 L30.63 -1.00 L30.63 0.00 Z M38.79 0.00 L38.79 1.00 L42.88 1.00 L42.88 0.00 L42.88 -1.00 L38.79 -1.00 L38.79 0.00 Z M46.96 0.00 L46.96 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L46.96 -1.00 L46.96 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 1212.5 3130.789)" d="" class="sd-line"/><path transform="matrix(0.707 -0.707 0.707 0.707 913.625 3170.748)" d="M50.21 0.71 C50.60 0.32 50.60 -0.32 50.21 -0.71 L43.84 -7.07 C43.45 -7.46 42.82 -7.46 42.43 -7.07 C42.04 -6.68 42.04 -6.05 42.43 -5.66 L48.08 0.00 L42.43 5.66 C42.04 6.05 42.04 6.68 42.43 7.07 C42.82 7.46 43.45 7.46 43.84 7.07 L50.21 0.71 Z M0.00 0.00 L0.00 1.00 L49.50 1.00 L49.50 0.00 L49.50 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(0.707 -0.707 0.707 0.707 913.625 3170.748)" d="" class="sd-line"/><path data-part="D" transform="matrix(0.707 0.707 0.707 -0.707 913.625 3194)" d="M50.21 0.71 C50.60 0.32 50.60 -0.32 50.21 -0.71 L43.84 -7.07 C43.45 -7.46 42.82 -7.46 42.43 -7.07 C42.04 -6.68 42.04 -6.05 42.43 -5.66 L48.08 0.00 L42.43 5.66 C42.04 6.05 42.04 6.68 42.43 7.07 C42.82 7.46 43.45 7.46 43.84 7.07 L50.21 0.71 Z M0.00 0.00 L0.00 1.00 L49.50 1.00 L49.50 0.00 L49.50 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="D" transform="matrix(0.707 0.707 0.707 -0.707 913.625 3194)" d="" class="sd-line"/><path data-part="A" transform="matrix(0 1 -1 0 326.25 3218)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="A" transform="matrix(0 1 -1 0 326.25 3218)" d="" class="sd-line"/><path transform="matrix(0 1 -1 0 600.75 3218)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(0 1 -1 0 600.75 3218)" d="" class="sd-line"/><path data-part="D" transform="matrix(0 1 -1 0 1032.625 3324.29)" d="M100.85 0.71 C101.24 0.32 101.24 -0.32 100.85 -0.71 L94.49 -7.07 C94.10 -7.46 93.46 -7.46 93.07 -7.07 C92.68 -6.68 92.68 -6.05 93.07 -5.66 L98.73 0.00 L93.07 5.66 C92.68 6.05 92.68 6.68 93.07 7.07 C93.46 7.46 94.10 7.46 94.49 7.07 L100.85 0.71 Z M0.00 0.00 L0.00 1.00 L100.14 1.00 L100.14 0.00 L100.14 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="D" transform="matrix(0 1 -1 0 1032.625 3324.29)" d="" class="sd-line"/><path transform="matrix(0 -1 -1 0 647.625 3450.433)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(0 -1 -1 0 647.625 3450.433)" d="" class="sd-line"/><path data-part="A" transform="matrix(0 -1 1 0 368.75 3450.433)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="A" transform="matrix(0 -1 1 0 368.75 3450.433)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 606.25 3109.583)" d="M9.63 12.04 L1.38 12.04 C1.01 12.04 0.66 11.90 0.40 11.64 C0.14 11.38 0.00 11.03 0.00 10.67 L0.00 2.42 C0.00 2.05 0.14 1.70 0.40 1.44 C0.66 1.19 1.01 1.04 1.38 1.04 C1.74 1.04 2.09 1.19 2.35 1.44 C2.61 1.70 2.75 2.05 2.75 2.42 L2.75 7.35 L5.26 4.83 C8.33 1.75 12.50 0.01 16.84 0.00 L16.93 0.00 C21.25 -0.01 25.39 1.68 28.46 4.70 C28.71 4.95 28.85 5.30 28.85 5.66 C28.85 6.02 28.71 6.36 28.46 6.62 C28.21 6.88 27.87 7.02 27.51 7.03 C27.15 7.04 26.80 6.91 26.54 6.66 C23.98 4.15 20.53 2.74 16.93 2.75 L16.86 2.75 C13.23 2.76 9.76 4.21 7.21 6.78 L4.69 9.29 L9.63 9.29 C9.99 9.29 10.34 9.44 10.60 9.69 C10.86 9.95 11.00 10.30 11.00 10.67 C11.00 11.03 10.86 11.38 10.60 11.64 C10.34 11.90 9.99 12.04 9.63 12.04 Z M31.63 20.29 L23.38 20.29 C23.01 20.29 22.66 20.44 22.40 20.69 C22.14 20.95 22.00 21.30 22.00 21.67 C22.00 22.03 22.14 22.38 22.40 22.64 C22.66 22.90 23.01 23.04 23.38 23.04 L28.31 23.04 L25.79 25.56 C23.24 28.12 19.77 29.57 16.14 29.58 L16.07 29.58 C12.47 29.59 9.02 28.19 6.46 25.67 C6.33 25.54 6.18 25.43 6.01 25.36 C5.84 25.29 5.66 25.26 5.48 25.26 C5.29 25.26 5.11 25.29 4.94 25.36 C4.78 25.43 4.62 25.54 4.49 25.67 C4.37 25.80 4.27 25.96 4.20 26.13 C4.13 26.30 4.10 26.48 4.10 26.66 C4.11 26.85 4.15 27.03 4.22 27.19 C4.30 27.36 4.41 27.51 4.54 27.64 C7.61 30.66 11.76 32.34 16.07 32.33 L16.16 32.33 C20.50 32.32 24.67 30.58 27.73 27.50 L30.25 24.99 L30.25 29.92 C30.25 30.28 30.39 30.63 30.65 30.89 C30.91 31.15 31.26 31.29 31.63 31.29 C31.99 31.29 32.34 31.15 32.60 30.89 C32.86 30.63 33.00 30.28 33.00 29.92 L33.00 21.67 C33.00 21.30 32.86 20.95 32.60 20.69 C32.34 20.44 31.99 20.29 31.63 20.29 Z " class="sd-line"/><path class="sd-hit" data-part="A" d="M200 3058 H476 V3395 H170 V3280 H200 Z"/><rect class="sd-hit" data-part="D" x="905" y="3176" width="600" height="219" rx="16"/></svg>
+                </div>
+                <p class="diagram-hint">Drag to explore the full diagram</p>
+            </div>
+            <div class="part-sections">
+                <section class="part-section" data-part="A">
+                <div id="part-A" class="lettered-heading fade">
+                    <button class="letter-marker" data-letter="A">A</button>
+                    <h3>The fresh session problem, solved with boot protocols</h3>
+                </div>
+                <p class="fade">Agents are not like human collaborators. Every new session, an agent arrives with a blank slate.</p>
+                <p class="fade">The design question becomes, “For this session’s goal, what does my AI need to know in order to be most effective in assisting me to reach that goal?”</p>
+                <p class="fade">The answer is in two parts:</p>
+                <ol class="fade">
+                    <li><p>Based on the session’s task and goal, the AI should find and load all relevant context from the org’s filesystem.</p></li>
+                    <li><p>As the task progresses, the AI should identify when it is missing context that the org has, and load it on the fly.</p></li>
+                </ol>
+                <p class="fade">This approach allows the AI in the session to start from an informed perspective based on established decisions and context. This way, <strong>I never have to repeat settled decisions or stories</strong>.</p>
+                </section>
+                <section class="part-section" data-part="B">
+                <div id="part-B" class="lettered-heading fade">
+                    <button class="letter-marker" data-letter="B">B</button>
+                    <h3>The 1M context problem, solved with the AI-navigable org and multi-sessions</h3>
+                </div>
+                <p class="fade">Each session can have up to 1M tokens in context. This presents a challenge, as the org itself is over 530M tokens and growing with every conversation, decision, and asset. </p>
+                <p class="fade">The boot protocols solve this problem partially, by only loading relevant context from the org. But to do that, the AI must be able to navigate the org’s filesystem effectively.</p>
+                <p class="fade">To solve this navigation challenge, the org has a few design considerations:</p>
+                <ul class="fade">
+                    <li><p>It has an enforced folder and file schema, making high level navigation predictable.</p></li>
+                    <li><p>It has multiple queryable knowledge graphs for the AI to use in different parts of the org.</p></li>
+                </ul>
+                <p class="fade">If a session goes beyond 1M context, the AI compresses information, which can impair its ability to collaborate from an informed perspective. </p>
+                <p class="fade">To address this, the AI will generate handoff instructions for another session to boot from, preserving key context and decisions intentionally without the uncertainty of automatic compression.</p>
+                </section>
+                <section class="part-section" data-part="C">
+                <div id="part-C" class="lettered-heading fade">
+                    <button class="letter-marker" data-letter="C">C</button>
+                    <h3>Different collaborators are needed for different tasks, solved with roles</h3>
+                </div>
+                <p class="fade">Some tasks require operating in different ways. Instead of having one universal AI assistant, I created 3 key roles:</p>
+                <ul class="fade">
+                    <li><p>Product Strategist, for collaborating on research and design discussion and decisions.</p></li>
+                    <li><p>Developer, for writing, maintaining, and advising on code and technical considerations.</p></li>
+                    <li><p>Org Strategist, for maintaining and improving the org itself, and its practices and roles.</p></li>
+                </ul>
+                <p class="fade">By splitting these roles, I was able to improve upon them individually. </p>
+                </section>
+                <section class="part-section" data-part="D">
+                <div id="part-D" class="lettered-heading fade">
+                    <button class="letter-marker" data-letter="D">D</button>
+                    <h3>Improving the org and roles is time consuming, solved with feedback loops</h3>
+                </div>
+                <p class="fade">Early on, I noticed despite corrections the AI would repeat similar mistakes. To address this, I introduced retrospectives to the session wind down procedures.</p>
+                <p class="fade">The goal of this was to log issues and feedback at the end of the session, when the experience was freshest in my mind.</p>
+                <p class="fade">The retrospectives consist of:</p>
+                <ul class="fade">
+                    <li><p>Friction list the AI noticed within the session, which I respond to.</p></li>
+                    <li><p>What I felt went well in the session.</p></li>
+                    <li><p>What I felt went poorly, or was draining.</p></li>
+                    <li><p>Anything I felt should be carried forward, as far as patterns I’d like the AI to operate in.</p></li>
+                </ul>
+                <p class="fade">These retrospectives would be logged for later “optimization” sessions with the Org Strategist AI role, which had autonomy to change how the org worked, from filesystem schema, to role definitions, to processes.</p>
+                </section>
+            </div>
+
+            <h3 class="fade">Balancing AI decision autonomy with cost of misjudgment, solved with autonomy upgrade processes</h3>
+            <p class="fade">Initially, I weighed in on all decisions the AI was making. Over time, I provided feedback on where AI was successful in making autonomous decisions, and where it failed to be able to make reliable autonomous decisions.</p>
+            <p class="fade">This resulted in a log of decision types: </p>
+            <ul class="fade">
+                <li><p>That an AI role could be trusted to do autonomously.</p></li>
+                <li><p>To make but review with me before finalizing.</p></li>
+                <li><p>Decisions I would explicitly make.</p></li>
+            </ul>
+            <p class="fade">I had many early experiences of having too much confidence in an AI role to fully make decisions and deliver on a goal, only to gradually discover (slowly through testing) some assumptions it made to complete the task that were far departed from what I’d advise.</p>
+            <p class="fade">The cost of one wrong product decision can cascade very quickly into product and technical debt, so while development proved it could be relatively autonomous, product decisions proved they largely couldn’t be trusted to AI.</p>
+            <h2 class="fade">How I ensured I never have to write code</h2>
+            <p class="fade">The issue of “vibe coded” apps boils down to spaghetti code. Each session focuses on a new feature, refactors and adds to what is necessary, and that’s it. In that mode of operating, it’s not a surprise that the AI isn’t going out of its way for maintainability, as it wasn’t instructed to.</p>
+            <p class="fade">In order to ensure I didn’t have to manually code, I needed to design the Developer AI role so it emulated an experienced developer.</p>
+            <h3 class="fade">Choosing languages and stack that Claude was most proficient in</h3>
+            <p class="fade">In the early stages of planning, I worked with Claude to understand what languages and technologies it was most proficient at using. The chosen technology stack all consisted of tools and languages where: </p>
+            <ul class="fade">
+                <li><p>Claude was proficient</p></li>
+                <li><p>Well maintained documentation as a resource for Claude</p></li>
+                <li><p>Has an active community to assist in troubleshooting</p></li>
+            </ul>
+            <h3 class="fade">The AI developer role had defined practices to follow</h3>
+            <p class="fade">Up front, the AI needed guidelines for writing and maintaining code. The developer role followed:</p>
+            <ul class="fade">
+                <li><p>A chosen architecture, following guidelines on best practices for modularizing the codebase.</p></li>
+                <li><p>Best practices defined for each language in the codebase, and style guides.</p></li>
+                <li><p>Guidelines for commenting and documentation.</p></li>
+                <li><p>Best practices defined for using and maintaining Git.</p></li>
+            </ul>
+            <p class="fade">Modularization in particular was important, not only because features are more susceptible to change early in MVP development, but because modular logic in the codebase is less context intensive for the AI to work within.</p>
+            <h3 class="fade">Documentation of decisions, rationale, and history was easily AI-navigable</h3>
+            <p class="fade">To ensure the AI was making development decisions from an informed perspective, the product codebase and its documentation needed to provide a clear picture of what was decided, why, and most importantly what was tried and failed or decided against.</p>
+            <p class="fade">I defined a number of roles and practices for different file types, to provide an AI-navigable system.</p>
+            <ul class="fade">
+                <li><p>Code comments: Provide file-specific decisions and context when relevant, and link to other files. Half of the current 858 codebase files cite ADRs.</p></li>
+                <li><p>Architectural Decision Records (ADRs): Provided comprehensive rationale for engineering decisions. Currently 38 in org.</p></li>
+                <li><p>Product Requirements Docs (PRDs): Provided feature requirements and product rationale.</p></li>
+            </ul>
+            <!-- Hand-laid-out from the lofi citation-linking diagram (exact lofi wording; layout balanced per Luke 2026-10-22). 858 total added per Luke. -->
+            <div class="diagram-wrap diagram-wrap--column citation-wrap fade">
+                <div class="diagram-scroll">
+                    <svg class="citation-diagram" viewBox="0 26 480 346" role="img" aria-label="Citation linking between ADRs, PRDs and code files"><defs><marker id="cd-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" class="cd-head"/></marker></defs><text x="240.0" y="50" text-anchor="middle" class="sd-title">Citation linking</text><text x="90" y="76" text-anchor="middle" class="sd-body">38 total</text><text x="390" y="76" text-anchor="middle" class="sd-body">7 total</text><rect x="20" y="82" width="140" height="96" rx="14" class="sd-box"/><text x="90" y="114" text-anchor="middle" class="sd-strong">ADRs</text><text text-anchor="middle" class="sd-body"><tspan x="90" y="138">Technical decisions</tspan><tspan x="90" y="153">and full rationale</tspan></text><rect x="320" y="82" width="140" height="96" rx="14" class="sd-box"/><text x="390" y="114" text-anchor="middle" class="sd-strong">PRDs</text><text text-anchor="middle" class="sd-body"><tspan x="390" y="138">Product requirements</tspan><tspan x="390" y="153">and rationale</tspan></text><rect x="170" y="250" width="140" height="96" rx="14" class="sd-box"/><text x="240" y="282" text-anchor="middle" class="sd-strong">Code files</text><text text-anchor="middle" class="sd-body"><tspan x="240" y="306">File specific</tspan><tspan x="240" y="321">decisions</tspan></text><text x="240" y="360" text-anchor="middle" class="sd-body">858 total</text><text text-anchor="middle" class="sd-small"><tspan x="240.0" y="109.0">11 ADRs cite PRDs</tspan></text><line x1="166.0" y1="119.0" x2="314.0" y2="119.0" class="cd-arrow" marker-end="url(#cd-head)"/><line x1="314.0" y1="133.0" x2="166.0" y2="133.0" class="cd-arrow" marker-end="url(#cd-head)"/><text text-anchor="middle" class="sd-small"><tspan x="240.0" y="148.0">1 PRD cites ADR</tspan></text><line x1="292.7" y1="240.3" x2="353.3" y2="191.7" class="cd-arrow" marker-end="url(#cd-head)"/><text text-anchor="start" class="sd-small"><tspan x="330.2" y="226.0">70 code files</tspan><tspan x="330.2" y="239.0">cite PRDs</tspan></text><line x1="185.4" y1="240.3" x2="119.7" y2="187.7" class="cd-arrow" marker-end="url(#cd-head)"/><line x1="142.1" y1="187.7" x2="207.8" y2="240.3" class="cd-arrow" marker-end="url(#cd-head)"/><text text-anchor="end" class="sd-small"><tspan x="140.3" y="220.0">395 of 858 code</tspan><tspan x="140.3" y="233.0">files cite ADRs</tspan></text><text text-anchor="start" class="sd-small"><tspan x="188.5" y="200.0">25 ADRs cite</tspan><tspan x="188.5" y="213.0">specific files</tspan></text></svg>
+                </div>
+                <p class="diagram-hint">Drag to explore the full diagram</p>
+            </div>
+            <p class="fade">These files linked to one another when relevant, and allowed the AI developer role to gain relevant context on any file specific or systemic development task it was working on.</p>
+            <h3 class="fade">Automated test generation and checks</h3>
+            <p class="fade">With any feature addition or change, the AI developer role creates tests and adds them to the full testing stack, so that we have some reassurance that recent changes have not had unforeseen impacts or break other parts of the product. The SHRP product currently has about 1,200 tests as of this writing.</p>
+            <h3 class="fade">How is code quality reviewed?</h3>
+            <p class="fade">The AI developer role executes its own code review with Claude’s models. For larger code reviews, I also have it use GPT Sol as an adversarial reviewer, and use Ollama higher end local models for a second opinion.</p>
+            <p class="fade">New code is tested live on device during development. Once a feature is complete, it graduates to Canary track which is a release build on my personal device. Once that is soaked, I graduate it to the Staging track consisting of beta users and monitor its stability via Sentry analytics.</p>
+            <h3 class="fade">Is this preferable to working with a professional developer?</h3>
+            <p class="fade">Absolutely not. Working with a human developer not only brings their experience and expertise, but also common sense, which AI can lack.</p>
+            <p class="fade">I have no doubt the code quality of the SHRP product is below what a senior+ engineer could deliver (even if they’re AI assisted). But given I don’t have the resources for that, the AI Developer role has far exceeded my expectations, and delivered a quality of collaboration and production performance that I am very happy with. There is no way I could have developed this product, of this scope, myself in even 10x the development time.</p>
+            <h2 class="fade">How I designed before, and how I design now</h2>
+            <p class="fade">My design process changed pretty drastically, allowing both greater depth and quality in shorter timeframes.</p>
+            <h3 class="fade">Code went from the most expensive aspect of production, to the cheapest.</h3>
+            <p class="fade">The classical design process front loaded lean research, to derisk initial product decisions as much as possible. Once engineering was involved, implementation was expensive, and changes later added significant cost. Not only accrued time cost, but technical debt, and increased pressure on developers who were managing multiple goals at any given time.</p>
+            <p class="fade">Initial discovery, research, lean testing, and all our usual up front methods as designers are all towards the purpose of making the case for a design as air-tight as possible prior to engineering.</p>
+            <p class="fade">When that flips, there are a huge amount of advantages and opportunities to improve the process.</p>
+            <h3 class="fade">Change #1: Due diligence research rigor</h3>
+            <p class="fade">Competitive analysis, market evaluation, design precedent, problem scope, etc. All that initial research work understanding the playing field took time. Now, it can be strategically automated and explored conversationally. </p>
+            <p class="fade">This allows more data to be taken into account, more quickly, and intentionally. What would take a week or more, can be done in an afternoon.</p>
+            <h3 class="fade">Change #2: No more high fidelity in Figma</h3>
+            <p class="fade">Once I had a low fidelity spec, I could take it and combine it with a loose set of typography and colors, and use AI to play and feel out what aesthetic matched the UI and experience I was trying to create.</p>
+            <p class="fade">Instead of taking a day to mock up a few high fidelity options, I was able to feel out over a dozen high fidelity versions of my UI over an afternoon.</p>
+            <h3 class="fade">Change #3: Live prototypes over less effective paper prototypes</h3>
+            <p class="fade">This is the biggest shift. To get the most accurate feedback from a user, it is ideal to give them the closest experience to the one you want to release. Before, that meant paper prototypes, or shoddy functional prototypes that often were not cost effective.</p>
+            <p class="fade">Now, you can get the actual, fully functional idea in front of the user faster than if you created paper prototypes, or conducted a survey, or any other classical method.</p>
+            <p class="fade">The user is in the position to provide more accurate information, and you’re in the position to experiment freely. An absolute win-win, which makes testing more cost effective for the business, more accurate from the user, and more playful and enjoyable for the designer.</p>
+            <!-- Hand-laid-out from the lofi "Today, with AI / Before, without AI" flows (exact lofi wording). Repeat icon: Phosphor arrows-clockwise. -->
+            <div class="diagram-wrap fade">
+                <div class="diagram-scroll">
+                    <svg class="flow-diagram" viewBox="0 0 1284 330" role="img" aria-label="Design process today with AI versus before, without AI"><defs><marker id="fd-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" class="fd-head"/></marker></defs><text x="20" y="58" class="fd-title">Today, with AI</text><text class="fd-step"><tspan x="20.0" y="100.0">Up front discovery</tspan><tspan x="20.0" y="118.0">and due diligence</tspan></text><line x1="168.0" y1="104" x2="212.0" y2="104" class="fd-arrow" marker-end="url(#fd-head)"/><text class="fd-step"><tspan x="234.0" y="100.0">Low fidelity design</tspan><tspan x="234.0" y="118.0">and interaction spec</tspan></text><line x1="389.0" y1="104" x2="433.0" y2="104" class="fd-arrow" marker-end="url(#fd-head)"/><text class="fd-step"><tspan x="448.0" y="100.0">Rapid high fidelity</tspan><tspan x="448.0" y="118.0">experimentation</tspan></text><line x1="599.5" y1="104" x2="643.5" y2="104" class="fd-arrow" marker-end="url(#fd-head)"/><text class="fd-step"><tspan x="662.0" y="91.0">Production-quality</tspan><tspan x="662.0" y="109.0">prototype in user</tspan><tspan x="662.0" y="127.0">hands</tspan></text><path d="M804.0 94 A48 40 0 0 1 900.0 94" class="fd-loop" marker-end="url(#fd-head)"/><path d="M900.0 114 A48 40 0 0 1 804.0 114" class="fd-loop" marker-end="url(#fd-head)"/><text x="852.0" y="42.0" text-anchor="middle" class="fd-note">Rapid iteration</text><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z" transform="translate(836.0 88.0) scale(0.1250)" class="fd-icon"/><text class="fd-step"><tspan x="916.0" y="109.0">User feedback</tspan></text><text x="20" y="224" class="fd-title">Before, without AI</text><text class="fd-step"><tspan x="20.0" y="266.0">Up front discovery</tspan><tspan x="20.0" y="284.0">and due diligence</tspan></text><line x1="168.0" y1="270" x2="212.0" y2="270" class="fd-arrow" marker-end="url(#fd-head)"/><text class="fd-step"><tspan x="234.0" y="266.0">Low fidelity design</tspan><tspan x="234.0" y="284.0">and interaction spec</tspan></text><line x1="389.0" y1="270" x2="433.0" y2="270" class="fd-arrow" marker-end="url(#fd-head)"/><text class="fd-step"><tspan x="448.0" y="257.0">Lean research method</tspan><tspan x="448.0" y="275.0">(paper prototype,</tspan><tspan x="448.0" y="293.0">interview, etc)</tspan></text><line x1="603.0" y1="270" x2="647.0" y2="270" class="fd-arrow" marker-end="url(#fd-head)"/><text class="fd-step"><tspan x="662.0" y="266.0">High fidelity</tspan><tspan x="662.0" y="284.0">design</tspan></text><line x1="770.0" y1="270" x2="814.0" y2="270" class="fd-arrow" marker-end="url(#fd-head)"/><text class="fd-step"><tspan x="831.0" y="275.0">Engineering handoff</tspan></text><line x1="981.0" y1="270" x2="1025.0" y2="270" class="fd-arrow" marker-end="url(#fd-head)"/><text class="fd-step"><tspan x="1042.0" y="257.0">Slow cycle of feedback,</tspan><tspan x="1042.0" y="275.0">research, eng delivery,</tspan><tspan x="1042.0" y="293.0">and repeat</tspan></text><path d="M224,48V96a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h28.69L182.06,73.37a79.56,79.56,0,0,0-56.13-23.43h-.45A79.52,79.52,0,0,0,69.59,72.71,8,8,0,0,1,58.41,61.27a96,96,0,0,1,135,.79L208,76.69V48a8,8,0,0,1,16,0ZM186.41,183.29a80,80,0,0,1-112.47-.66L59.31,168H88a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8v48a8,8,0,0,0,16,0V179.31l14.63,14.63A95.43,95.43,0,0,0,130,222.06h.53a95.36,95.36,0,0,0,67.07-27.33,8,8,0,0,0-11.18-11.44Z" transform="translate(1106.5 198.0) scale(0.1250)" class="fd-icon"/></svg>
+                </div>
+                <p class="diagram-hint">Drag to explore the full diagram</p>
+            </div>
+            <h3 class="fade">Change #4: Design through play</h3>
+            <p class="fade">Using a development build on-device that updated the app live after any codebase change, allowed me to brainstorm with an AI session and design interactions iteratively. I’d try playing with a feature, and come up with ideas for how to change and improve the experience. Then I’d play with the change, and continue tweaking until I was happy with it.</p>
+            <p class="fade">This type of design iteration before AI would have significant time cost, outweighing the UX benefit many of the times, so lots of these tweaks and improvements wouldn’t be viable before AI. With AI, I can have fun iterating, and refine features delivering a much higher UX quality, with comparably negligible additional time cost.</p>
+            <h3 class="fade">What didn’t change: Ownership, low fidelity design, and interview strategy</h3>
+            <p class="fade">AI is most helpful for scoped tasks with clear constraints, context, and criteria. But it has no actual responsibility for success or failure.</p>
+            <p class="fade">As full responsibility fell to me, I ensured at every step involving a product decision, that I either explicitly made that decision, or approved it from a fully informed perspective. </p>
+            <p class="fade">My low fidelity design process was also largely unchanged. While AI was helpful to conduct research and inform my perspective, it was not helpful as an actual designer. A first draft low fidelity spec takes a huge amount of context (problem, user, business, design, etc) and involves structuring a system balancing all that context and the product goals. Every flow, every page hierarchy, every piece of copy, works together to reflect the design intent defined by that context.</p>
+            <p class="fade">Because of the high complexity of reasoning and scale of context required for a new product low fidelity spec, I found AI (as of Q3 2026) consistently unable to make effective decisions of value. Therefore I kept its role as providing critique at this phase.</p>
+            <p class="fade">I also kept my previous interview practices. Interview strategy design is already highly complex; What are we looking to learn? How should it be learned from the user? What are our priorities?</p>
+            <p class="fade">Once you establish your study design and interview strategy, you need to conduct the interview. When should you refocus the user? When should you provide bias or withhold? When should you let the user run and explore an idea?</p>
+            <p class="fade">Getting the most out of a user interview also requires them to be comfortable, to trust you, and to enjoy talking to you. This takes practice, and in no way can be emulated by AI.</p>
+            <h2 class="fade">When is AI better, and when is a human designer better?</h2>
+            <p class="fade">Through the experience of working with AI in the variety of ways required to produce and ship a product, I learned first hand AI’s significant strengths and weaknesses.</p>
+            <p class="fade">Bottom line: AI is strongest on problems it has been trained on, or that fit inside one session; a human is strongest where the decision needs more context than a session can hold.</p>
+            <h3 class="fade">AI wins: Large dataset, precise distillation, pattern recognition, rule-based labor, teaching</h3>
+            <p class="fade">I found AI to be a boon of help executing rule-based thought labor, which would have taken me significant time and energy. Some general examples:</p>
+            <ul class="fade">
+                <li><p>Collecting docs to inform a decision during discussion.</p></li>
+                <li><p>Pulling data to assess state of the product.</p></li>
+                <li><p>Analysis over data or research papers.</p></li>
+                <li><p>Automating code documentation and updating product policy as features evolved.</p></li>
+                <li><p>Small scope autonomous coding decisions.</p></li>
+                <li><p>Acting as a role in which I have less experience, and teaching me (with citations) specific to our work.</p></li>
+            </ul>
+            <p class="fade">In these areas, some things that AI could do in minutes could have taken me days, weeks, or even months.</p>
+            <h3 class="fade">Designer wins: High context decisions, design system tradeoffs, product judgement, and in-person interaction</h3>
+            <p class="fade">In some cases, I found AI to slow the process down, or to be unable to deliver competitive value vs doing the work myself. This was primarily in regards to decisions that required significant context, across a long timeframe, which considered priorities across domains.</p>
+            <p class="fade">A single design decision, let’s say adding a button on an app homepage, has a large number of considerations. Here is an incomplete potential example list:</p>
+            <ul class="fade">
+                <li><p>What are the functions of the homepage for the user, and does this button merit inclusion?</p></li>
+                <li><p>What are the current business goals, and how does this button influence them?</p></li>
+                <li><p>What are the engineering considerations of this button? Are there equally valuable leaner solutions?</p></li>
+                <li><p>What are unknown potential risks of this change?</p></li>
+                <li><p>Based on the potential value of this change, is its impact measurable, and over what timeframe?</p></li>
+                <li><p>Are there other design strategies for using this button’s space on the UI that produce greater net user and business value?</p></li>
+                <li><p>Will a user understand and value this button?</p></li>
+            </ul>
+            <p class="fade">These are just some questions that can be asked depending on a single design decision on a single UI.</p>
+            <p class="fade">AI still is assistive for small scope, low complexity design. For example, drafting a confirmation pop-up modal with design and copy. But from my experience so far, I ensure that I explicitly decide or weigh in on every product decision.</p>
+            <p class="fade">A designer also is able to know when to distrust an idea or answer, and challenge the basis of a decision. That is a key design skill, and one that keeps AI assistance value net positive.</p>
+            <h3 class="centered-title fade">Designer vs AI advantage summary</h3>
+            <div class="compare-wrap fade">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <td class="compare-corner"><span class="compare-badge">AI wins</span></td>
+                            <th scope="col">Designer (me)</th>
+                            <th scope="col">AI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row"><p>Precise distillation of large dataset</p></th>
+                        <td data-label="Designer"><p>Hours of review, imperfect recall</p></td>
+                        <td data-label="AI" class="is-winner"><p><i class="ph-fill ph-crown-simple compare-crown" aria-label="Winner"></i>Accurate distillation in minutes</p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><p>Pattern recognition across large dataset</p></th>
+                        <td data-label="Designer"><p>Hours of review, imperfect recall</p></td>
+                        <td data-label="AI" class="is-winner"><p><i class="ph-fill ph-crown-simple compare-crown" aria-label="Winner"></i>Accurate patterns in minutes</p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><p>Manual, rule-based technology labor</p><p class="compare-note">Searching for docs, reviewing code, etc.</p></th>
+                        <td data-label="Designer"><p>Slower searching, reading, and time to comprehension</p></td>
+                        <td data-label="AI" class="is-winner"><p><i class="ph-fill ph-crown-simple compare-crown" aria-label="Winner"></i>Accurate, fast, and predictable</p><p class="compare-note">Assuming given accurate guidance and criteria</p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><p>Skill breadth</p><p class="compare-note">Acting as any requested role; design, legal, dev, etc.</p></th>
+                        <td data-label="Designer"><p>Finite, gradually increasing through experience.</p></td>
+                        <td data-label="AI" class="is-winner"><p><i class="ph-fill ph-crown-simple compare-crown" aria-label="Winner"></i>Extremely high breadth</p><p class="compare-note">Assuming given accurate guidance and criteria</p></td>
+                    </tr>
+                    <tr class="compare-group"><th colspan="3" scope="rowgroup"><span class="compare-badge">Designer wins</span></th></tr>
+                    <tr>
+                        <th scope="row"><p>High context decisions</p><p class="compare-note">Spanning weeks or months of learnings</p></th>
+                        <td data-label="Designer" class="is-winner"><p><i class="ph-fill ph-crown-simple compare-crown" aria-label="Winner"></i>Higher accuracy, given immersed in material</p></td>
+                        <td data-label="AI"><p>Unable to target recall to relevant key patterns at context scale competitively</p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><p>Systemic design decisions</p></th>
+                        <td data-label="Designer" class="is-winner"><p><i class="ph-fill ph-crown-simple compare-crown" aria-label="Winner"></i>Higher first pass accuracy</p></td>
+                        <td data-label="AI"><p>Thought processes struggle to blend tradeoffs and reason within a product’s UI architecture</p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><p>Product judgement and feeling</p></th>
+                        <td data-label="Designer" class="is-winner"><p><i class="ph-fill ph-crown-simple compare-crown" aria-label="Winner"></i>Instant, providing accurate single user datapoint</p></td>
+                        <td data-label="AI"><p>N/A, incapable of “feeling” full impression of a design</p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><p>In-person inquiry and user testing</p></th>
+                        <td data-label="Designer" class="is-winner"><p><i class="ph-fill ph-crown-simple compare-crown" aria-label="Winner"></i>Accurate, utilizing social skills and interview experience</p></td>
+                        <td data-label="AI"><p>Untested</p></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><p>Identifying incomplete decision basis</p></th>
+                        <td data-label="Designer" class="is-winner"><p><i class="ph-fill ph-crown-simple compare-crown" aria-label="Winner"></i>Accurate, with known criteria based on decision</p></td>
+                        <td data-label="AI"><p>Inconsistent, and will assert stances on known incomplete criteria</p><p class="compare-note">Despite instruction guards</p></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="fade">Conclusions so far: A designer leads and carries responsibility, AI provides enablement, options, and speed.</h3>
+            <p class="fade">Going into creating this org system, I was curious how much of my role as a designer could actually be emulated by AI. </p>
+            <p class="fade">Instead, I learned how many opportunities for improvement AI provides, opening up the potential to redefine many ways of how I previously worked.</p>
+            <p class="fade">At the same time, I got a strong dose of AI’s failures in my experimentation with it. I found what could be improved over time, and what it was unable to do.</p>
+            <p class="fade">I’m thrilled to be a designer in this new paradigm, compared to how I previously worked.</p>
+            <p class="fade">Granted, this is as of this writing (October 2026). I’m sure this assessment will be outdated in no time, and my practices will continue changing.</p>
+            <h2 class="fade">So, can one designer ship a whole product with AI? Yes*</h2>
+            <p class="fade">My design experience combined with AI’s breadth of skills and enablement allowed me to produce a validated consumer app on the market.</p>
+            <ul class="fade">
+                <li><p>First commit landed May 13th, with store distribution approvals landing October 9th.</p></li>
+                <li><p>App and infrastructure coded and managed with AI.</p></li>
+                <li><p>Product validated in comprehensive beta test, with AI assisting distillation.</p></li>
+                <li><p>Product documentation and testing was well maintained and robust with AI.</p></li>
+            </ul>
+            <p class="fade">Based on the scope of the product I delivered, it would have easily taken me 18-24 months or more to produce what I did in 5 with the AI org. Plus, I was building the AI org itself at the same time.</p>
+            <h3 class="fade">It isn’t without friction</h3>
+            <p class="fade">Improving the org, roles, and the AI to perform tasks in ways I found passable is a process. Along that process, the failures and friction in the AI’s work become the data needed to feedback into the org system to improve it. Over time, the org became better and better, as my practices and preferences became learned and encoded in how the org worked.</p>
+            <p class="fade">Along that journey there were countless decisions by the AI I qualified as mistakes. To name a few notable incidents:</p>
+            <ul class="fade">
+                <li><p>Before release gates were added, an over-the-air update pointed the production release at a dev database.</p></li>
+                <li><p>Early on, decision autonomy for small product decisions (like data refresh rate) was often inaccurate, so I limited that autonomy significantly.</p></li>
+                <li><p>Untraceable research claims were brought into discussion, so I incorporated required citation and citation chain traceability.</p></li>
+                <li><p>Early privacy policy drafts were inaccurate to the product’s actual function.</p></li>
+                <li><p>Early versions of monitoring systems failed silently.</p></li>
+            </ul>
+            <p class="fade">Some of these failures were of org processes and instruction, which were improved upon and tightened to be reliable and verifiable. Other failures were from inherent limits of current AI and session constraints, so these failures caused task delegation away from AI to myself.</p>
+            <h3 class="fade">Can one designer ship any product with AI? No</h3>
+            <p class="fade">This is my experience so far at the current scope of the product I produced. SHRP’s scope is a single app, on 2 platforms, whose system is across devices and servers. While the product requirements are design and research heavy, the technical requirements are well within a scope AI can collaboratively manage.</p>
+            <p class="fade">My previous development experience and high level understanding were enough to structure a system that the AI could work within to produce a product of this technical complexity.</p>
+            <p class="fade">This may not be true for a product of higher inherent technical complexity, like Netflix’s data distribution network (as an extreme example). Higher technical complexity would require greater human developer experience to define and guide AI towards technical solutions, beyond my experience.</p>
+            <h2 class="fade">Where it stands, and what’s next?</h2>
+            <p class="fade">I currently use the org to improve SHRP based on user feedback, and monitor the product.</p>
+            <p class="fade">The org handles SHRP’s operations: a daily production health check that alerts me when something needs attention, a weekly analytics review, nightly maintenance jobs, monitoring user feedback submissions, and more.</p>
+            <h3 class="fade">Looking towards my next design role</h3>
+            <p class="fade">The value I bring, more than any one system or technology, is the experience and insight into how AI can be used for greatest benefit, and how to manage and scope it to ensure it produces value.</p>
+            <p class="fade">Producing a product with AI taught me a huge amount of valuable lessons through experience. At this point, my next chapter is to do this within a team; to meet them where they are currently, and help strategically integrate AI into my own practice there, and with the team’s potentially existing practices.</p>
+            <p class="fade">This experience was terrific practice in learning and adapting my own practices, and questioning my own previous ways of doing things. I look forward to bringing my skills to a new team, and continue improving and growing along with them in the future.</p>
+
+        </div>
+
+        <hr>
+
+        <h1 id="footer-title">Related case studies</h1>
+
+        <div class="related-work-container">
+            <a class="fade grow case-study" href="/shrp/">
+                <div class="image-wrapper image-wrapper--outlined">
+                    <video src="/assets/images/shrp/shrp-loop-1056.mp4?v=2" poster="/assets/images/shrp/shrp-poster-1056.jpg" class="case-study-hero" autoplay muted loop playsinline aria-label="SHRP: see your friends' social media use, track your own, and check each other" style="display: block; width: 100%;"></video>
+                </div>
+                <h3>SHRP: Social Screentime</h3>
+                <p>Social screentime app for cutting back on social media.</p>
+                <div class="read-link">
+                    <p>Read case study</p>
+                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <script src="/assets/js/video-scrub.js?v=2026-10-28-live" defer></script>
+</body>
+</html>

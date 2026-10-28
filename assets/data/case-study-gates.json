@@ -1,0 +1,13 @@
+{
+  "/shrp/": {
+    "title": "Social screentime app for cutting back on social media",
+    "lead": "This page covers internal product research. If you would like the password, *email me at luke@lukeschenker.com with your company email*, and I'll usually get back to you *in under 10 minutes*.",
+    "subject": "Password for your SHRP case study",
+    "body": "Hi Luke,\n\nI'd like the password for your SHRP case study.\n\nName:\nCompany:\nRole:\n\nThanks!",
+    "video": {
+      "src": "/assets/images/shrp/shrp-loop.mp4?v=2",
+      "poster": "/assets/images/shrp/shrp-poster.jpg",
+      "label": "SHRP product walkthrough: friends' use, your own use, checking a friend, and friends checking you"
+    }
+  }
+}

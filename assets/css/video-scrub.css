@@ -1,0 +1,17 @@
+/* Hover scrub bar for loop videos (assets/js/video-scrub.js). Its own file (moved out of project-styles.css
+   2026-10-28) because the case-study pages, the password gate and the homepage gate modal all use it. */
+.video-scrub { position: relative; line-height: 0; }
+.video-scrub video { display: block; }
+.video-scrub video { cursor: pointer; }
+.video-scrub-bar { position: absolute; left: 14px; right: 20px; bottom: 12px; height: 28px; display: flex; align-items: center; gap: 12px;
+    opacity: 0; transition: opacity 0.25s ease; touch-action: none; }
+.video-scrub:hover .video-scrub-bar, .video-scrub.is-scrubbing .video-scrub-bar, .video-scrub.show-scrub .video-scrub-bar { opacity: 1; }
+.video-scrub-play { flex: none; width: 28px; height: 28px; border: 0; padding: 0; border-radius: 50%; background: rgba(0, 0, 0, 0.35);
+    color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 14px; }
+.video-scrub-play:hover { background: rgba(0, 0, 0, 0.55); }
+.video-scrub-track { position: relative; flex: 1; cursor: pointer; width: 100%; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, 0.22); transition: height 0.15s ease; }
+.video-scrub-bar:hover .video-scrub-track, .video-scrub.is-scrubbing .video-scrub-track { height: 6px; border-radius: 3px; }
+.video-scrub-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: inherit; background: rgba(255, 255, 255, 0.85); }
+.video-scrub-knob { position: absolute; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: #fff;
+    opacity: 0; transition: opacity 0.15s ease; }
+.video-scrub-bar:hover .video-scrub-knob, .video-scrub.is-scrubbing .video-scrub-knob { opacity: 1; }

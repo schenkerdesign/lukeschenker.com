@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luke Schenker | Product Designer</title>
+    <title>Luke Schenker | Product Designer and Builder</title>
 
-    <meta property="og:title" content="Luke Schenker - Product Designer Focused on Strategy, Systems, and Business Impact">
+    <meta property="og:title" content="Luke Schenker - Product Designer and Builder Focused on Strategy, Systems, and Business Impact">
     <meta property="og:description" content="Senior product designer with 7+ years leading UX and research across startups and enterprise—bridging design, psychology, and technology to create products that improve people's lives.">
     <meta property="og:image" content="https://lukeschenker.com/assets/images/home/headshot.png">
     <meta property="og:url" content="https://lukeschenker.com/">
@@ -21,11 +21,19 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=2026-10-28-live">
+    <!-- Password gate modal for the protected case studies (desktop) and its video's scrub player -->
+    <link rel="stylesheet" href="/assets/css/video-scrub.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/case-study-gate.css?v=2026-10-28-live">
     
     <!-- Scripts -->
-    <script src="/assets/js/animations.js"></script>
-    <script type="module" src="/assets/js/gradient.js"></script>
+    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/copy-email.js?v=2026-10-28-live" defer></script>
+    <script type="module" src="/assets/js/gradient.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/live-metric.js?v=2026-10-28-live" defer></script>
+    <script src="/assets/js/video-scrub.js?v=2026-10-28-live" defer></script>
+    <!-- data-gate-links: clicks on /shrp/ and /ai-org/ open the password modal on desktop until this browser has unlocked -->
+    <script src="/assets/js/case-study-gate.js?v=2026-10-28-live" data-gate-links defer></script>
 
     <!-- Jakarta and Open Sans Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +43,7 @@
     <!-- Phosphor Icons -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"/>
 </head>
 <body>
     <div id="header">
@@ -52,21 +61,76 @@
         <div class="fade header-container">
             <div class="header-content">
                 <h1>Hello, I'm Luke</h1>
-                <h1>Product Designer</h1>
+                <h1>Product Designer and Builder</h1>
                 <h1>Ex-Uber, Fintech, and Founder</h1>
-                <span style="font-size: 25px; color: #A5A5A5">Open to US relocation</span>
+                <span class="header-note">Open to US relocation</span>
             </div>
             <a href="/about/">
                 <div class="header-image"></div>
             </a>
         </div>
 
-        <p class="quote" id="header-bottom" style="max-width: 782px; margin: 0 auto">“I thrive in ambiguity - building strategy from research, shaping design principles and systems, and shipping products that create measurable outcomes for users and businesses.”</p>
-
         <div id="companies-container">
             <img src="assets/images/home/previous-companies.png">
         </div>
         
+         <hr>
+
+        <p class="fade era-label era-label--top">AI-driven case studies</p>
+
+        <!-- New 2026 case studies (home tiles lofi, figma 58:585). Images are the case studies' GIF placeholders. -->
+        <div class="fade home-tiles">
+            <div class="home-tile">
+                <a href="/shrp/">
+                    <div class="image-wrapper image-wrapper--outlined image-wrapper--expand">
+                        <span class="tile-expand" aria-hidden="true"><i class="ph-bold ph-corners-out"></i></span>
+                        <video src="/assets/images/shrp/shrp-loop-1056.mp4?v=2" poster="/assets/images/shrp/shrp-poster-1056.jpg" autoplay muted loop playsinline aria-label="SHRP: see your friends' social media use, track your own, and check each other"></video>
+                    </div>
+                    <!-- Live-metric tag, version B (on the video's bottom edge; Luke's pick). Filled by /assets/js/live-metric.js; hidden until the data loads. -->
+                    <div class="live-bubble live-bubble--tag-edge" data-live-metric="total-hours-saved" hidden>
+                        <span class="live-bubble-dot" aria-hidden="true"></span>
+                        <p class="live-bubble-main"><span data-live-field="hours"></span> hours saved so far</p>
+                    </div>
+                    <!-- SAVED ALTERNATIVES (Luke 2026-10-27: keep these to try later; CSS for both is in styles.css)
+                         C, beside the title, two lines: replace the tag above and the <h2> with
+                           <div class="home-tile-title-row"><h2>SHRP: Social Screentime</h2>
+                             <div class="live-bubble live-bubble--title" data-live-metric="total-hours-saved" hidden><span class="live-bubble-dot"></span>
+                               <div class="live-bubble-text"><p class="live-bubble-main"><span data-live-field="hours"></span> hours</p><p class="live-bubble-sub">Saved so far</p></div></div></div>
+                         D, one line under the meta line, above the download buttons: move the tag after <p class="home-tile-meta"> and use class "live-bubble live-bubble--tag-meta" -->
+                    <h2>SHRP: Social Screentime</h2>
+                    <p class="home-tile-meta">Designed, built and shipped solo · May to Sept 2026</p>
+                </a>
+                <div class="home-tile-buttons">
+                    <div class="store-button">
+                        <a href="https://testflight.apple.com/join/AHJZkEww" target="_blank" rel="noopener" class="connect-button">
+                            <i class="ph-bold ph-apple-logo" style="font-size: 21px; color: #fff"></i>
+                            Download on iOS
+                        </a>
+                        <span class="beta-tag">TestFlight Beta</span>
+                    </div>
+                    <div class="store-button">
+                        <a href="https://play.google.com/store/apps/details?id=design.schenker.shrp" target="_blank" rel="noopener" class="connect-button">
+                            <i class="ph-bold ph-google-play-logo" style="font-size: 21px; color: #fff"></i>
+                            Download on Android
+                        </a>
+                        <span class="beta-tag">Open Testing Beta</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-tile">
+                <a href="/ai-org/">
+                    <div class="image-wrapper image-wrapper--outlined">
+                        <video src="/assets/images/ai-org/ai-org-loop-1056.mp4?v=1" poster="/assets/images/ai-org/ai-org-poster-1056.jpg" autoplay muted loop playsinline aria-label="AI Org case study: what I did and what AI did, six stages"></video>
+                    </div>
+                    <h2>Shipping a product solo with custom AI-Org infrastructure</h2>
+                    <p class="home-tile-meta">Built from the ground up · May to Sept 2026</p>
+                </a>
+            </div>
+        </div>
+
+        <p class="fade era-label">Work before integrating AI into my processes</p>
+
          <hr>
 
         <div class="fade project-header">
@@ -317,7 +381,7 @@
         <div style="display: flex;">
             <span style="font-weight: 500;">Luke Schenker</span>
             <span style="margin: 0 20px;">|</span>
-            <span style="font-weight: 100;">Product Designer</span>
+            <span style="font-weight: 100;">Product Designer and Builder</span>
         </div>
 
         <div class="right-container">
@@ -332,9 +396,9 @@
             Resume
         </a>
 
-        <a class="connect-button" id="copy-email">
+        <a class="connect-button" id="copy-email" data-copy-email>
             <i class="ph-bold ph-copy" style="font-size: 21px; color: #fff"></i>
-            <p id="copy-text" style="font-weight: 500;">Copy email</p>
+            <p id="copy-text" data-copy-label style="font-weight: 500;">Copy email</p>
         </a>
 
         </div>
