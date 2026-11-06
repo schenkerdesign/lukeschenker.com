@@ -1,16 +1,12 @@
 #!/usr/bin/env node
-// Encrypt the password-protected case studies for publishing (Luke 2026-10-27/28): /shrp/ (AI-org: see PAGES).
-//
+// Encrypt the password-protected case studies for publishing: /shrp/ (AI-org: see PAGES).
 //   node _tools/encrypt-case-studies.mjs <output site dir>   e.g. ../lukeschenker.com (the main checkout, at publish)
 //   node _tools/encrypt-case-studies.mjs --preview           a full encrypted copy of the site in _gate-preview/,
 //                                                            served by the "lukeschenker-gate-preview" preview (port 4601)
-//
 // The password comes from STATICRYPT_PASSWORD or is asked for. This script never writes it anywhere.
-//
-// Where things live: this worktree (branch hifi-2026, never pushed) holds the readable pages and stays the place to
+// Where things live: a local branch that is never pushed holds the readable pages and stays the place to
 // edit them. Only this script's output, which is ciphertext plus the gate, ever goes to the public repo. Every file
 // in that repo is public, so the readable pages and anything marked data-encrypt-inline must never be committed there.
-//
 // For each page this script:
 //   1. inlines every <script src=... data-encrypt-inline> so that script's contents are encrypted with the page
 //      (SHRP's usage chart: the per-tester data stays behind the password; see the note at its tag);
@@ -33,10 +29,10 @@ const SALT_CONFIG = join(SITE, '_tools/gate/staticrypt.json');
 const TEMPLATE = readFileSync(join(SITE, '_tools/gate/password_template.html'), 'utf8');
 const VERSION = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, ''); // cache-busting for the gate's assets
 
-// Gate copy per page [Luke-decided 2026-10-28; he refines it live]. *Starred* parts show in white (case-study-gate.js).
-// The email body helps him tell real people apart.
+// Gate copy per page. *Starred* parts show in white (case-study-gate.js).
+// The email body helps tell real people apart.
 const ASK = 'If you would like the password, *email me at luke@lukeschenker.com with your company email*, and I\'ll usually get back to you *in under 10 minutes*.';
-// AI-org is public for now [Luke-decided 2026-10-28: "I'm still pretty early in the job hunt"]. To put it behind the
+// AI-org is public for now. To put it behind the
 // password again, uncomment its line (its copy is ready) and rerun this script; the homepage modal picks it up.
 const PAGES = [
     { dir: 'shrp', name: 'SHRP', lead: 'This page covers internal product research. ' + ASK },

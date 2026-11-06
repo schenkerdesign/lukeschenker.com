@@ -6,7 +6,7 @@
     <title>About | Luke Schenker</title>
 
     <meta property="og:title" content="Luke Schenker | Product Designer | About">
-    <meta property="og:description" content="Product designer with 7+ years bridging human behavior, design, and technology — from leading UX at Uber ATG to founding a startup that reduced user anxiety by 49%. Passionate about turning complex problems into clear, human-centered solutions.">
+    <meta property="og:description" content="Product designer with 8+ years bridging human behavior, design, and technology, from leading UX at Uber ATG to founding a startup that reduced user anxiety by 49%. Passionate about turning complex problems into clear, human-centered solutions.">
     <meta property="og:image" content="https://lukeschenker.com/assets/images/about/motorcycle.png">
     <meta property="og:url" content="https://lukeschenker.com/about/">
     <meta property="og:type" content="article"> <!-- use "article" for blog posts -->
@@ -21,11 +21,11 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/about-styles.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/about-styles.css?v=2026-11-05-live">
 
     <!-- Scripts -->
-    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
-    <script src="/assets/js/copy-email.js?v=2026-10-28-live" defer></script>
+    <script src="/assets/js/animations.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/copy-email.js?v=2026-11-05-live" defer></script>
 
     <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,16 +39,22 @@
 </head>
 <body>
 
-    <div id="header">
-        <a href="/">Home</a>
-        <a href="/#testimonials">Testimonials</a>
-        <a href="/about/">About</a>
+    <!-- Same floating nav bar as the homepage, with About marked as the current page -->
+    <div id="header" class="header--pill">
+        <a href="/" class="nav-projects">Work</a>
+        <a href="/about/" class="nav-about is-current" aria-current="page">About</a>
     </div>
 
+    <!-- Layout: intro (photo, greeting, text), then links, then life outside work, then what others say, then additional contributions. -->
     <div class="content-container">
+        <img src="/assets/images/about/motorcycle.png" style="max-width: 564px; width: 100%; border-radius: 30px; margin-top: 122px;" class="fade">
+        <h1 class="fade">Hello, I'm Luke! 👋</h1>
+        <p class="fade">I'm a product designer fascinated with human processes. I love learning about people - deeply understanding what they want, how they think, and then providing them with experiences that make their lives better, easier, and happier.</p>
+        <p class="fade">No matter the problem, no matter the industry, it can be solved. All that's needed is a clear picture of the problem, a clear strategy, and clear communication - and that's exactly what I provide my teams, no matter how ambiguous the problems may seem. I've brought that to B2B companies for most of my career across finance and autonomous cars, and more recently B2C in my most recent start-up.</p>
+        <p class="fade">In all of my roles, I've been one of the first designers on a team or in an organization. Not only do I lead them towards better outcomes, I make sure to teach and bring everyone along with me. I communicate and collaborate closely with leadership and users, effectively lead contributors and developers within my team, and make sure everyone is comfortably on the same page.</p>
+        <p class="fade">In university, I started in computer science at Carnegie Mellon. But after the first 3 years at one of the most challenging computer science schools in the world, I found I was more fascinated with debugging human processes than code. It’s been many years since my initial dive into HCI and design back in 2014, and I haven't once looked back.</p>
 
-        <h1 style="margin-top: 122px;">Links, email, and downloads</h1>
-
+        <!-- Links right after the About text, no section header -->
         <div class="fade right-container">
                 
             <a href="https://www.linkedin.com/in/luke-schenker/" target="_blank" class="connect-button" style="background-color: #446BBA;">
@@ -68,21 +74,6 @@
 
         </div>
 
-        <hr style="border: solid 1px #535353; margin: 40px 0 100px 0">
-
-
-        <img src="/assets/images/about/motorcycle.png" style="max-width: 564px; width: 100%; border-radius: 30px;" class="fade">
-
-        <h1 class="fade">Hello, I'm Luke! 👋</h1>
-
-        <p class="fade">I'm a product designer fascinated with human processes. I love learning about people - deeply understanding what they want, how they think, and then providing them with experiences that make their lives better, easier, and happier.</p>
-        
-        <p class="fade">No matter the problem, no matter the industry, it can be solved. All that's needed is a clear picture of the problem, a clear strategy, and clear communication - and that's exactly what I provide my teams, no matter how ambiguous the problems may seem. I've brought that to B2B companies for most of my career across finance and autonomous cars, and more recently B2C in my most recent start-up.</p>
-
-        <p class="fade">In all of my roles, I've been one of the first designers on a team or in an organization. Not only do I lead them towards better outcomes, I make sure to teach and bring everyone along with me. I communicate and collaborate closely with leadership and users, effectively lead contributors and developers within my team, and make sure everyone is comfortably on the same page.</p>
-
-        <p class="fade">In university, I started in computer science at Carnegie Mellon. But after the first 3 years at one of the most challenging computer science schools in the world, I found I was more fascinated with debugging human processes than code. It’s been many years since my initial dive into HCI and design back in 2014, and I haven't once looked back.</p>
-
         <div class="image-grid">
 
             <img src="/assets/images/about/helsinki.png" class="fade" style="height: 370px;">
@@ -99,5 +90,93 @@
 
         </div>
 
+        <div class="work-section-label" id="testimonials"><span>Testimonials</span></div>
+
+        <h2 class="about-subhead">Managers & Stakeholders</h2>
+
+        <div class="fade testimonials-container">
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="/assets/images/home/jared.png">
+                    <div>
+                        <h3>Jared Fagan</h3>
+                        <h3 style="opacity: 70%; margin: 2px 0;">Senior Program Manager</h3>
+                        <h3 style="opacity: 70%">Amazon, Ex-Uber</h3>
+                    </div>
+                </div>
+                <p>Luke was a motivated, forward thinking and intelligent designer with lots of knowledge in his field. He understands complex issues even when outside of his direct area of expertise.</p>
+                <br/>
+                <p>For Luke the user is one of the most important parts of the solution. Thanks to his awesome interpersonal skills he had great relationships with all the team members. Always the energetic and broad-minded designer and a detail orientated team player. On account of his mature approach to his responsibilities, I often thought of Luke as a professional I could always rely upon to get the job done. Experiencing his fast and sharp mind at work was most impressive.</p>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="/assets/images/home/vanitha.png">
+                    <div>
+                        <h3>Vanitha Sengal Rao</h3>
+                        <h3 style="opacity: 70%; margin: 2px 0;">Senior Engineering Manager</h3>
+                        <h3 style="opacity: 70%">Aurora, Ex-Uber</h3>
+                    </div>
+                </div>
+                <p>“Ridiculously efficient” is the phrase that comes to mind when I think about Luke. Luke expertly filled the role of a designer for my team for over a year.</p>
+                <br/>
+                <p>Luke's ability to be initially scrappy as we discover and learn more about product requirements and then perform more thoughtful user research to come up with a UX design that made a dramatic difference in the productivity level of my team and uplifted the user's trust. </p>
+                <br/>
+                <p>Unlike any I've seen before and no matter how tense a day is, Luke brings forward his honest empathy and makes each one on the team feel important and good.</p>
+            </div>
+        </div>
+
+        <h2 class="about-subhead">Direct Reports</h2>
+
+        <div class="fade testimonials-container">
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="/assets/images/home/taru.png">
+                    <div>
+                        <h3>Taru Jain</h3>
+                        <h3 style="opacity: 70%; margin: 2px 0;">Technical Product Manager</h3>
+                        <h3 style="opacity: 70%">Inpleo, Ex-Anew</h3>
+                    </div>
+                </div>
+                <p>Luke is a great manager. He sets realistic goals and sets reasonable deadlines for achieving those goals. But he always pays attention to details, his understanding of people's needs is outstanding, and he makes everyone who works under him feel comfortable and heard.</p>
+                <br/>
+                <p>As a leader, Luke deserves my highest recommendation.</p>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-header">
+                    <img src="/assets/images/home/yee-kit.png">
+                    <div>
+                        <h3>Yee Kit Chan</h3>
+                        <h3 style="opacity: 70%; margin: 2px 0;">Software Engineer</h3>
+                        <h3 style="opacity: 70%">Ebay, Ex-Anew</h3>
+                    </div>
+                </div>
+                <p>Luke's thoroughness across all areas—product development, design, ethics, and mentorship—was truly inspiring. He was incredibly responsive and understanding of my level of experience, always treating my questions as valid and important.</p>
+                <br/>
+                <p>Luke also provided me with unique opportunities to grow in any area I expressed interest in, whether it was research, decision-making, design, or implementation. His leadership style and dedication to fostering a growth-oriented environment during the internship period and beyond make him an exceptional CEO and mentor.</p>
+            </div>
+        </div>
+
+        <a href="https://www.linkedin.com/in/luke-schenker/details/recommendations/?detailScreenTabIndex=0" class="testimonials-link">
+            <h2 style="margin-right: 7px;">See more testimonials on LinkedIn</h2>
+            <i class="ph-bold ph-arrow-right" style="font-size: 38px;"></i>
+        </a>
+
+
+        <div class="work-section-label"><span>Additional contributions</span></div>
+
+        <div class="fade testimonials-container">
+            <div class="no-padding testimonial">
+                <img src="/assets/images/home/wake-forest.png" class="banner">
+                <h2>Wake Forest Guest Speaker On Leadership & Communication</h2>
+                <p style="padding: 0 20px 20px 20px">Luke has been invited several times by professors at Wake Forest to give talks on how to present ideas to leadership, and sell them on strategy.</p>
+            </div>
+            <div class="no-padding testimonial">
+                <img src="/assets/images/home/tepper.png" class="banner">
+                <h2>Ongoing Mentorship</h2>
+                <p style="padding: 0 20px 20px 20px">Luke continues to mentor prior interns, in addition to CMU students.</p>
+            </div>
+        </div>
+
+      
     </div>
 </body>

@@ -1,10 +1,10 @@
 // Live "hours saved" metric (portfolio go-live, 2026-10-27).
 // Reads /assets/data/live-metric.json, which the nightly GitHub Action (.github/workflows/live-metric.yml)
 // writes into this site from shrp-prod. The site itself never contacts production, and nothing in it
-// points there [Luke 2026-10-27].
+// points there.
 // Every [data-live-metric] element ships `hidden` and is shown only once the file loads, so a failed or
 // missing read shows nothing: never a placeholder, never 0. A stale file still shows, with its real date.
-// The number is static, no count-up [Luke-decided: "I think that distracts"].
+// The number is static, no count-up.
 (function () {
     function fill(data) {
         var parts = data.updated.split('-').map(Number);
@@ -13,7 +13,9 @@
             hours: Number(data.total_hours).toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 }),
             users: String(data.users_counted),
             // `updated` is a calendar date (YYYY-MM-DD, New York); format it without any timezone shift.
-            updated: new Date(Date.UTC(parts[0], parts[1] - 1, parts[2])).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' })
+            updated: new Date(Date.UTC(parts[0], parts[1] - 1, parts[2])).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }),
+            // M/D/YY, e.g. 11/5/26, for the SHRP caption line
+            updatedShort: parts[1] + '/' + parts[2] + '/' + String(parts[0]).slice(2)
         };
         document.querySelectorAll('[data-live-metric="total-hours-saved"]').forEach(function (el) {
             el.querySelectorAll('[data-live-field]').forEach(function (slot) {

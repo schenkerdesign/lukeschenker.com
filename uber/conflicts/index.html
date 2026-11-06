@@ -21,10 +21,12 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-11-05-live">
 
     <!-- Scripts -->
-    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/animations.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/section-index.js?v=2026-11-05-live" defer></script>
+    <script src="/assets/js/summary-fold.js?v=2026-11-05-live" defer></script>
 
     <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,12 +38,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
 
 </head>
-<body>
+<body class="uber-case has-summary">
 
-    <div id="header">
-        <a href="/">Home</a>
-        <a href="/#testimonials">Testimonials</a>
-        <a href="/about/">About</a>
+    <!-- Same floating nav as the homepage and About; a case study sits under Work -->
+    <div id="header" class="header--pill">
+        <a href="/" class="nav-projects is-current">Work</a>
+        <a href="/about/" class="nav-about">About</a>
     </div>
 
     <div class="header-image-container">
@@ -79,43 +81,53 @@
             </div>
         </div>
 
-        <div class="info-container">
-            <div class="info-box tldr">
-                <!-- <p class="info-header">TLDR</p> -->
-                 <a href="#problem" class="tldr-section">
-                    <p class="tldr-title">Problem: Conflict annotations were slow, error-prone, and a scaling risk</p>
-                    <p class="tldr-bullets">- Users had overhead of unnecessary manual actions
-                        <br/>- Auditing was tedious and inefficient, with no visual representation of data
-                        <br/>- Inefficiency added risk to $1.2M/mo India scale-out and production deadlines
-                    </p>
-                </a>
-                <a href="#strategy" class="tldr-section">
-                    <p class="tldr-title">Strategy & Collaboration: Fast cycles under tight constraints</p>
-                    <p class="tldr-bullets">- Balanced speed and accuracy goals with limited engineering resources
-                        <br/>- Reused existing visualizations to deliver solutions quickly
-                        <br/>- Ran very tight feedback cycles with local users
-                        <br/>- Weekly reviews and complete specs kept engineers, stakeholders, and QA aligned
-                    </p>
-                </a>
-                <a href="#solution" class="tldr-section">
-                    <p class="tldr-title">Solution: Conflict Lenses and Hotkeys</p>
-                    <p class="tldr-bullets">- Visualized all conflicts at once
-                        <br/>- Hotkeys to cycle and assign conflicts; click actions for user flexibility
-                        <br/>- Zoom-level simplification for dense maps
-                        <br/>- User-driven refinements: yellow “to-do” state, dual input methods
-                    </p>
-                </a>
-                <a href="#impact" class="tldr-section">
-                    <p class="tldr-title">Impact: 70% faster annotation with accuracy maintained</p>
-                    <p class="tldr-bullets">- $80k/mo projected savings once scaled to India
-                        <br/>- QA teams audited more easily
-                        <br/>- Reduced mapper cognitive load and removed unnecessary friction
-                    </p>
-                </a>
-            </div>
-        </div>
+        <div id="article" data-index-sections-only>
 
-        <div id="article">
+            <!-- Summary rows, same format as the SHRP and AI-org pages. The words are the page's original summary card. -->
+            <div class="cs-top is-foldable">
+                <div class="cs-beat">
+                    <p class="cs-label">Problem</p>
+                    <p class="cs-head">Conflict annotations were slow, error-prone, and a scaling risk</p>
+                    <ul class="cs-list">
+                        <li>Users had overhead of unnecessary manual actions</li>
+                        <li>Auditing was tedious and inefficient, with no visual representation of data</li>
+                        <li>Inefficiency added risk to $1.2M/mo India scale-out and production deadlines</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Strategy & Collaboration</p>
+                    <p class="cs-head">Fast cycles under tight constraints</p>
+                    <ul class="cs-list">
+                        <li>Balanced speed and accuracy goals with limited engineering resources</li>
+                        <li>Reused existing visualizations to deliver solutions quickly</li>
+                        <li>Ran very tight feedback cycles with local users</li>
+                        <li>Weekly reviews and complete specs kept engineers, stakeholders, and QA aligned</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Solution</p>
+                    <p class="cs-head">Conflict Lenses and Hotkeys</p>
+                    <ul class="cs-list">
+                        <li>Visualized all conflicts at once</li>
+                        <li>Hotkeys to cycle and assign conflicts; click actions for user flexibility</li>
+                        <li>Zoom-level simplification for dense maps</li>
+                        <li>User-driven refinements: yellow “to-do” state, dual input methods</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Impact</p>
+                    <p class="cs-head">70% faster annotation with accuracy maintained</p>
+                    <ul class="cs-list">
+                        <li>$80k/mo projected savings once scaled to India</li>
+                        <li>QA teams audited more easily</li>
+                        <li>Reduced mapper cognitive load and removed unnecessary friction</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Phones only: contents card under the summary. Filled by /assets/js/section-index.js. -->
+            <nav class="section-index-inline fade" data-section-index-inline aria-label="Contents"></nav>
+
 
             <h2 id="problem" class="fade">Context & Problem</h2>
 

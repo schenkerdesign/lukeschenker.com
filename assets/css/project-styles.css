@@ -87,7 +87,7 @@ li {
     color: var(--text-color);
 }
 
-/* Top summary row: who / how / results (EXPERIMENT 2026-10-27) */
+/* Top summary row: who / how / results */
 .summary-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -127,7 +127,7 @@ li {
     }
 }
 
-/* Compact medal key (EXPERIMENT 2026-10-27) */
+/* Compact medal key */
 .medal-key {
     display: flex;
     justify-content: center;
@@ -603,11 +603,11 @@ hr {
     position: relative;
     left: 50%;
     width: min(960px, calc(100vw - 40px));
-    margin: 104px 0 200px 0; /* bottom was 80; more room after the last bet (Luke 2026-10-27) */
+    margin: 104px 0 200px 0; /* bottom was 80; more room after the last bet */
     transform: translateX(-50%);
 }
 
-/* Space between consecutive bets only, so each reads on its own; the gap above bet 1 stays as it was (Luke 2026-10-27) */
+/* Space between consecutive bets only, so each reads on its own; the gap above bet 1 stays as it was */
 .bet + .bet {
     margin-top: 240px;
 }
@@ -636,7 +636,7 @@ hr {
     margin-top: 6px;
 }
 
-/* Card hierarchy (2026-10-27, Luke): title > labels > content. Labels are bold caps in the text color
+/* Card hierarchy: title > labels > content. Labels are bold caps in the text color
    (blue tried and dropped); bet titles step up so the order reads render > bet title > labels + quotes > body. */
 .card-label {
     color: var(--text-color) !important;
@@ -722,8 +722,8 @@ hr {
     color: var(--subtext-color) !important;
 }
 
-/* Quote voice (EXPERIMENT 2026-10-27): quotes read as a person speaking, not body copy.
-   Display face in italic, a touch larger, a speaker-color bar on the left, name as a small mono sign-off (no em dash, per Luke's copy rule). */
+/* Quote voice: quotes read as a person speaking, not body copy.
+   Display face in italic, a touch larger, a speaker-color bar on the left, name as a small mono sign-off. */
 .tint-platinum { --tint: rgb(126, 176, 226); }
 .tint-gold     { --tint: rgb(212, 156, 52); }
 .tint-silver   { --tint: rgb(190, 190, 196); }
@@ -762,7 +762,7 @@ hr {
     background-color: var(--tint, var(--text-color));
 }
 
-/* Bet-card quotes are secondary (2026-10-27, Luke): smaller, narrower, staggered left/right with a slight overlap.
+/* Bet-card quotes are secondary: smaller, narrower, staggered left/right with a slight overlap.
    Names sit on the uncovered side of each bubble (left on odd, right on even). The "What testing showed" quotes keep full size. */
 .bet-quotes {
     gap: 0;
@@ -803,7 +803,7 @@ hr {
     }
 }
 
-/* Bet 1's card is a little taller to frame its two phones (Luke 2026-10-26); trimmed 2026-10-27 (Luke: too much space above the quotes) */
+/* Bet 1's card is a little taller to frame its two phones; trimmed 2026-10-27 */
 .bet--tall .bet-card {
     min-height: 300px;
 }
@@ -1213,7 +1213,7 @@ hr {
     }
 }
 
-/* Scroll position under the chart when it scrolls sideways (phones) [Luke 2026-10-28]; hidden while it fits */
+/* Scroll position under the chart when it scrolls sideways (phones); hidden while it fits */
 .usage-scrollbar {
     position: relative;
     height: 3px;
@@ -1864,7 +1864,7 @@ hr {
     }
 }
 
-/* Phones v3 (Luke): centred topic; a subtle centred "Designer" / "AI" label above each answer */
+/* Phones v3: centred topic; a subtle centred "Designer" / "AI" label above each answer */
 @media (max-width: 700px) {
     .compare-table tbody tr > th[scope="row"] {
         text-align: center;
@@ -1883,7 +1883,7 @@ hr {
     }
 }
 
-/* Phones v4 (Luke): centred win pills; the topic reads clearly as the header over its two answers */
+/* Phones v4: centred win pills; the topic reads clearly as the header over its two answers */
 @media (max-width: 700px) {
     .compare-table tr.compare-group > th,
     .compare-table thead .compare-corner {
@@ -1903,8 +1903,7 @@ hr {
 }
 
 /* ============================================================
-   SHRP case-study type standard (2026-10-27, Luke review). Scoped to <body class="shrp"> only;
-   whether it extends to the AI-org page is decided at that page's review.
+   SHRP case-study type standard. Scoped to <body class="shrp"> only;
    L1 page title (h1, 60px) · L2 section (h2, 34px + rule) · L3 subsection / card title (26px bold, optional icon above)
    · L4 sub-subhead (20px bold sentence case: What worked, What performed well...) · card labels (12px bold white caps: Hypothesis, Method)
    · L5 body (16px light).
@@ -1958,9 +1957,8 @@ hr {
     font-weight: 700;
 }
 
-/* Section dividers (EXPERIMENT 2026-10-27): one line, one meaning. Every L2 section starts with a full-width rule ABOVE it
-   (a chapter break); no underline under the header and no separate <hr>s. The opening results headline is an L3 (h3), not a section.
-   Revert this commit to restore the underlined h2s and the three <hr>s. */
+/* Section dividers: one line, one meaning. Every L2 section starts with a full-width rule ABOVE it
+   (a chapter break); no underline under the header and no separate <hr>s. The opening results headline is an L3 (h3), not a section. */
 .shrp #article > h2,
 .ai-org #article > h2 {
     margin-top: 104px;
@@ -1972,19 +1970,19 @@ hr {
 
 /* Phones: the metadata row as a 2-column grid instead of five full-width rows (a phone reader saw a full screen of metadata before any content) */
 @media (max-width: 700px) {
-    .shrp .info-container {
+    :is(.shrp, .ai-org, .has-summary) .info-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
     }
 
-    .shrp .info-box {
+    :is(.shrp, .ai-org, .has-summary) .info-box {
         flex: none;
     }
 }
 
-/* Size-specific tracking (EXPERIMENT 2026-10-27, from Apple's UI-typography guidance): large display text gets slightly
-   negative letter-spacing and tighter leading; body stays at 0; small caps labels keep their positive tracking. Revert to remove. */
+/* Size-specific tracking: large display text gets slightly
+   negative letter-spacing and tighter leading; body stays at 0; small caps labels keep their positive tracking. */
 .shrp h1 {
     letter-spacing: -0.025em;
     line-height: 1.05;
@@ -2003,7 +2001,7 @@ hr {
     letter-spacing: -0.01em;
 }
 
-/* The four success-criteria tiles are not links on SHRP (Luke 2026-10-27): no hover change */
+/* The four success-criteria tiles are not links on SHRP: no hover change */
 .shrp .criteria-tile:hover {
     background-color: #161616;
 }
@@ -2019,8 +2017,8 @@ hr {
     z-index: 1;
 }
 
-/* AI-org summary as one card of horizontal rows (EXPERIMENT 2026-10-27, Luke: the 3 vertical cards felt heavy with long leads).
-   Each row full width, stacked: label, lead, body; rows divided by a faint line (Luke 2026-10-27: no left/right columns). */
+/* AI-org summary as one card of horizontal rows.
+   Each row full width, stacked: label, lead, body; rows divided by a faint line. */
 .ai-org .summary-row {
     grid-template-columns: 1fr;
     gap: 0;
@@ -2045,8 +2043,8 @@ hr {
     }
 }
 
-/* Section headers a clear step above subsections on SHRP (EXPERIMENT 2026-10-27; AI-org kept its original fonts per Luke): 34px/500 sat too close to
-   the 26px/600 subsections (the subsections were heavier). Scale is now 60 / 40 / 26, all semibold. Revert to restore 34px/500. */
+/* Section headers a clear step above subsections on SHRP: 34px/500 sat too close to
+   the 26px/600 subsections (the subsections were heavier). Scale is now 60 / 40 / 26, all semibold. */
 .shrp #article > h2 {
     font-size: 40px;
     font-weight: 600;
@@ -2060,7 +2058,7 @@ hr {
     }
 }
 
-/* Live metric bubble (DEMO 2026-10-27, Luke's design): green "live" dot on the left, the total on top, refresh line below.
+/* Live metric bubble: green "live" dot on the left, the total on top, refresh line below.
    Static (no count-up). Values are filled by /assets/js/live-metric.js from the nightly shrp-prod row. */
 .live-bubble {
     display: inline-flex;
@@ -2110,7 +2108,7 @@ hr {
     font-size: 12px;
 }
 
-/* SHRP case study: centered above the summary cards, content stacked and centered: dot, total, refresh line (Luke 2026-10-27) */
+/* SHRP case study: centered above the summary cards, content stacked and centered: dot, total, refresh line */
 .live-bubble--case {
     display: flex;
     flex-direction: column;
@@ -2177,7 +2175,7 @@ hr {
 }
 
 /* A section's subsections stay closed, even for the current section, and open only while the mouse is over the
-   section [Luke 2026-10-27], or while a keyboard user is in it. Hover is limited to real pointers so a tap on a
+   section, or while a keyboard user is in it. Hover is limited to real pointers so a tap on a
    touch screen goes straight to the section. The 0fr -> 1fr row animates the open/close. */
 .section-index-sub {
     display: grid;
@@ -2240,8 +2238,8 @@ hr {
         pointer-events: auto;
     }
 
-    /* EXPERIMENT 2026-10-27 (Luke): the persistent index sits back so the page content leads, and comes to full
-       strength while the mouse is over it (or a keyboard user is in it). Revert this commit to undo. */
+    /* The persistent index sits back so the page content leads, and comes to full
+       strength while the mouse is over it (or a keyboard user is in it). */
     .section-index-rail .section-index.is-visible {
         opacity: 0.5;
     }
@@ -2251,7 +2249,7 @@ hr {
         opacity: 1;
     }
 
-    /* Hide/show caret [Luke 2026-10-27]: a round button above "Summary", styled like the narrow-screen menu button.
+    /* Hide/show caret: a round button above "Summary", styled like the narrow-screen menu button.
        It stays in place in both states; only its icon changes (left caret = hide, menu icon = show). Folded, the
        index is just this button, at full strength. No shadow (unlike the menu button): the index's scroll box would clip it, and on
        the empty black margin it barely shows. */
@@ -2293,7 +2291,7 @@ hr {
     }
 }
 
-/* Narrower screens: the floating button, the dimmed page and the card [Luke 2026-10-27]. Above the site's nav bar
+/* Narrower screens: the floating button, the dimmed page and the card. Above the site's nav bar
    (z-index 1000), so the whole page dims. */
 .section-index-toggle {
     position: fixed;
@@ -2436,8 +2434,7 @@ hr {
     }
 }
 
-/* Phones: inline contents card where a page places [data-section-index-inline] (SHRP: under the summary cards,
-   Luke 2026-10-27). Same surface and label as the summary cards, so it reads as a fourth card. */
+/* Phones: inline contents card where a page places [data-section-index-inline] (SHRP: under the summary cards). Same surface and label as the summary cards, so it reads as a fourth card. */
 .section-index-inline {
     display: none;
 }
@@ -2489,4 +2486,580 @@ hr {
     flex: none;
     color: #6f6f6f;
     font-size: 14px;
+}
+
+/* Floating nav bar, same as the homepage and About: two tabs, current section marked with a dot.
+   Colors follow the page theme (light or dark). */
+#header.header--pill {
+    gap: 56px;
+    padding: 10px 48px;
+}
+
+#header.header--pill > a {
+    position: relative;
+    color: #9a9a9a;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#header.header--pill > a:hover,
+#header.header--pill > a.is-current {
+    color: var(--text-color);
+}
+
+#header.header--pill > a.is-current::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--text-color);
+    transform: translateX(-50%);
+}
+
+/* Quiet link to the book's free sample chapter, under the book page title */
+.book-sample-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: -8px 0 28px 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: inherit;
+    opacity: 0.7;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+.book-sample-link:hover {
+    opacity: 1;
+}
+
+/* Case-study summary: business problem, people problem, solution, result, then the video. Layout locked 2026-11-05: two columns at 850px, label and statement in the same L3 style (26px bold), the
+   label in a medium-light grey so the white statement reads first. Phones stack, label on top. The title, metadata,
+   summary, video and caption share the 850px width; everything from The Question down keeps the reading column. */
+.cs-top {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    margin-bottom: 64px;
+}
+
+.cs-beat > .cs-label {
+    margin: 0 0 6px 0;
+    /* in dark mode this equals the #d2d2d2 the diagrams use */
+    color: color-mix(in srgb, var(--text-color) 82%, var(--background-color));
+    letter-spacing: -0.01em;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.cs-beat > .cs-head {
+    margin: 0;
+    color: var(--text-color);
+    letter-spacing: -0.01em;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+/* Descriptions use the page's body style: regular weight, 1.6 line height, off-white */
+.cs-beat > .cs-desc {
+    margin: 8px 0 0 0;
+    color: color-mix(in srgb, var(--text-color) 85%, var(--background-color));
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.cs-beat > .cs-list {
+    margin: 8px 0 0 0;
+    padding-left: 22px;
+    color: color-mix(in srgb, var(--text-color) 85%, var(--background-color));
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.cs-beat > .cs-list li + li {
+    margin-top: 2px;
+}
+
+.cs-media {
+    display: block;
+    position: relative;
+    left: 50%;
+    width: min(850px, calc(100vw - 40px));
+    transform: translateX(-50%);
+}
+
+.cs-media .header-image {
+    display: block;
+}
+
+/* Timeline, the last part of the summary. Left: duration in the phase-name style (L4), since how long each took is what
+   the reader scans for, with the dates under it in grey mono. Right: phase name and bullets (body). */
+.cs-beat--timeline > .cs-label {
+    margin-bottom: 20px;
+}
+
+.cs-phase + .cs-phase {
+    margin-top: 28px;
+}
+
+.cs-phase-duration,
+.cs-phase-name {
+    margin: 0;
+    color: var(--text-color);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.cs-phase-date {
+    margin: 2px 0 0 0;
+    color: var(--subtext-color);
+    text-transform: uppercase;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+/* The icon would skew baseline alignment; both sides share a 26px line, so align their tops */
+.cs-phase.cs-phase--done {
+    align-items: start;
+}
+
+.cs-phase--done .cs-phase-when {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cs-phase-check {
+    color: var(--text-color);
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.cs-phase ul {
+    margin: 6px 0 0 0;
+}
+
+.cs-phase li p {
+    margin: 2px 0 0 0;
+}
+
+/* Phones: duration and dates share one line above the phase name */
+@media (max-width: 700px) {
+    .cs-phase-when {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 2px;
+    }
+
+    .cs-phase-date {
+        margin: 0;
+    }
+}
+
+/* Line under the video: the live metric, one centered line at the video's width. Same style as the chart subtitle. */
+.cs-beat--visual > .cs-sub {
+    position: relative;
+    left: 50%;
+    width: min(850px, calc(100vw - 40px));
+    margin: 14px 0 0 0;
+    color: var(--subtext-color);
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/* Metadata: more room when a value wraps */
+:is(.shrp, .ai-org, .has-summary) .info-container .info-content {
+    line-height: 1.4;
+}
+
+/* Metadata link to the related case study: whole value clickable, box-with-arrow icon to the right of the text */
+:is(.shrp, .ai-org) .info-link {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+:is(.shrp, .ai-org) .info-link i {
+    flex: none;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+:is(.shrp, .ai-org) .info-link:hover {
+    color: var(--text-color);
+}
+
+.cs-head a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+.cs-beat > .cs-sub a {
+    color: var(--text-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+@media (min-width: 701px) {
+    .cs-top,
+    :is(.shrp, .ai-org, .has-summary) .content-container > h1:not(#footer-title),
+    :is(.shrp, .ai-org, .has-summary) .content-container > .info-container {
+        position: relative;
+        left: 50%;
+        width: min(850px, calc(100vw - 40px));
+        transform: translateX(-50%);
+    }
+
+    .cs-beat:not(.cs-beat--visual, .cs-beat--timeline),
+    .cs-phase {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr);
+        column-gap: 48px;
+        align-items: baseline;
+    }
+
+    .cs-beat > .cs-head,
+    .cs-beat > .cs-desc,
+    .cs-beat > .cs-list {
+        grid-column: 2;
+    }
+
+    /* Room for "First users in 2 months" on one line */
+    :is(.shrp, .ai-org) .info-container > .info-box:last-child {
+        flex: 0 0 170px;
+    }
+
+    /* Spans both rows so a two-line label doesn't push the description away from its statement */
+    .cs-beat:not(.cs-beat--timeline) > .cs-label {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        margin: 0;
+    }
+
+    .cs-beat > .cs-head {
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 700px) {
+    .cs-top {
+        gap: 44px;
+    }
+}
+
+
+
+/* Case-study body text (L5): regular weight, 1.6 line height,
+   85% of the text color over the background, which is off-white on dark pages and soft black (#262626) on light ones.
+   Matched against the test step element by element: labels, quotes, captions, mono meta and the contents index are excluded and keep their styling. */
+:is(.shrp, .ai-org, .uber-case, .anew-case) :is(p, li):not(:where(.info-header, .info-content, .cs-sub, .cs-label, .cs-head, .bet-eyebrow, .card-label,
+        .quote-text, .quote-name, .usage-sub, .usage-axis, .block-head, .section-index-item, .section-index-inline-label,
+        .stat-card p, .read-link p, .section-index-card-head p, .section-index li, .section-index p, .live-bubble p,
+        .cs-phase-duration, .cs-phase-date, .cs-phase-name, .ob-eyebrow, .ob-label,
+        .stage-point-label, .stage-rating, .diagram-hint, .compare-note, th p,
+        .subtext, .tldr-title, .tldr-bullets)) {
+    font-weight: 400;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--text-color) 85%, var(--background-color));
+}
+
+/* Onboarding before and after: two phones, the same bezel as the rendered stills (portfolio-motion
+   stills/banner.html), each with its own video. Labels use the page's mono meta and L4. */
+.ob-compare {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 300px));
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0 16px 0;
+}
+
+.ob-side {
+    margin: 0;
+}
+
+.ob-side figcaption {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.ob-eyebrow {
+    margin: 0;
+    color: var(--subtext-color);
+    text-transform: uppercase;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.ob-label {
+    margin: 4px 0 0 0;
+    color: var(--text-color);
+    font-family: 'Plus Jakarta Sans';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.ob-phone {
+    aspect-ratio: 1080 / 2340;
+    padding: 1.2%;
+    border-radius: 14% / 6.5%;
+    background: linear-gradient(135deg, #8d9096, #3a3c40 30%, #6e7176 55%, #2a2b2e 80%, #7d8086);
+}
+
+.ob-bezel {
+    height: 100%;
+    padding: 2.6%;
+    border-radius: 13.2% / 6.1%;
+    background: #050505;
+}
+
+.ob-screen {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 11% / 5.1%;
+    background: #111111;
+}
+
+.ob-screen .video-scrub {
+    height: 100%;
+}
+
+.ob-screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.ob-watch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 14px auto 0 auto;
+    padding: 8px 16px;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.ob-watch:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width: 700px) {
+    .ob-compare {
+        gap: 12px;
+    }
+
+    .ob-label {
+        font-size: 16px;
+        line-height: 21px;
+    }
+}
+
+/* Research layer image: vertical, so one image reads well on desktop and phones */
+.rl-wide {
+    width: min(620px, 100%);
+    margin: 40px auto 16px auto;
+}
+
+/* Same style as the line under the video */
+.rl-caption {
+    margin-top: 14px;
+    color: var(--subtext-color);
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.rl-wide img {
+    display: block;
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* AI-org header: the session diagram as live vector on a flat gray (the video's background) */
+.ai-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    aspect-ratio: 2112 / 1100;
+    background: #0e0e0e;
+    overflow: hidden;
+}
+
+.ai-header-diagram {
+    display: block;
+    width: 92%;
+    height: auto;
+}
+
+.ai-header-diagram .sd-org { fill: #161616; }
+.ai-header-diagram .sd-group { fill: none; stroke: #2e2e2e; stroke-width: 1; }
+.ai-header-diagram .sd-box { fill: #222222; }
+.ai-header-diagram .sd-line { fill: var(--text-color); }
+.ai-header-diagram .sd-badge { fill: none; stroke: var(--text-color); stroke-width: 1.5; }
+.ai-header-diagram .sd-title { fill: var(--text-color); font-family: 'Plus Jakarta Sans'; font-size: 20px; font-weight: 600; }
+.ai-header-diagram .sd-letter { fill: var(--text-color); font-family: 'Plus Jakarta Sans'; font-size: 18px; font-weight: 600; }
+.ai-header-diagram .sd-body { fill: #d2d2d2; font-family: 'Ubuntu Mono', monospace; font-size: 14px; }
+
+/* Metadata: keep a role title on one line */
+.info-nowrap {
+    white-space: nowrap;
+}
+
+/* Summary rows on the older case studies (Anew, Uber): labels and statements at the 20px secondary level, because these
+   summaries carry bullets and run longer than SHRP's and the AI-org page's */
+.has-summary .cs-beat > .cs-label,
+.has-summary .cs-beat > .cs-head {
+    letter-spacing: normal;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.has-summary .cs-beat > .cs-label + .cs-list {
+    margin-top: 0;
+}
+
+/* Foldable summary rows, for the longest summaries (Anew commercial product): bullets open on a click anywhere in the row.
+   Built by /assets/js/summary-fold.js. */
+.cs-top.is-foldable {
+    gap: 28px;
+}
+
+.cs-top.is-foldable .cs-beat {
+    cursor: pointer;
+}
+
+.cs-top.is-foldable .cs-beat > .cs-list {
+    display: none;
+    cursor: auto;
+}
+
+.cs-top.is-foldable .cs-beat.is-open > .cs-list {
+    display: block;
+}
+
+.cs-top.is-foldable .cs-beat > .cs-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.cs-fold-icon {
+    display: none;
+    flex: none;
+    color: var(--subtext-color);
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.cs-top.is-foldable .cs-fold-icon {
+    display: block;
+}
+
+.cs-top.is-foldable .cs-beat.is-open .cs-fold-icon {
+    transform: rotate(180deg);
+}
+
+.cs-top.is-foldable .cs-beat > .cs-head:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 4px;
+}
+
+/* Summary labels on light pages: dark tones are harder to tell apart, so the 82% used on dark pages read as black */
+:root:not(.dark) .cs-beat > .cs-label {
+    color: color-mix(in srgb, var(--text-color) 55%, var(--background-color));
+}
+
+/* Page index on light pages (Anew): the same parts as the dark pages, in the light card style */
+:root:not(.dark) .section-index a {
+    color: #8c8c8c;
+}
+
+:root:not(.dark) .section-index-item--l1 > a {
+    color: #6f6f6f;
+}
+
+:root:not(.dark) .section-index-item.is-current > a,
+:root:not(.dark) .section-index a:hover,
+:root:not(.dark) .section-index-item--l1:hover > a {
+    color: var(--text-color);
+}
+
+:root:not(.dark) .section-index-collapse,
+:root:not(.dark) .section-index-toggle {
+    border-color: var(--border-color);
+    background: rgba(255, 255, 255, 0.92);
+}
+
+:root:not(.dark) .section-index-collapse:hover {
+    border-color: #bdbdbd;
+}
+
+:root:not(.dark) .section-index-toggle {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+:root:not(.dark) .section-index-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+:root:not(.dark) .section-index-card {
+    border-color: var(--border-color);
+    background: #ffffff;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
+}
+
+:root:not(.dark) .section-index-close {
+    color: #6f6f6f;
+}
+
+@media (max-width: 700px) {
+    :root:not(.dark) .section-index-inline {
+        background-color: #ffffff;
+        box-shadow:
+            0 1px 3px rgba(0, 0, 0, 0.08),
+            0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+}
+
+:root:not(.dark) .section-index-inline li + li {
+    border-top-color: var(--border-color);
 }

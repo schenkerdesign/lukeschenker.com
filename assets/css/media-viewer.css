@@ -1,0 +1,131 @@
+/* Full-screen viewer for images and YouTube videos (assets/js/media-viewer.js).
+   Shared by the homepage and the case-study pages, so colors are set here rather than taken from either page's
+   variables. Always dark, whatever the page's theme. */
+.media-viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    background: rgba(5, 5, 5, 0.96);
+    cursor: zoom-out;
+}
+
+.media-viewer.is-open {
+    display: block;
+}
+
+.media-viewer-stage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 68px 32px 32px 32px;
+}
+
+.media-viewer img {
+    /* capped so tall images (the citation diagram) don't blow up to the whole window */
+    max-width: min(100%, 1400px);
+    max-height: min(100%, 720px);
+    object-fit: contain;
+    border-radius: 12px;
+    cursor: default;
+}
+
+.media-viewer img.is-tall {
+    max-height: min(100%, 560px);
+}
+
+.media-viewer-frame {
+    display: block;
+    border: 0;
+    border-radius: 12px;
+    background: #000000;
+    cursor: default;
+}
+
+/* Video: 16:9, as large as the window allows up to 1200px wide, leaving room for the caption row */
+.media-viewer-media {
+    width: min(100%, 1200px, (100vh - 140px) * 16 / 9);
+    cursor: default;
+}
+
+.media-viewer-media .media-viewer-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/* Caption line on the player's top edge, left-aligned: what the video is, then its year in grey */
+.media-viewer-caption {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0 2px 14px 2px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.media-viewer-caption span:last-child {
+    color: #a3a3a3;
+    font-weight: 500;
+}
+
+/* Top-right bar: the secondary action ("View the full case study", "Watch on YouTube") next to the X */
+.media-viewer-bar {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    left: 18px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.media-viewer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 18px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.media-viewer-link:hover {
+    color: #050505;
+    background: #ffffff;
+}
+
+.media-viewer-link[hidden] {
+    display: none;
+}
+
+.media-viewer-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.media-viewer-close:hover {
+    background: rgba(255, 255, 255, 0.18);
+}

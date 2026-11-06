@@ -21,10 +21,12 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-11-05-live">
 
     <!-- Scripts -->
-    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/animations.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/section-index.js?v=2026-11-05-live" defer></script>
+    <script src="/assets/js/summary-fold.js?v=2026-11-05-live" defer></script>
 
     <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,12 +38,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
 
 </head>
-<body>
+<body class="anew-case has-summary">
 
-    <div id="header">
-        <a href="/">Home</a>
-        <a href="/#testimonials">Testimonials</a>
-        <a href="/about/">About</a>
+    <!-- Same floating nav as the homepage and About; a case study sits under Work -->
+    <div id="header" class="header--pill">
+        <a href="/" class="nav-projects is-current">Work</a>
+        <a href="/about/" class="nav-about">About</a>
     </div>
 
     <div class="header-image-container">
@@ -79,49 +81,62 @@
             </div>
         </div>
 
-        <div class="info-container">
-            <div class="info-box tldr light-card ">
-                 <a href="#problem" class="tldr-section light">
-                    <p class="tldr-title">Context & Problem: Rising screentime correlated to worsening mental health</p>
-                    <p class="tldr-bullets">- 50+ interviews and US national data showed sustained correlation with anxiety, depression, self-harm
-                        <br/>- Existing tools (screen time, blockers, meditation apps) had high churn and failed long-term
-                        <br/>- Market size and appetite showed a significant unmet need
-                    </p>
-                </a>
-                <a href="#strategy" class="tldr-section light">
-                    <p class="tldr-title">Strategy & Collaboration: Advisory board and design principles shaped approach</p>
-                    <p class="tldr-bullets">- Built cross-disciplinary advisory board (psych, design, engineering, business)
-                        <br/>- Modeled user/phone engagement relationship to frame hypotheses and design principles
-                        <br/>- Competitive analysis showed why Headspace failed and why Noom's behavior-change model worked
-                        <br/>- Defined guiding principles: environment shapes habits, disruption required, tradeoffs must be user-directed
-                    </p>
-                </a>
-                <a href="#constraints" class="tldr-section light">
-                    <p class="tldr-title">Constraints & Execution: Lean MVP and go/no-go framing</p>
-                    <p class="tldr-bullets">- Learned from NIMH, NSF, VCs that theory alone wouldn't raise capital
-                        <br/>- Bootstrapped pilot as a go/no-go study; would kill company if impact wasn't significant
-                        <br/>- Scoped lean MVP (desktop setup, mobile delivery) to cut infra cost and design overhead
-                        <br/>- Prioritized only potentially highest-impact features (blocking, notification filtering, routine-based homescreens)
-                    </p>
-                </a>
-                <a href="#solution" class="tldr-section light">
-                    <p class="tldr-title">Solution: MVP product, evaluated with comprehensive user study</p>
-                    <p class="tldr-bullets">- Built curated smartphone experience with goal-setting and educational onboarding
-                        <br/>- Recruited 5 participants (from 60 applicants) at Carnegie Mellon for 30-day pilot study
-                        <br/>- Combined UX research (interviews, journals) with clinical self-evaluation (BDI-II, GAD-7)
-                    </p>
-                </a>
-                <a href="#impact" class="tldr-section light">
-                    <p class="tldr-title">Impact: Pilot de-risked commercialization with clear efficacy</p>
-                    <p class="tldr-bullets">- 49% average anxiety reduction; every participant dropped a severity category
-                        <br/>- Validated treatment model (education, user-directed goals, routine-based restrictions)
-                        <br/>- Created a clear case for commercialization: solvable UX issues, with ~50M addressable market in US/EU
-                    </p>
-                </a>
-            </div>
-        </div>
+        <div id="article" data-index-sections-only>
 
-        <div id="article">
+            <!-- Summary rows, same format as the SHRP and AI-org pages. The words are the page's original summary card. -->
+            <div class="cs-top is-foldable">
+                <div class="cs-beat">
+                    <p class="cs-label">Context & Problem</p>
+                    <p class="cs-head">Rising screentime correlated to worsening mental health</p>
+                    <ul class="cs-list">
+                        <li>50+ interviews and US national data showed sustained correlation with anxiety, depression, self-harm</li>
+                        <li>Existing tools (screen time, blockers, meditation apps) had high churn and failed long-term</li>
+                        <li>Market size and appetite showed a significant unmet need</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Strategy & Collaboration</p>
+                    <p class="cs-head">Advisory board and design principles shaped approach</p>
+                    <ul class="cs-list">
+                        <li>Built cross-disciplinary advisory board (psych, design, engineering, business)</li>
+                        <li>Modeled user/phone engagement relationship to frame hypotheses and design principles</li>
+                        <li>Competitive analysis showed why Headspace failed and why Noom's behavior-change model worked</li>
+                        <li>Defined guiding principles: environment shapes habits, disruption required, tradeoffs must be user-directed</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Constraints & Execution</p>
+                    <p class="cs-head">Lean MVP and go/no-go framing</p>
+                    <ul class="cs-list">
+                        <li>Learned from NIMH, NSF, VCs that theory alone wouldn't raise capital</li>
+                        <li>Bootstrapped pilot as a go/no-go study; would kill company if impact wasn't significant</li>
+                        <li>Scoped lean MVP (desktop setup, mobile delivery) to cut infra cost and design overhead</li>
+                        <li>Prioritized only potentially highest-impact features (blocking, notification filtering, routine-based homescreens)</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Solution</p>
+                    <p class="cs-head">MVP product, evaluated with comprehensive user study</p>
+                    <ul class="cs-list">
+                        <li>Built curated smartphone experience with goal-setting and educational onboarding</li>
+                        <li>Recruited 5 participants (from 60 applicants) at Carnegie Mellon for 30-day pilot study</li>
+                        <li>Combined UX research (interviews, journals) with clinical self-evaluation (BDI-II, GAD-7)</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Impact</p>
+                    <p class="cs-head">Pilot de-risked commercialization with clear efficacy</p>
+                    <ul class="cs-list">
+                        <li>49% average anxiety reduction; every participant dropped a severity category</li>
+                        <li>Validated treatment model (education, user-directed goals, routine-based restrictions)</li>
+                        <li>Created a clear case for commercialization: solvable UX issues, with ~50M addressable market in US/EU</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Phones only: contents card under the summary. Filled by /assets/js/section-index.js. -->
+            <nav class="section-index-inline fade" data-section-index-inline aria-label="Contents"></nav>
+
 
             <h2 id="problem" class="fade">Context & Problem</h2>
 

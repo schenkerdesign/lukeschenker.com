@@ -21,10 +21,12 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-11-05-live">
 
     <!-- Scripts -->
-    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/animations.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/section-index.js?v=2026-11-05-live" defer></script>
+    <script src="/assets/js/summary-fold.js?v=2026-11-05-live" defer></script>
 
     <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,12 +38,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
 
 </head>
-<body>
+<body class="anew-case has-summary">
 
-    <div id="header">
-        <a href="/">Home</a>
-        <a href="/#testimonials">Testimonials</a>
-        <a href="/about/">About</a>
+    <!-- Same floating nav as the homepage and About; a case study sits under Work -->
+    <div id="header" class="header--pill">
+        <a href="/" class="nav-projects is-current">Work</a>
+        <a href="/about/" class="nav-about">About</a>
     </div>
 
     <div class="header-image-container">
@@ -50,6 +52,8 @@
 
     <div class="content-container">
         <h1>Book on Smartphone Mental Health Mechanics and Solutions</h1>
+        <!-- Free sample, "Introduction to diets" from Section II -->
+        <a class="book-sample-link" href="/assets/downloads/The-Nonobvious-Fix-Sample-Chapter.pdf" target="_blank" rel="noopener">Read sample chapter (8 min) <i class="ph-bold ph-arrow-up-right"></i></a>
 
         <div class="info-container">
             <a class="info-box" href="/anew/">
@@ -79,42 +83,52 @@
             </div>
         </div>
 
-        <div class="info-container">
-            <div class="info-box tldr light-card">
-                 <a href="#problem" class="tldr-section light">
-                    <p class="tldr-title">Context & Problem: Preserving and ensuring usefulness of research</p>
-                    <p class="tldr-bullets">- Winding down Anew risked losing years of behavioral research and strategy
-                        <br/>- White paper too narrow; needed broader and accessible user-facing format
-                        <br/>- Education is half of treatment; commercial app overly condensed it
-                    </p>
-                </a>
-                <a href="#strategy" class="tldr-section light">
-                    <p class="tldr-title">Strategy & Collaboration: Codify research as an educational product companion</p>
-                    <p class="tldr-bullets">- Wrote a 255 page book capturing research, frameworks, and design theory
-                        <br/>- Worked with a developmental counselor to refine clarity, accuracy, and accessibility
-                    </p>
-                </a>
-                <a href="#outline" class="tldr-section light">
-                    <p class="tldr-title">Book Outline: Practical guidance, frameworks, design strategy, systemic context</p>
-                    <p class="tldr-bullets">- Guidance for individuals (behavioral diet, self-service methods)
-                        <br/>- Frameworks for evaluating behavioral and information diet, and overuse mechanics
-                        <br/>- Anew's design strategy tied to treatment efficacy
-                        <br/>- Private sector and government context
-                    </p>
-                </a>
-                <a href="#impact" class="tldr-section light">
-                    <p class="tldr-title">Impact & Reflection: Preserved frameworks and improved credibility</p>
-                    <p class="tldr-bullets">- Positioned Anew as a research-backed solution, not just another blocker app
-                        <br/>- Book empowers users, parents, and caregivers with knowledge to improve mental health
-                        <br/>- Preserved multiple years of research in a reusable framework, under peer review
-                        <br/>- Strengthened my ability to translate complex theory into accessible, actionable storytelling
-                    </p>
-                </a>
+        <div id="article" data-index-sections-only>
+
+            <!-- Summary rows, same format as the SHRP and AI-org pages. The words are the page's original summary card. -->
+            <div class="cs-top is-foldable">
+                <div class="cs-beat">
+                    <p class="cs-label">Context & Problem</p>
+                    <p class="cs-head">Preserving and ensuring usefulness of research</p>
+                    <ul class="cs-list">
+                        <li>Winding down Anew risked losing years of behavioral research and strategy</li>
+                        <li>White paper too narrow; needed broader and accessible user-facing format</li>
+                        <li>Education is half of treatment; commercial app overly condensed it</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Strategy & Collaboration</p>
+                    <p class="cs-head">Codify research as an educational product companion</p>
+                    <ul class="cs-list">
+                        <li>Wrote a 255 page book capturing research, frameworks, and design theory</li>
+                        <li>Worked with a developmental counselor to refine clarity, accuracy, and accessibility</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Book Outline</p>
+                    <p class="cs-head">Practical guidance, frameworks, design strategy, systemic context</p>
+                    <ul class="cs-list">
+                        <li>Guidance for individuals (behavioral diet, self-service methods)</li>
+                        <li>Frameworks for evaluating behavioral and information diet, and overuse mechanics</li>
+                        <li>Anew's design strategy tied to treatment efficacy</li>
+                        <li>Private sector and government context</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Impact & Reflection</p>
+                    <p class="cs-head">Preserved frameworks and improved credibility</p>
+                    <ul class="cs-list">
+                        <li>Positioned Anew as a research-backed solution, not just another blocker app</li>
+                        <li>Book empowers users, parents, and caregivers with knowledge to improve mental health</li>
+                        <li>Preserved multiple years of research in a reusable framework, under peer review</li>
+                        <li>Strengthened my ability to translate complex theory into accessible, actionable storytelling</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
+            <!-- Phones only: contents card under the summary. Filled by /assets/js/section-index.js. -->
+            <nav class="section-index-inline fade" data-section-index-inline aria-label="Contents"></nav>
 
-        <div id="article">
 
             <h2 id="problem" class="fade">Context & Problem</h2>
 

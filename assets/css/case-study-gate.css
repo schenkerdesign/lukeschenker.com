@@ -1,4 +1,4 @@
-/* Password gate for the protected case studies (Luke 2026-10-28), built by /assets/js/case-study-gate.js.
+/* Password gate for the protected case studies, built by /assets/js/case-study-gate.js.
    One look in two places: the modal over the homepage on desktop, and the gate page itself (direct visits, phones).
    Desktop: dark backdrop, the case study's video close to full screen, then the title and copy beside the password
    field and the two email buttons. Phones: text and form only; the homepage already plays the video full width. */
@@ -82,7 +82,7 @@
     line-height: 1.6;
 }
 
-/* The starred parts of the copy: how to ask, and how fast the reply comes [Luke 2026-10-28] */
+/* The starred parts of the copy: how to ask, and how fast the reply comes */
 .cs-gate .cs-gate-em {
     color: #ffffff;
 }
@@ -174,7 +174,7 @@
     background-color: #161616;
 }
 
-/* Phones only: a short rule and a label above the field [Luke 2026-10-28] */
+/* Phones only: a short rule and a label above the field */
 .cs-gate-rule,
 .cs-gate-label {
     display: none;
@@ -228,7 +228,7 @@
         padding: 12px;
     }
 
-    /* Centered, 80% of the column [Luke 2026-10-28] */
+    /* Centered, 80% of the column */
     .cs-gate-rule {
         display: block;
         width: 80%;

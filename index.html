@@ -6,7 +6,7 @@
     <title>Luke Schenker | Product Designer and Builder</title>
 
     <meta property="og:title" content="Luke Schenker - Product Designer and Builder Focused on Strategy, Systems, and Business Impact">
-    <meta property="og:description" content="Senior product designer with 7+ years leading UX and research across startups and enterprise—bridging design, psychology, and technology to create products that improve people's lives.">
+    <meta property="og:description" content="Senior product designer with 8+ years leading UX and research across startups and enterprise, bridging design, psychology, and technology to create products that improve people's lives.">
     <meta property="og:image" content="https://lukeschenker.com/assets/images/home/headshot.png">
     <meta property="og:url" content="https://lukeschenker.com/">
     <meta property="og:type" content="website">
@@ -21,24 +21,29 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/styles.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/styles.css?v=2026-11-05-live">
+    <link rel="stylesheet" href="/assets/css/media-viewer.css?v=2026-11-05-live">
     <!-- Password gate modal for the protected case studies (desktop) and its video's scrub player -->
-    <link rel="stylesheet" href="/assets/css/video-scrub.css?v=2026-10-28-live">
-    <link rel="stylesheet" href="/assets/css/case-study-gate.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/video-scrub.css?v=2026-11-05-live">
+    <link rel="stylesheet" href="/assets/css/case-study-gate.css?v=2026-11-05-live">
     
     <!-- Scripts -->
-    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
-    <script src="/assets/js/copy-email.js?v=2026-10-28-live" defer></script>
-    <script type="module" src="/assets/js/gradient.js?v=2026-10-28-live"></script>
-    <script src="/assets/js/live-metric.js?v=2026-10-28-live" defer></script>
-    <script src="/assets/js/video-scrub.js?v=2026-10-28-live" defer></script>
+    <script src="/assets/js/animations.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/work-expand.js?v=2026-11-05-live" defer></script>
+    <script src="/assets/js/scroll-reveal.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/media-viewer.js?v=2026-11-05-live" defer></script>
+    <script src="/assets/js/view-toggle.js?v=2026-11-05-live" defer></script>
+    <script src="/assets/js/copy-email.js?v=2026-11-05-live" defer></script>
+    <script type="module" src="/assets/js/gradient.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/live-metric.js?v=2026-11-05-live" defer></script>
+    <script src="/assets/js/video-scrub.js?v=2026-11-05-live" defer></script>
     <!-- data-gate-links: clicks on /shrp/ and /ai-org/ open the password modal on desktop until this browser has unlocked -->
-    <script src="/assets/js/case-study-gate.js?v=2026-10-28-live" data-gate-links defer></script>
+    <script src="/assets/js/case-study-gate.js?v=2026-11-05-live" data-gate-links defer></script>
 
     <!-- Jakarta and Open Sans Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Ubuntu+Mono&display=swap" rel="stylesheet">
 
     <!-- Phosphor Icons -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"/>
@@ -46,10 +51,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"/>
 </head>
 <body>
-    <div id="header">
-        <a href="">Home</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="/about/">About</a>
+    <!-- Floating nav bar: Work (this page, marked current) and About. -->
+    <div id="header" class="header--pill">
+        <a href="/" class="nav-projects is-current" aria-current="page">Work</a>
+        <a href="/about/" class="nav-about">About</a>
     </div>
 
     <div id="mesh-container">
@@ -58,320 +63,228 @@
 
     <div class="column">
         
-        <div class="fade header-container">
-            <div class="header-content">
-                <h1>Hello, I'm Luke</h1>
-                <h1>Product Designer and Builder</h1>
-                <h1>Ex-Uber, Fintech, and Founder</h1>
-                <span class="header-note">Open to US relocation</span>
-            </div>
-            <a href="/about/">
-                <div class="header-image"></div>
-            </a>
+        <!-- Centered hero, no headshot: discipline, name, current role, then previous roles as the logo row. -->
+        <!-- Add the class "hero-compact" here for the compact hero (its CSS is in styles.css). -->
+        <div class="fade hero-centered">
+            <p class="hero-eyebrow">Product Designer</p>
+            <h1 class="hero-name">Luke Schenker</h1>
+            <p class="hero-role">Product Designer &amp; Builder @ SHRP</p>
         </div>
 
+        <!-- Outside the .fade block, as on live: the gradient's height is measured from here, and a .fade block starts 30px low -->
         <div id="companies-container">
-            <img src="assets/images/home/previous-companies.png">
+            <img src="assets/images/home/previous-companies.png" alt="Uber, John Hancock, Anew, Carnegie Mellon HCII">
         </div>
-        
-         <hr>
 
-        <p class="fade era-label era-label--top">AI-driven case studies</p>
-
-        <!-- New 2026 case studies (home tiles lofi, figma 58:585). Images are the case studies' GIF placeholders. -->
-        <div class="fade home-tiles">
-            <div class="home-tile">
-                <a href="/shrp/">
-                    <div class="image-wrapper image-wrapper--outlined image-wrapper--expand">
-                        <span class="tile-expand" aria-hidden="true"><i class="ph-bold ph-corners-out"></i></span>
-                        <video src="/assets/images/shrp/shrp-loop-1056.mp4?v=2" poster="/assets/images/shrp/shrp-poster-1056.jpg" autoplay muted loop playsinline aria-label="SHRP: see your friends' social media use, track your own, and check each other"></video>
+        <!-- One row per project, image beside the text, alternating sides: dates eyebrow, title, and a summary that opens with role + company. -->
+        <!-- The homepage gradient ends at the top of this row (animations.js syncHeight). View toggle: large rows (default) or a compact list with image strips (view-toggle.js). -->
+        <div class="work-view-toggle" id="work-start" role="group" aria-label="Project layout">
+            <button type="button" class="view-btn is-active" data-view="large" aria-pressed="true" aria-label="Large view">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2.5" width="16" height="6.5" rx="2"/><rect x="2" y="11" width="16" height="6.5" rx="2"/></svg>
+            </button>
+            <button type="button" class="view-btn" data-view="compact" aria-pressed="false" aria-label="Compact view">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2.5" width="16" height="2.6" rx="1.3"/><rect x="2" y="6.6" width="16" height="2.6" rx="1.3"/><rect x="2" y="10.7" width="16" height="2.6" rx="1.3"/><rect x="2" y="14.8" width="16" height="2.6" rx="1.3"/></svg>
+            </button>
+        </div>
+        <div class="work-section-label"><span>Current Work</span></div>
+        <div class="work-list">
+            <div class="work-row" data-thumbs='[{"src": "/assets/images/shrp/frames/shrp-frame-1.jpg", "full": "/assets/images/shrp/frames/full/shrp-frame-1.jpg", "zoom": true}, {"src": "/assets/images/shrp/frames/shrp-frame-2.jpg", "full": "/assets/images/shrp/frames/full/shrp-frame-2.jpg", "zoom": true}, {"src": "/assets/images/shrp/frames/shrp-frame-3.jpg", "full": "/assets/images/shrp/frames/full/shrp-frame-3.jpg", "zoom": true}, {"src": "/assets/images/shrp/frames/shrp-frame-4.jpg", "full": "/assets/images/shrp/frames/full/shrp-frame-4.jpg", "zoom": true}]'>
+                <!-- Hover: darkens with the video still playing; the dark area opens the case study, the two buttons open the stores -->
+                <div class="work-row-media work-row-media--hover">
+                    <video src="/assets/images/shrp/shrp-loop-1056.mp4?v=2026-11-05-live" poster="/assets/images/shrp/shrp-poster-1056.jpg" autoplay muted loop playsinline aria-label="SHRP: see your friends' social media use, track your own, and check each other"></video>
+                    <a href="/shrp/" class="media-overlay" aria-label="Read the SHRP case study"></a>
+                    <div class="media-overlay-content">
+                        <span class="media-overlay-label">Read case study <i class="ph-bold ph-arrow-right"></i></span>
+                        <div class="media-overlay-try">
+                            <span class="media-overlay-try-label">or try it yourself</span>
+                            <div class="media-overlay-buttons">
+                                <a href="https://testflight.apple.com/join/AHJZkEww" target="_blank" rel="noopener"><i class="ph-bold ph-apple-logo"></i> iOS beta</a>
+                                <a href="https://play.google.com/store/apps/details?id=design.schenker.shrp" target="_blank" rel="noopener"><i class="ph-bold ph-google-play-logo"></i> Android beta</a>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Live-metric tag, version B (on the video's bottom edge; Luke's pick). Filled by /assets/js/live-metric.js; hidden until the data loads. -->
-                    <div class="live-bubble live-bubble--tag-edge" data-live-metric="total-hours-saved" hidden>
-                        <span class="live-bubble-dot" aria-hidden="true"></span>
-                        <p class="live-bubble-main"><span data-live-field="hours"></span> hours saved so far</p>
+                </div>
+                <div class="work-row-text">
+                    <!-- Touch screens only: the store buttons live in the hover group on desktop, which phones never see -->
+                    <div class="media-overlay-buttons work-row-install">
+                        <a href="https://testflight.apple.com/join/AHJZkEww" target="_blank" rel="noopener"><i class="ph-bold ph-apple-logo"></i> Try iOS beta</a>
+                        <a href="https://play.google.com/store/apps/details?id=design.schenker.shrp" target="_blank" rel="noopener"><i class="ph-bold ph-google-play-logo"></i> Try Android beta</a>
                     </div>
-                    <!-- SAVED ALTERNATIVES (Luke 2026-10-27: keep these to try later; CSS for both is in styles.css)
-                         C, beside the title, two lines: replace the tag above and the <h2> with
-                           <div class="home-tile-title-row"><h2>SHRP: Social Screentime</h2>
-                             <div class="live-bubble live-bubble--title" data-live-metric="total-hours-saved" hidden><span class="live-bubble-dot"></span>
-                               <div class="live-bubble-text"><p class="live-bubble-main"><span data-live-field="hours"></span> hours</p><p class="live-bubble-sub">Saved so far</p></div></div></div>
-                         D, one line under the meta line, above the download buttons: move the tag after <p class="home-tile-meta"> and use class "live-bubble live-bubble--tag-meta" -->
-                    <h2>SHRP: Social Screentime</h2>
-                    <p class="home-tile-meta">Designed, built and shipped solo · May to Sept 2026</p>
-                </a>
-                <div class="home-tile-buttons">
-                    <div class="store-button">
-                        <a href="https://testflight.apple.com/join/AHJZkEww" target="_blank" rel="noopener" class="connect-button">
-                            <i class="ph-bold ph-apple-logo" style="font-size: 21px; color: #fff"></i>
-                            Download on iOS
-                        </a>
-                        <span class="beta-tag">TestFlight Beta</span>
-                    </div>
-                    <div class="store-button">
-                        <a href="https://play.google.com/store/apps/details?id=design.schenker.shrp" target="_blank" rel="noopener" class="connect-button">
-                            <i class="ph-bold ph-google-play-logo" style="font-size: 21px; color: #fff"></i>
-                            Download on Android
-                        </a>
-                        <span class="beta-tag">Open Testing Beta</span>
-                    </div>
+                    <p class="work-row-eyebrow">May 2026 - Present</p>
+                    <h2 class="work-row-title"><a href="/shrp/">Designing and shipping a social screentime app</a></h2>
+                    <ul class="work-row-tags"><li class="tag tag--design">End-to-End Design</li><li class="tag tag--ai">Built with AI</li><li class="tag tag--research">Product Validation</li></ul>
+                    <p class="work-row-summary"><span class="work-row-role">Product Designer &amp; Builder at SHRP.</span> Designed and built the MVP in 2 months to test product-market fit; 5 beta testers reduced their social media use by 39% on average. Now in public beta on iOS and Android.</p>
+                    <a href="/shrp/" class="work-row-cta">Read case study <i class="ph-bold ph-arrow-right"></i></a>
                 </div>
             </div>
-
-            <div class="home-tile">
-                <a href="/ai-org/">
-                    <div class="image-wrapper image-wrapper--outlined">
-                        <video src="/assets/images/ai-org/ai-org-loop-1056.mp4?v=1" poster="/assets/images/ai-org/ai-org-poster-1056.jpg" autoplay muted loop playsinline aria-label="AI Org case study: what I did and what AI did, six stages"></video>
-                    </div>
-                    <h2>Shipping a product solo with custom AI-Org infrastructure</h2>
-                    <p class="home-tile-meta">Built from the ground up · May to Sept 2026</p>
-                </a>
-            </div>
-        </div>
-
-        <p class="fade era-label">Work before integrating AI into my processes</p>
-
-         <hr>
-
-        <div class="fade project-header">
-            <h2 class="project-title">Anew Smartphone Operating System</h2>
-            <p class="project-description">Founded and led research, design, and development of a smartphone product that reduced chronic anxiety by 49% in research trials.</p>
-            <p class="project-dates">Anew.so<br/>2020 - 2025</p>
-        </div>
-
-        <a href="/anew/">
-            <div class="fade image-wrapper">
-                <img src="/assets/images/home/anew-header.png" alt="Example">
-                <div class="badge">
-                    <span>Product and Team Overview</span>
-                    <i class="ph-bold ph-arrow-right" style="font-size: 21px;"></i>
-                </div>
-            </div>
-        </a>
-
-        <div class="fade case-studies-container">
-            <a href="/anew/pilot-study/">
-            <div class="case-study">
-                <div class="image-wrapper" style="margin-bottom:0">
-                    <img src="/assets/images/home/pilot-case.png" class="case-study-hero">
-                </div>
-                <h3>Pilot Product & User Study</h3>
-                <p>The first version of Anew was tested at Carnegie Mellon in a 30 day study, yielding the initial average 49% anxiety reduction findings.</p>
-                <div class="read-link">
-                    <p>Read case study</p>
-                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
-                </div>
-            </div>
-            </a>
-
-            <a href="/anew/commercial-product/">
-            <div class="case-study">
-                <div class="image-wrapper" style="margin-bottom:0">
-                    <img src="/assets/images/home/commercializing-case.png" class="case-study-hero">
-                </div>
-                <h3>Commercializing Product</h3>
-                <p>Based on the significant amount of findings on the pilot's successes and shortcomings, a commercial product was designed and developed.</p>
-                <div class="read-link">
-                    <p>Read case study</p>
-                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
-                </div>
-            </div>
-            </a>
-
-            <a href="/anew/internships/">
-            <div class="case-study">
-                <div class="image-wrapper" style="margin-bottom:0">
-                    <img src="/assets/images/home/intern-case.png" class="case-study-hero">
-                </div>
-                <h3>Hosting Master's Internships</h3>
-                <p>During design and engineering of the commercial product, Anew hosted 6 Masters internships from recent CMU MIIPS graduates, and one undergraduate internship.</p>
-                <div class="read-link">
-                    <p>Read case study</p>
-                    <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
-                </div>
-            </div>
-            </a>
-        </div>
-
-        <hr>
-
-        <div class="quote-container fade">
-
-            <i class="ph ph-chart-bar section-icon" style="font-size: 51px; color:#e3e3e3; display: block;"></i>
-
-            <p class="quote vanitha-quote">“<i>Ridiculously efficient…</i> scrappy when needed, rigorous in research, and made a dramatic difference in productivity and user trust.”</p>
-
-            <p style="color: #8D8D8D;">— Senior Engineering Manager, Uber</p>
-
-        </div>
-
-        <hr>
-
-        <div class="fade project-header">
-            <h2 class="project-title">Uber Mapping<br/>Suite</h2>
-            <p class="project-description">Led as sole designer on the Map Maker internal application, improving usability, expanding features, and increasing overall output efficiency by 27%.</p>
-            <p class="project-dates">Uber<br/>2018 - 2020</p>
-        </div>
-
-        <a href="/uber/">
-            <div class="fade image-wrapper">
-                <img src="/assets/images/home/uber-header.png" alt="Example">
-                <div class="badge">
-                    <span>Product and Team Overview</span>
-                    <i class="ph-bold ph-arrow-right" style="font-size: 21px;"></i>
-                </div>
-            </div>
-        </a>
-
-        <div class="fade case-studies-container">
-            <a href="/uber/portions/">
-                <div class="case-study">
-                    <div class="image-wrapper" style="margin-bottom:0">
-                        <img src="/assets/images/home/portions-case.png" class="case-study-hero">
-                    </div>
-                    <h3>Reusable Geometries</h3>
-                    <p>Drawing efficiency improved by up to 60% across polyline map features.</p>
-                    <div class="read-link">
-                        <p>Read case study</p>
-                        <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
+            <div class="work-row" data-thumbs='[{"src": "/assets/images/ai-org/diagrams/session-diagram.jpg?v=2026-11-05-live", "full": "/assets/images/ai-org/diagrams/full/session-diagram.jpg?v=2026-11-05-live", "zoom": true}, {"src": "/assets/images/ai-org/diagrams/citation-diagram.jpg?v=2026-11-05-live", "full": "/assets/images/ai-org/diagrams/full/citation-diagram.jpg?v=2026-11-05-live", "zoom": true}, {"src": "/assets/images/ai-org/diagrams/flow-diagram.jpg?v=2026-11-05-live", "full": "/assets/images/ai-org/diagrams/full/flow-diagram.jpg?v=2026-11-05-live", "zoom": true}]'>
+                <div class="work-row-media work-row-media--diagram work-row-media--hover">
+                    <!-- Still image: the session diagram from the AI-org case study (copied from /ai-org/, hover hit-areas removed), so SHRP's video is the one moving thing -->
+                    <svg class="session-diagram home-diagram" aria-hidden="true" viewBox="0 3040 1512 640" role="img" aria-label="How a session works: boot up, the session, wind down, and the org filesystem layer they read from and save to"><rect data-part="B" transform="matrix(1 0 0 1 202.25 3399.5)" width="894" height="254.5" rx="24" class="sd-org"/><rect data-part="B" transform="matrix(1 0 0 1 243.75 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="B" transform="matrix(1 0 0 1 234 3493.816)" width="153" height="107.736083984375" rx="14" class="sd-group"/><rect data-part="B" transform="matrix(1 0 0 1 400.375 3493.816)" width="667.75" height="107.736083984375" rx="14" class="sd-group"/><rect data-part="B" transform="matrix(1 0 0 1 413.25 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="C" transform="matrix(1 0 0 1 582.75 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="B" transform="matrix(1 0 0 1 752.25 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="B" transform="matrix(1 0 0 1 921.75 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><ellipse data-part="D" transform="matrix(1 0 0 1 963.125 3181)" cx="21.25" cy="21.25" rx="21.25" ry="21.25" class="sd-badge"/><ellipse data-part="C" transform="matrix(1 0 0 1 628 3511.223)" cx="21.25" cy="21.25" rx="21.25" ry="21.25" class="sd-badge"/><ellipse data-part="B" transform="matrix(1 0 0 1 790.563 3417.183)" cx="21.25" cy="21.25" rx="21.25" ry="21.25" class="sd-badge"/><ellipse data-part="A" transform="matrix(1 0 0 1 276.875 3068.25)" cx="21.25" cy="21.25" rx="21.25" ry="21.25" class="sd-badge"/><text data-part="D" transform="matrix(1 0 0 1 977.375 3188.25)" class="sd-letter"><tspan x="0" y="20.5">D</tspan></text><text data-part="C" transform="matrix(1 0 0 1 642.25 3518.473)" class="sd-letter"><tspan x="0" y="20.5">C</tspan></text><text data-part="B" transform="matrix(1 0 0 1 804.813 3424.433)" class="sd-letter"><tspan x="0" y="20.5">B</tspan></text><text data-part="A" transform="matrix(1 0 0 1 291.125 3075.5)" class="sd-letter"><tspan x="0" y="20.5">A</tspan></text><text transform="matrix(1 0 0 1 963.125 3066.868)" class="sd-title"><tspan x="0" y="20.5">Wind down</tspan></text><text data-part="A" transform="matrix(1 0 0 1 262.125 3116.789)" class="sd-title"><tspan x="0" y="20.5">Boot up</tspan></text><text data-part="B" transform="matrix(1 0 0 1 839.438 3429.433)" class="sd-body"><tspan x="0" y="12.5">Org filesystem layer</tspan></text><text data-part="B" transform="matrix(1 0 0 1 235 3606.052)" class="sd-body"><tspan x="0" y="12.5">Code knowledge graphs</tspan></text><text data-part="B" transform="matrix(1 0 0 1 665.75 3606.052)" class="sd-body"><tspan x="0" y="12.5">Org knowledge graph</tspan></text><text data-part="B" transform="matrix(1 0 0 1 278.625 3540.723)" class="sd-body"><tspan x="0" y="12.5">Codebases</tspan></text><text data-part="B" transform="matrix(1 0 0 1 437.125 3540.723)" class="sd-body"><tspan x="0" y="12.5">Product docs</tspan></text><text data-part="C" transform="matrix(1 0 0 1 610.125 3556.723)" class="sd-body"><tspan x="0" y="12.5">Agent roles </tspan></text><text data-part="B" transform="matrix(1 0 0 1 790.625 3540.723)" class="sd-body"><tspan x="0" y="12.5">Org docs</tspan></text><text data-part="B" transform="matrix(1 0 0 1 945.625 3540.723)" class="sd-body"><tspan x="0" y="12.5">Company docs</tspan></text><text transform="matrix(1 0 0 1 10.125 3157)" class="sd-body"><tspan x="0" y="12.5">Session starts with user </tspan><tspan x="0" y="28.5">defined task, and goal </tspan><tspan x="0" y="44.5">criteria, and AI role</tspan></text><text data-part="A" transform="matrix(1 0 0 1 262.125 3157)" class="sd-body"><tspan x="0" y="12.5">Boots up AI role, and gains </tspan><tspan x="0" y="28.5">context from org based on </tspan><tspan x="0" y="44.5">task</tspan></text><text transform="matrix(1 0 0 1 562.188 3157)" class="sd-body"><tspan x="0" y="12.5">Session proceeds </tspan><tspan x="0" y="28.5">collaboratively</tspan></text><text transform="matrix(1 0 0 1 773.688 3165)" class="sd-body"><tspan x="0" y="12.5">Session completes </tspan><tspan x="0" y="28.5">stated goal</tspan></text><text transform="matrix(1 0 0 1 963.125 3106.747)" class="sd-body"><tspan x="0" y="12.5">AI logs full discussion, </tspan><tspan x="0" y="28.5">distills it, finishes pending </tspan><tspan x="0" y="44.5">writes, and pushes to Git</tspan></text><text data-part="D" transform="matrix(1 0 0 1 963.125 3229)" class="sd-body"><tspan x="0" y="12.5">AI walks through personal retro </tspan><tspan x="0" y="28.5">with me, discussing and logging </tspan><tspan x="0" y="44.5">friction points, what went </tspan><tspan x="0" y="60.5">well, what should improve, and </tspan><tspan x="0" y="76.5">themes.</tspan></text><text data-part="D" transform="matrix(1 0 0 1 1276 3229)" class="sd-body"><tspan x="0" y="12.5">Retro logs are used later to </tspan><tspan x="0" y="28.5">inform more significant changes </tspan><tspan x="0" y="44.5">to the org and roles.</tspan></text><text transform="matrix(1 0 0 1 1276 3119.789)" class="sd-body"><tspan x="0" y="12.5">Following session</tspan></text><text transform="matrix(1 0 0 1 1211.133 3079.868)" class="sd-body"><tspan x="0" y="12.5">optional </tspan><tspan x="0" y="28.5">handoff</tspan></text><text transform="matrix(1 0 0 1 668.094 3291.75)" class="sd-body"><tspan x="0" y="12.5">AI role gains </tspan><tspan x="0" y="28.5">additional context </tspan><tspan x="0" y="44.5">as needed</tspan></text><text data-part="D" transform="matrix(1 0 0 1 1049.25 3344.556)" class="sd-body"><tspan x="0" y="12.5">All saved durably </tspan><tspan x="0" y="28.5">in the org</tspan></text><text transform="matrix(1 0 0 1 447.313 3286.75)" class="sd-body"><tspan x="0" y="12.5">AI updates code, </tspan><tspan x="0" y="28.5">docs, etc according </tspan><tspan x="0" y="44.5">to instruction and </tspan><tspan x="0" y="60.5">defined practices.</tspan></text><text data-part="A" transform="matrix(1 0 0 1 177.492 3292.25)" class="sd-body"><tspan x="0" y="12.5">Subagent navigates </tspan><tspan x="0" y="28.5">the org and surfaces </tspan><tspan x="0" y="44.5">relevant context</tspan></text><path transform="matrix(1 0 0 1 197.75 3182)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 197.75 3182)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 473.625 3182)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 473.625 3182)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 705.5 3182)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 705.5 3182)" d="" class="sd-line"/><path data-part="D" transform="matrix(1 0 0 1 1212.5 3258)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="D" transform="matrix(1 0 0 1 1212.5 3258)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 1212.5 3130.789)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L2.04 1.00 L2.04 0.00 L2.04 -1.00 L0.00 -1.00 L0.00 0.00 Z M6.13 0.00 L6.13 1.00 L10.21 1.00 L10.21 0.00 L10.21 -1.00 L6.13 -1.00 L6.13 0.00 Z M14.29 0.00 L14.29 1.00 L18.38 1.00 L18.38 0.00 L18.38 -1.00 L14.29 -1.00 L14.29 0.00 Z M22.46 0.00 L22.46 1.00 L26.54 1.00 L26.54 0.00 L26.54 -1.00 L22.46 -1.00 L22.46 0.00 Z M30.63 0.00 L30.63 1.00 L34.71 1.00 L34.71 0.00 L34.71 -1.00 L30.63 -1.00 L30.63 0.00 Z M38.79 0.00 L38.79 1.00 L42.88 1.00 L42.88 0.00 L42.88 -1.00 L38.79 -1.00 L38.79 0.00 Z M46.96 0.00 L46.96 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L46.96 -1.00 L46.96 0.00 Z M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L2.04 1.00 L2.04 0.00 L2.04 -1.00 L0.00 -1.00 L0.00 0.00 Z M6.13 0.00 L6.13 1.00 L10.21 1.00 L10.21 0.00 L10.21 -1.00 L6.13 -1.00 L6.13 0.00 Z M14.29 0.00 L14.29 1.00 L18.38 1.00 L18.38 0.00 L18.38 -1.00 L14.29 -1.00 L14.29 0.00 Z M22.46 0.00 L22.46 1.00 L26.54 1.00 L26.54 0.00 L26.54 -1.00 L22.46 -1.00 L22.46 0.00 Z M30.63 0.00 L30.63 1.00 L34.71 1.00 L34.71 0.00 L34.71 -1.00 L30.63 -1.00 L30.63 0.00 Z M38.79 0.00 L38.79 1.00 L42.88 1.00 L42.88 0.00 L42.88 -1.00 L38.79 -1.00 L38.79 0.00 Z M46.96 0.00 L46.96 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L46.96 -1.00 L46.96 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 1212.5 3130.789)" d="" class="sd-line"/><path transform="matrix(0.707 -0.707 0.707 0.707 913.625 3170.748)" d="M50.21 0.71 C50.60 0.32 50.60 -0.32 50.21 -0.71 L43.84 -7.07 C43.45 -7.46 42.82 -7.46 42.43 -7.07 C42.04 -6.68 42.04 -6.05 42.43 -5.66 L48.08 0.00 L42.43 5.66 C42.04 6.05 42.04 6.68 42.43 7.07 C42.82 7.46 43.45 7.46 43.84 7.07 L50.21 0.71 Z M0.00 0.00 L0.00 1.00 L49.50 1.00 L49.50 0.00 L49.50 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(0.707 -0.707 0.707 0.707 913.625 3170.748)" d="" class="sd-line"/><path data-part="D" transform="matrix(0.707 0.707 0.707 -0.707 913.625 3194)" d="M50.21 0.71 C50.60 0.32 50.60 -0.32 50.21 -0.71 L43.84 -7.07 C43.45 -7.46 42.82 -7.46 42.43 -7.07 C42.04 -6.68 42.04 -6.05 42.43 -5.66 L48.08 0.00 L42.43 5.66 C42.04 6.05 42.04 6.68 42.43 7.07 C42.82 7.46 43.45 7.46 43.84 7.07 L50.21 0.71 Z M0.00 0.00 L0.00 1.00 L49.50 1.00 L49.50 0.00 L49.50 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="D" transform="matrix(0.707 0.707 0.707 -0.707 913.625 3194)" d="" class="sd-line"/><path data-part="A" transform="matrix(0 1 -1 0 326.25 3218)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="A" transform="matrix(0 1 -1 0 326.25 3218)" d="" class="sd-line"/><path transform="matrix(0 1 -1 0 600.75 3218)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(0 1 -1 0 600.75 3218)" d="" class="sd-line"/><path data-part="D" transform="matrix(0 1 -1 0 1032.625 3324.29)" d="M100.85 0.71 C101.24 0.32 101.24 -0.32 100.85 -0.71 L94.49 -7.07 C94.10 -7.46 93.46 -7.46 93.07 -7.07 C92.68 -6.68 92.68 -6.05 93.07 -5.66 L98.73 0.00 L93.07 5.66 C92.68 6.05 92.68 6.68 93.07 7.07 C93.46 7.46 94.10 7.46 94.49 7.07 L100.85 0.71 Z M0.00 0.00 L0.00 1.00 L100.14 1.00 L100.14 0.00 L100.14 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="D" transform="matrix(0 1 -1 0 1032.625 3324.29)" d="" class="sd-line"/><path transform="matrix(0 -1 -1 0 647.625 3450.433)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(0 -1 -1 0 647.625 3450.433)" d="" class="sd-line"/><path data-part="A" transform="matrix(0 -1 1 0 368.75 3450.433)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="A" transform="matrix(0 -1 1 0 368.75 3450.433)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 606.25 3109.583)" d="M9.63 12.04 L1.38 12.04 C1.01 12.04 0.66 11.90 0.40 11.64 C0.14 11.38 0.00 11.03 0.00 10.67 L0.00 2.42 C0.00 2.05 0.14 1.70 0.40 1.44 C0.66 1.19 1.01 1.04 1.38 1.04 C1.74 1.04 2.09 1.19 2.35 1.44 C2.61 1.70 2.75 2.05 2.75 2.42 L2.75 7.35 L5.26 4.83 C8.33 1.75 12.50 0.01 16.84 0.00 L16.93 0.00 C21.25 -0.01 25.39 1.68 28.46 4.70 C28.71 4.95 28.85 5.30 28.85 5.66 C28.85 6.02 28.71 6.36 28.46 6.62 C28.21 6.88 27.87 7.02 27.51 7.03 C27.15 7.04 26.80 6.91 26.54 6.66 C23.98 4.15 20.53 2.74 16.93 2.75 L16.86 2.75 C13.23 2.76 9.76 4.21 7.21 6.78 L4.69 9.29 L9.63 9.29 C9.99 9.29 10.34 9.44 10.60 9.69 C10.86 9.95 11.00 10.30 11.00 10.67 C11.00 11.03 10.86 11.38 10.60 11.64 C10.34 11.90 9.99 12.04 9.63 12.04 Z M31.63 20.29 L23.38 20.29 C23.01 20.29 22.66 20.44 22.40 20.69 C22.14 20.95 22.00 21.30 22.00 21.67 C22.00 22.03 22.14 22.38 22.40 22.64 C22.66 22.90 23.01 23.04 23.38 23.04 L28.31 23.04 L25.79 25.56 C23.24 28.12 19.77 29.57 16.14 29.58 L16.07 29.58 C12.47 29.59 9.02 28.19 6.46 25.67 C6.33 25.54 6.18 25.43 6.01 25.36 C5.84 25.29 5.66 25.26 5.48 25.26 C5.29 25.26 5.11 25.29 4.94 25.36 C4.78 25.43 4.62 25.54 4.49 25.67 C4.37 25.80 4.27 25.96 4.20 26.13 C4.13 26.30 4.10 26.48 4.10 26.66 C4.11 26.85 4.15 27.03 4.22 27.19 C4.30 27.36 4.41 27.51 4.54 27.64 C7.61 30.66 11.76 32.34 16.07 32.33 L16.16 32.33 C20.50 32.32 24.67 30.58 27.73 27.50 L30.25 24.99 L30.25 29.92 C30.25 30.28 30.39 30.63 30.65 30.89 C30.91 31.15 31.26 31.29 31.63 31.29 C31.99 31.29 32.34 31.15 32.60 30.89 C32.86 30.63 33.00 30.28 33.00 29.92 L33.00 21.67 C33.00 21.30 32.86 20.95 32.60 20.69 C32.34 20.44 31.99 20.29 31.63 20.29 Z " class="sd-line"/></svg>
+                    <a href="/ai-org/" class="media-overlay" aria-label="Read the AI org case study"></a>
+                    <div class="media-overlay-content">
+                        <span class="media-overlay-label">Read case study <i class="ph-bold ph-arrow-right"></i></span>
                     </div>
                 </div>
-            </a>
-            
-        
-            <a href="/uber/conflicts/">
-                <div class="case-study">
-                    <div class="image-wrapper" style="margin-bottom:0">
-                        <img src="/assets/images/home/conflicts-case.png" class="case-study-hero">
-                    </div>
-                    <h3>Improved Visualization and Annotation</h3>
-                    <p>Creation efficiency of mission-critical map annotation increased by 70%.</p>
-                    <div class="read-link">
-                        <p>Read case study</p>
-                        <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
-                    </div>
+                <div class="work-row-text">
+                    <p class="work-row-eyebrow">May 2026 - Present</p>
+                    <h2 class="work-row-title"><a href="/ai-org/">Building AI infrastructure to ship an app solo</a></h2>
+                    <ul class="work-row-tags"><li class="tag tag--ai">AI-Native Workflow</li><li class="tag tag--ai">AI Prototyping</li><li class="tag tag--ai">Agent Orchestration</li></ul>
+                    <p class="work-row-summary"><span class="work-row-role">Designer &amp; Architect.</span> Enabled one-person company operation with a custom system of AI agents, shared knowledge and workflows, shipping a product in 5 months that would have taken me an estimated 18 to 24 months.</p>
+                    <a href="/ai-org/" class="work-row-cta">Read case study <i class="ph-bold ph-arrow-right"></i></a>
                 </div>
-            </a>
-
-            <a href="/uber/hotkeys/">
-                <div class="case-study">
-                    <div class="image-wrapper" style="margin-bottom:0">
-                        <img src="/assets/images/home/hotkeys-case.png" class="case-study-hero">
-                    </div>
-                    <h3>Drastically Improved Ease-Of-Use</h3>
-                    <p>Redesigned and unified input schema increased overall output efficiency by 27%.</p>
-                    <div class="read-link">
-                        <p>Read case study</p>
-                        <i class="ph-bold ph-arrow-right" style="font-size: 21px; color: #fff"></i>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-
-        <hr>
-
-        <div class="fade project-header">
-            <h2 class="project-title">Finance<br/>Applications</h2>
-            <p class="project-description">Led research and design on: an internal forex hedging application for traders, an insurance shopping platform, and a backend service monitoring system for engineers.</p>
-            <p class="project-dates">John Hancock Financial<br/>2016 - 2018</p>
-        </div>
-
-        <hr>
-
-        <div class="fade project-header">
-            <h2 class="project-title">Carnegie Mellon University</h2>
-            <p class="project-description">Led capstone HCII team to create an application that would later be used to raise $1.5M. Then cofounded a startup which raised a $125k angel round.</p>
-            <p class="project-dates">Carnegie Mellon University<br/>2011 - 2015</p>
-        </div>
-
-        <h1 id="testimonials" style="margin-top: 120px">Testimonials</h1>
-
-        <h2 style="text-align: center; margin-top: 49px;">Managers & Stakeholders</h2>
-
-        <div class="fade testimonials-container">
-            <div class="testimonial">
-                <div class="testimonial-header">
-                    <img src="/assets/images/home/jared.png">
-                    <div>
-                        <h3>Jared Fagan</h3>
-                        <h3 style="opacity: 70%; margin: 2px 0;">Senior Program Manager</h3>
-                        <h3 style="opacity: 70%">Amazon, Ex-Uber</h3>
-                    </div>
-                </div>
-                <p>Luke was a motivated, forward thinking and intelligent designer with lots of knowledge in his field. He understands complex issues even when outside of his direct area of expertise.</p>
-                <br/>
-                <p>For Luke the user is one of the most important parts of the solution. Thanks to his awesome interpersonal skills he had great relationships with all the team members. Always the energetic and broad-minded designer and a detail orientated team player. On account of his mature approach to his responsibilities, I often thought of Luke as a professional I could always rely upon to get the job done. Experiencing his fast and sharp mind at work was most impressive.</p>
-            </div>
-            <div class="testimonial">
-                <div class="testimonial-header">
-                    <img src="/assets/images/home/vanitha.png">
-                    <div>
-                        <h3>Vanitha Sengal Rao</h3>
-                        <h3 style="opacity: 70%; margin: 2px 0;">Senior Engineering Manager</h3>
-                        <h3 style="opacity: 70%">Aurora, Ex-Uber</h3>
-                    </div>
-                </div>
-                <p>“Ridiculously efficient” is the phrase that comes to mind when I think about Luke. Luke expertly filled the role of a designer for my team for over a year.</p>
-                <br/>
-                <p>Luke's ability to be initially scrappy as we discover and learn more about product requirements and then perform more thoughtful user research to come up with a UX design that made a dramatic difference in the productivity level of my team and uplifted the user's trust. </p>
-                <br/>
-                <p>Unlike any I've seen before and no matter how tense a day is, Luke brings forward his honest empathy and makes each one on the team feel important and good.</p>
             </div>
         </div>
 
-        <h2 style="text-align: center; margin-top: 49px;">Direct Reports</h2>
-
-        <div class="fade testimonials-container">
-            <div class="testimonial">
-                <div class="testimonial-header">
-                    <img src="/assets/images/home/taru.png">
-                    <div>
-                        <h3>Taru Jain</h3>
-                        <h3 style="opacity: 70%; margin: 2px 0;">Technical Product Manager</h3>
-                        <h3 style="opacity: 70%">Inpleo, Ex-Anew</h3>
+        <div class="work-section-label"><span>Previous Work (before incorporating AI)</span></div>
+        <div class="work-list work-list--spaced">
+            <div class="work-row" data-thumbs='[{"src": "/assets/images/anew/my-role-thumb.jpg", "href": "/anew/", "cap": "My Role", "hover": "Read about my role"}, {"src": "/assets/images/home/pilot-case.png", "href": "/anew/pilot-study/", "cap": "Pilot Product & User Study", "date": "2022"}, {"src": "/assets/images/home/commercializing-case.png", "href": "/anew/commercial-product/", "cap": "Commercializing Product", "date": "2023 - 2024"}, {"src": "/assets/images/home/intern-case.png", "href": "/anew/internships/", "cap": "Hosting Master&#39;s Internships", "date": "2023 - 2024"}, {"src": "/assets/images/home/book-case.png", "href": "/anew/book/", "cap": "Book on Smartphone Mental Health Mechanics", "date": "2025"}]'>
+                <!-- Hover: primary opens the individual projects below; secondary goes to the Anew overview -->
+                <div class="work-row-media work-row-media--hover">
+                    <img src="/assets/images/home/anew-header.png" alt="Anew smartphone operating system">
+                    <button type="button" class="media-overlay" data-expand="anew-projects" aria-label="View the Anew case studies"></button>
+                    <div class="media-overlay-content">
+                        <span class="media-overlay-label">View the case studies <i class="ph-bold ph-caret-down"></i></span>
+                        <div class="media-overlay-try">
+                            <div class="media-overlay-buttons">
+                                <a href="/anew/">Read about my role <i class="ph-bold ph-arrow-right"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p>Luke is a great manager. He sets realistic goals and sets reasonable deadlines for achieving those goals. But he always pays attention to details, his understanding of people's needs is outstanding, and he makes everyone who works under him feel comfortable and heard.</p>
-                <br/>
-                <p>As a leader, Luke deserves my highest recommendation.</p>
+                <div class="work-row-text">
+                    <p class="work-row-eyebrow">2020 - 2025</p>
+                    <h2 class="work-row-title"><a href="/anew/">Designing and building a smartphone operating system to treat phone overuse</a></h2>
+                    <ul class="work-row-tags"><li class="tag tag--design">Product Design</li><li class="tag tag--lead">Product Strategy</li><li class="tag tag--lead">Team Leadership</li></ul>
+                    <p class="work-row-summary"><span class="work-row-role">Founder of Anew.</span> Led design, research and engineering of Anew OS; a 30-day pilot study achieved a 49% reduction in daily user anxiety. Managed 6 Carnegie Mellon master's interns across design, research and engineering.</p>
+                    <button type="button" class="work-row-cta work-expand-toggle" aria-expanded="false" aria-controls="anew-projects"><span class="work-expand-text">View case studies</span> <i class="ph-bold ph-caret-down"></i></button>
+                </div>
             </div>
-            <div class="testimonial">
-                <div class="testimonial-header">
-                    <img src="/assets/images/home/yee-kit.png">
-                    <div>
-                        <h3>Yee Kit Chan</h3>
-                        <h3 style="opacity: 70%; margin: 2px 0;">Software Engineer</h3>
-                        <h3 style="opacity: 70%">Ebay, Ex-Anew</h3>
+            <!-- Anew sub-project dates match each case-study page's own date field. -->
+            <!-- Individual Anew case studies: 2x2, each a small image beside a plain title and "Read case study" (homepage row styles) -->
+            <div class="work-expand">
+                <div class="work-expand-panel" id="anew-projects">
+                    <div class="work-expand-inner">
+                    <!-- What 2020-2021 was, so the case studies' 2022 start doesn't read as a gap -->
+                    <div class="sub-project-prelude">
+                        <p class="sub-project-dates">2020 - 2021</p>
+                        <p class="sub-project-prelude-text">I started by designing an experimental, design-centered IDE for tweaking how everything in your digital smartphone environment works.</p>
+                        <p class="sub-project-prelude-text">Alongside that, I sought funding from VCs, the NSF and the Shuttleworth Fellowship, and pitched research proposals to scientists at the National Institutes of Health (NIMH &amp; NIDA).</p>
+                        <a class="sub-project-prelude-link" href="https://youtu.be/bLPagkihShs" target="_blank" rel="noopener" data-viewer="video" data-youtube="bLPagkihShs" data-caption="Shuttleworth Foundation grant pitch" data-date="2021">Watch the concept pitch (5 min) <i class="ph-bold ph-arrow-up-right"></i></a>
+                    </div>
+                    <div class="sub-project-grid">
+                        <div class="sub-project">
+                            <a href="/anew/pilot-study/" class="sub-project-media"><img src="/assets/images/home/pilot-case.png" alt=""></a>
+                            <div class="sub-project-text">
+                                <p class="sub-project-dates">2022</p>
+                                <h3 class="sub-project-title"><a href="/anew/pilot-study/">Pilot Product &amp; User Study</a></h3>
+                                <p class="sub-project-desc">The first version of Anew was tested in partnership with Carnegie Mellon University.</p>
+                                <a href="/anew/pilot-study/" class="work-row-cta">Read case study <i class="ph-bold ph-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="sub-project">
+                            <a href="/anew/commercial-product/" class="sub-project-media"><img src="/assets/images/home/commercializing-case.png" alt=""></a>
+                            <div class="sub-project-text">
+                                <p class="sub-project-dates">2023 - 2024</p>
+                                <h3 class="sub-project-title"><a href="/anew/commercial-product/">Commercializing Product</a></h3>
+                                <p class="sub-project-desc">Based on the pilot’s findings, Anew was taken into high fidelity and full production.</p>
+                                <a class="sub-project-video-link" href="https://youtu.be/TFvVlQW8yIo" target="_blank" rel="noopener" data-viewer="video" data-youtube="TFvVlQW8yIo" data-caption="60-second Y Combinator application pitch" data-date="2023">Watch the YC pitch (1 min) <i class="ph-bold ph-arrow-up-right"></i></a>
+                                <a href="/anew/commercial-product/" class="work-row-cta">Read case study <i class="ph-bold ph-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="sub-project">
+                            <a href="/anew/internships/" class="sub-project-media"><img src="/assets/images/home/intern-case.png" alt=""></a>
+                            <div class="sub-project-text">
+                                <p class="sub-project-dates">2023 - 2024</p>
+                                <h3 class="sub-project-title"><a href="/anew/internships/">Hosting Master's Internships</a></h3>
+                                <p class="sub-project-desc">Anew hosted 6 master's internships from recent CMU MIIPS graduates, and one undergraduate internship.</p>
+                                <a href="/anew/internships/" class="work-row-cta">Read case study <i class="ph-bold ph-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="sub-project">
+                            <a href="/anew/book/" class="sub-project-media"><img src="/assets/images/home/book-case.png" alt=""></a>
+                            <div class="sub-project-text">
+                                <p class="sub-project-dates">2025</p>
+                                <h3 class="sub-project-title"><a href="/anew/book/">Book on Smartphone Mental Health Mechanics</a></h3>
+                                <p class="sub-project-desc">A 255-page deep dive into the research, frameworks, and design strategy behind Anew.</p>
+                                <a class="sub-project-video-link" href="/assets/downloads/The-Nonobvious-Fix-Sample-Chapter.pdf" target="_blank" rel="noopener">Read sample chapter (8 min) <i class="ph-bold ph-arrow-up-right"></i></a>
+                                <a href="/anew/book/" class="work-row-cta">Read case study <i class="ph-bold ph-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
-                <p>Luke's thoroughness across all areas—product development, design, ethics, and mentorship—was truly inspiring. He was incredibly responsive and understanding of my level of experience, always treating my questions as valid and important.</p>
-                <br/>
-                <p>Luke also provided me with unique opportunities to grow in any area I expressed interest in, whether it was research, decision-making, design, or implementation. His leadership style and dedication to fostering a growth-oriented environment during the internship period and beyond make him an exceptional CEO and mentor.</p>
+            </div>
+            <div class="work-row" data-thumbs='[{"src": "/assets/images/uber/my-role-thumb.jpg", "href": "/uber/", "cap": "My Role", "hover": "Read about my role"}, {"src": "/assets/images/home/portions-case.png", "href": "/uber/portions/", "cap": "Reusable Geometries"}, {"src": "/assets/images/home/conflicts-case.png", "href": "/uber/conflicts/", "cap": "Improved Visualization and Annotation"}, {"src": "/assets/images/home/hotkeys-case.png", "href": "/uber/hotkeys/", "cap": "Drastically Improved Ease-Of-Use"}]'>
+                <!-- Hover: primary opens the individual projects below; secondary goes to the Uber overview -->
+                <div class="work-row-media work-row-media--hover">
+                    <img src="/assets/images/home/uber-header.png" alt="Uber Map Maker" style="object-position: left center">
+                    <button type="button" class="media-overlay" data-expand="uber-projects" aria-label="View the Uber case studies"></button>
+                    <div class="media-overlay-content">
+                        <span class="media-overlay-label">View the case studies <i class="ph-bold ph-caret-down"></i></span>
+                        <div class="media-overlay-try">
+                            <div class="media-overlay-buttons">
+                                <a href="/uber/">Read about my role <i class="ph-bold ph-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-row-text">
+                    <p class="work-row-eyebrow">2018 - 2020</p>
+                    <h2 class="work-row-title"><a href="/uber/">Redesigning Map Maker, the tool that turns raw AV data into self-driving maps</a></h2>
+                    <ul class="work-row-tags"><li class="tag tag--design">Interaction Design</li><li class="tag tag--design">Complex Workflows</li><li class="tag tag--platform">Internal Tools</li></ul>
+                    <p class="work-row-summary"><span class="work-row-role">Senior Interaction Designer at Uber ATG.</span> Redesigned Map Maker's input schema and core annotation workflows, increasing the mapping team's overall efficiency by 27%.</p>
+                    <button type="button" class="work-row-cta work-expand-toggle" aria-expanded="false" aria-controls="uber-projects"><span class="work-expand-text">View case studies</span> <i class="ph-bold ph-caret-down"></i></button>
+                </div>
+            </div>
+            <!-- Individual Uber case studies: same grid as Anew (image beside title, description, "Read case study") -->
+            <div class="work-expand">
+                <div class="work-expand-panel" id="uber-projects">
+                    <div class="work-expand-inner">
+                    <div class="sub-project-grid">
+                        <div class="sub-project">
+                            <a href="/uber/portions/" class="sub-project-media"><img src="/assets/images/home/portions-case.png" alt=""></a>
+                            <div class="sub-project-text">
+                                <h3 class="sub-project-title"><a href="/uber/portions/">Reusable Geometries</a></h3>
+                                <p class="sub-project-desc">Drawing efficiency improved by up to 60% across polyline map features.</p>
+                                <a href="/uber/portions/" class="work-row-cta">Read case study <i class="ph-bold ph-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="sub-project">
+                            <a href="/uber/conflicts/" class="sub-project-media"><img src="/assets/images/home/conflicts-case.png" alt=""></a>
+                            <div class="sub-project-text">
+                                <h3 class="sub-project-title"><a href="/uber/conflicts/">Improved Visualization and Annotation</a></h3>
+                                <p class="sub-project-desc">Creation efficiency of mission-critical map annotation increased by 70%.</p>
+                                <a href="/uber/conflicts/" class="work-row-cta">Read case study <i class="ph-bold ph-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="sub-project">
+                            <a href="/uber/hotkeys/" class="sub-project-media"><img src="/assets/images/home/hotkeys-case.png" alt=""></a>
+                            <div class="sub-project-text">
+                                <h3 class="sub-project-title"><a href="/uber/hotkeys/">Drastically Improved Ease-Of-Use</a></h3>
+                                <p class="sub-project-desc">Redesigned and unified input schema increased overall output efficiency by 27%.</p>
+                                <a href="/uber/hotkeys/" class="work-row-cta">Read case study <i class="ph-bold ph-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- John Hancock: not clickable, no case study. No individual projects on the homepage for this role. -->
+            <div class="work-row" data-thumbs='[{"src": "/assets/images/john-hancock/fx-isometric.jpg?v=2026-11-05-live", "full": "/assets/images/john-hancock/full/fx-isometric.jpg", "zoom": true}, {"src": "/assets/images/john-hancock/fx-hedging-dashboard.jpg", "full": "/assets/images/john-hancock/full/fx-hedging-dashboard.jpg", "zoom": true}, {"src": "/assets/images/john-hancock/fx-trade-queue.jpg", "full": "/assets/images/john-hancock/full/fx-trade-queue.jpg", "zoom": true}, {"src": "/assets/images/john-hancock/status-service-view.jpg", "full": "/assets/images/john-hancock/full/status-service-view.jpg", "zoom": true}, {"src": "/assets/images/john-hancock/status-service-grid.jpg", "full": "/assets/images/john-hancock/full/status-service-grid.jpg", "zoom": true}]'>
+                <div class="work-row-media" style="background: #ffffff; aspect-ratio: 1940 / 993">
+                    <img src="/assets/images/john-hancock/fx-isometric.jpg?v=2026-11-05-live" alt="Isometric view of the FX hedging app's upload, portfolio manager and trade queue screens, connected in three steps" style="object-fit: contain">
+                </div>
+                <div class="work-row-text">
+                    <p class="work-row-eyebrow">2016 - 2017</p>
+                    <h2 class="work-row-title">Preventing costly trading errors and introducing UX processes to a finance company</h2>
+                    <ul class="work-row-tags"><li class="tag tag--research">UX Research</li><li class="tag tag--design">Error Prevention</li><li class="tag tag--platform">Fintech</li></ul>
+                    <p class="work-row-summary"><span class="work-row-role">UX Designer at John Hancock Financial.</span> Established design practice from scratch, as 1 of 3 first design hires, by teaching and embedding UX research and design best practices into PM and engineering workflows.</p>
+                    <p class="work-row-note">Case study not published</p>
+                </div>
             </div>
         </div>
-
-        <a href="https://www.linkedin.com/in/luke-schenker/details/recommendations/?detailScreenTabIndex=0" class="testimonials-link">
-            <h2 style="margin-right: 7px;">See more testimonials on LinkedIn</h2>
-            <i class="ph-bold ph-arrow-right" style="font-size: 38px;"></i>
-        </a>
-
-        <h1 style="margin: 100px 0 36px 0">Additional contributions</h1>
-
-        <div class="fade testimonials-container">
-            <div class="no-padding testimonial">
-                <img src="/assets/images/home/wake-forest.png" class="banner">
-                <h2>Wake Forest Guest Speaker On Leadership & Communication</h2>
-                <p style="padding: 0 20px 20px 20px">Luke has been invited several times by professors at Wake Forest to give talks on how to present ideas to leadership, and sell them on strategy.</p>
-            </div>
-            <div class="no-padding testimonial">
-                <img src="/assets/images/home/tepper.png" class="banner">
-                <h2>Ongoing Mentorship</h2>
-                <p style="padding: 0 20px 20px 20px">Luke continues to mentor prior interns, in addition to CMU students.</p>
-            </div>
-        </div>
-
-      
     </div>
 
     <hr style="margin-top: 100px">

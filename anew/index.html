@@ -21,10 +21,11 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-11-05-live">
 
     <!-- Scripts -->
-    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/animations.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/section-index.js?v=2026-11-05-live" defer></script>
 
     <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,12 +37,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
 
 </head>
-<body>
+<body class="anew-case">
 
-    <div id="header">
-        <a href="/">Home</a>
-        <a href="/#testimonials">Testimonials</a>
-        <a href="/about/">About</a>
+    <!-- Same floating nav as the homepage and About; a case study sits under Work -->
+    <div id="header" class="header--pill">
+        <a href="/" class="nav-projects is-current">Work</a>
+        <a href="/about/" class="nav-about">About</a>
     </div>
 
     <div class="header-image-container">
@@ -62,21 +63,21 @@
             </div>
         </div>
 
-        <div class="info-container">
-            <div class="info-box tldr light-card">
-                 <a href="#footer-title" class="tldr-section light">
-                    <p class="tldr-title">Impact Highlights found in case studies:</p>
-                    <p class="tldr-bullets">- 49% average anxiety reduction in pilot study, validated with clinical measures (GAD-7, BDI-II).
-                        <br/>- 5k visitors in 24h at MVP launch through 65k-member community partnership.
-                        <br/>- Designed, built, and shipped a commercial-grade app on Google Play.
-                        <br/>- Hosted and mentored 7 cross-disciplinary interns (design, research, engineering, data science).
-                        <br/>- Authored a 255 page book distilling research into usable frameworks.
-                    </p>
-                </a>
-            </div>
-        </div>
+        <div id="article" data-index-sections-only>
 
-        <div id="article">
+            <!-- Impact highlights, in the page's own heading and list styles and its column width. -->
+            <h3 class="fade">Impact highlights found in case studies</h3>
+            <ul class="fade">
+                <li><p><b>49%</b> average anxiety reduction in pilot study, validated with clinical measures (GAD-7, BDI-II).</p></li>
+                <li><p><b>5k</b> visitors in 24h at MVP launch through 65k-member community partnership.</p></li>
+                <li><p>Designed, built, and shipped a commercial-grade app on Google Play.</p></li>
+                <li><p>Hosted and mentored <b>7</b> cross-disciplinary interns (design, research, engineering, data science).</p></li>
+                <li><p>Authored a <b>255</b> page book distilling research into usable frameworks.</p></li>
+            </ul>
+
+            <!-- Phones only: contents card under the summary. Filled by /assets/js/section-index.js. -->
+            <nav class="section-index-inline fade" data-section-index-inline aria-label="Contents"></nav>
+
 
             <i class="ph ph-device-mobile-speaker section-icon fade" style="transform: scaleY(-1);"></i>
 

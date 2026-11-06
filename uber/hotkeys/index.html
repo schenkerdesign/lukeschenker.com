@@ -21,10 +21,12 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-11-05-live">
 
     <!-- Scripts -->
-    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/animations.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/section-index.js?v=2026-11-05-live" defer></script>
+    <script src="/assets/js/summary-fold.js?v=2026-11-05-live" defer></script>
 
     <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,12 +38,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
 
 </head>
-<body>
+<body class="uber-case has-summary">
 
-    <div id="header">
-        <a href="/">Home</a>
-        <a href="/#testimonials">Testimonials</a>
-        <a href="/about/">About</a>
+    <!-- Same floating nav as the homepage and About; a case study sits under Work -->
+    <div id="header" class="header--pill">
+        <a href="/" class="nav-projects is-current">Work</a>
+        <a href="/about/" class="nav-about">About</a>
     </div>
 
     <div class="header-image-container">
@@ -79,45 +81,56 @@
             </div>
         </div>
 
-        <div class="info-container">
-            <div class="info-box tldr">
-                 <a href="#problem" class="tldr-section">
-                    <p class="tldr-title">Context & Problem: Efficiency and onboarding were critical as Uber scaled Map Maker</p>
-                    <p class="tldr-bullets">- $250k/mo Pittsburgh mapping team depended on Map Maker daily
-                        <br/>- $1.2M/mo India expansion in 6 months, multiplying user base
-                        <br/>- Efficiency gains valuable before rollout
-                    </p>
-                </a>
-                <a href="#strategy" class="tldr-section">
-                    <p class="tldr-title">Strategy & Collaboration: Iteration, alignment, and cross-functional buy-in</p>
-                    <p class="tldr-bullets">- Observed daily work, interviewed users, stakeholders, and management
-                        <br/>- Consolidated ideas into 3 options; tested with 8 users via hi-fi “interactive” prototypes
-                        <br/>- PM concerns about adoption shaped schema design (simple mental model, easy onboarding)
-                        <br/>- Brought engineer into co-research session; aligned on visual decisions and built trust
-                        <br/>- Brainstormed schema/visuals with users (drawing on gaming analogies)
-                    </p>
-                </a>
-                <a href="#solution" class="tldr-section">
-                    <p class="tldr-title">Solution: Unified Shortcut Schema</p>
-                    <p class="tldr-bullets">- Users kept right hand on mouse; schema designed around maintained left-hand orientation
-                        <br/>- Category system enabled 50+ functions with &lt;30 accessible keys
-                        <br/>- Keys toggled categories, engaged tools, or held high-frequency functions
-                        <br/>- 5-minute onboarding guide & in-app visual references ensured fast adoption
-                        <br/>- Schema was scalable, memorable, and enjoyable to use
-                    </p>
-                </a>
-                <a href="#impact" class="tldr-section">
-                    <p class="tldr-title">Impact: 27% efficiency gain and $400k+/mo savings at scale</p>
-                    <p class="tldr-bullets">- $72k/mo savings in Pittsburgh, projected $400k/mo with India rollout
-                        <br/>- Faster onboarding enabled smooth and expedited expansion
-                        <br/>- Users loved the schema; morale improved, trust in Map Maker team grew
-                        <br/>- Long-term adoption: years later, “user uprising” pushed back on changes to the schema
-                    </p>
-                </a>
-            </div>
-        </div>
+        <div id="article" data-index-sections-only>
 
-        <div id="article">
+            <!-- Summary rows, same format as the SHRP and AI-org pages. The words are the page's original summary card. -->
+            <div class="cs-top is-foldable">
+                <div class="cs-beat">
+                    <p class="cs-label">Context & Problem</p>
+                    <p class="cs-head">Efficiency and onboarding were critical as Uber scaled Map Maker</p>
+                    <ul class="cs-list">
+                        <li>$250k/mo Pittsburgh mapping team depended on Map Maker daily</li>
+                        <li>$1.2M/mo India expansion in 6 months, multiplying user base</li>
+                        <li>Efficiency gains valuable before rollout</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Strategy & Collaboration</p>
+                    <p class="cs-head">Iteration, alignment, and cross-functional buy-in</p>
+                    <ul class="cs-list">
+                        <li>Observed daily work, interviewed users, stakeholders, and management</li>
+                        <li>Consolidated ideas into 3 options; tested with 8 users via hi-fi “interactive” prototypes</li>
+                        <li>PM concerns about adoption shaped schema design (simple mental model, easy onboarding)</li>
+                        <li>Brought engineer into co-research session; aligned on visual decisions and built trust</li>
+                        <li>Brainstormed schema/visuals with users (drawing on gaming analogies)</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Solution</p>
+                    <p class="cs-head">Unified Shortcut Schema</p>
+                    <ul class="cs-list">
+                        <li>Users kept right hand on mouse; schema designed around maintained left-hand orientation</li>
+                        <li>Category system enabled 50+ functions with &lt;30 accessible keys</li>
+                        <li>Keys toggled categories, engaged tools, or held high-frequency functions</li>
+                        <li>5-minute onboarding guide & in-app visual references ensured fast adoption</li>
+                        <li>Schema was scalable, memorable, and enjoyable to use</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Impact</p>
+                    <p class="cs-head">27% efficiency gain and $400k+/mo savings at scale</p>
+                    <ul class="cs-list">
+                        <li>$72k/mo savings in Pittsburgh, projected $400k/mo with India rollout</li>
+                        <li>Faster onboarding enabled smooth and expedited expansion</li>
+                        <li>Users loved the schema; morale improved, trust in Map Maker team grew</li>
+                        <li>Long-term adoption: years later, “user uprising” pushed back on changes to the schema</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Phones only: contents card under the summary. Filled by /assets/js/section-index.js. -->
+            <nav class="section-index-inline fade" data-section-index-inline aria-label="Contents"></nav>
+
 
             <h2 id="problem" class="fade">Context & Problem</h2>
 

@@ -1,5 +1,4 @@
-// Password gate UI for the protected case studies (Luke 2026-10-28). Styles: /assets/css/case-study-gate.css.
-//
+// Password gate UI for the protected case studies. Styles: /assets/css/case-study-gate.css.
 // One gate, two places:
 //   - the gate page itself, which a protected page (today /shrp/) serves before the password (built by StatiCrypt from
 //     _tools/gate/password_template.html): direct visits, and every visit on a phone;
@@ -8,7 +7,6 @@
 // The modal checks the password against the encrypted page with StatiCrypt's own engine and saves it exactly as the
 // gate page does, so the case study then opens without asking again. If anything here can't run, the link simply
 // goes to the gate page, which always works.
-//
 // Gate content (title, copy, video, email subject and body) comes from /assets/data/case-study-gates.json, which
 // _tools/encrypt-case-studies.mjs writes from the pages themselves; the gate page gets its own entry inlined.
 (function () {
@@ -64,7 +62,7 @@
         var title = el('h2', 'cs-gate-title', gate.title);
         title.id = 'cs-gate-title';
         text.appendChild(title);
-        // *Starred* parts of the copy are highlighted in white [Luke 2026-10-28]; the rest stays grey.
+        // *Starred* parts of the copy are highlighted in white; the rest stays grey.
         var lead = el('p', 'cs-gate-lead');
         String(gate.lead || '').split('*').forEach(function (part, i) {
             if (part) lead.appendChild(i % 2 ? el('span', 'cs-gate-em', part) : document.createTextNode(part));
@@ -73,7 +71,7 @@
         body.appendChild(text);
 
         var form = el('form', 'cs-gate-form');
-        // A plain text field [Luke-decided: "We don't have to make it terribly sneaky"]. Phone keyboards would
+        // A plain text field. Phone keyboards would
         // capitalize, autocorrect or add a space and break the password, so all of that is off and spaces are trimmed.
         var input = el('input', 'cs-gate-input');
         input.type = 'text';
@@ -88,7 +86,7 @@
         error.setAttribute('role', 'alert');
         error.hidden = true;
 
-        // Two ways to ask for the password [Luke 2026-10-28]: copy the address, or open a ready-made email.
+        // Two ways to ask for the password: copy the address, or open a ready-made email.
         var emailRow = el('div', 'cs-gate-email');
         var copy = el('button');
         copy.type = 'button';
@@ -100,10 +98,10 @@
         mail.innerHTML = '<i class="ph-bold ph-envelope-simple" aria-hidden="true"></i><span>Email me</span>';
         emailRow.appendChild(copy);
         emailRow.appendChild(mail);
-        // Under the copy that mentions them [Luke 2026-10-28]; the password form follows.
+        // Under the copy that mentions them; the password form follows.
         text.appendChild(emailRow);
 
-        // Phones only (CSS): a short rule and a label between the email buttons and the field [Luke 2026-10-28].
+        // Phones only (CSS): a short rule and a label between the email buttons and the field.
         form.appendChild(el('hr', 'cs-gate-rule'));
         var label = el('label', 'cs-gate-label', 'Enter the password provided to you');
         label.htmlFor = input.id = 'cs-gate-password';

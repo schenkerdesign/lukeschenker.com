@@ -15,3 +15,25 @@
 .video-scrub-knob { position: absolute; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: #fff;
     opacity: 0; transition: opacity 0.15s ease; }
 .video-scrub-bar:hover .video-scrub-knob, .video-scrub.is-scrubbing .video-scrub-knob { opacity: 1; }
+
+/* Centered replay + play/pause (data-center-controls). Keyboard focus keeps them up via :focus-visible,
+   not :focus-within: a mouse click also focuses the button, which left them stuck after the pointer left. */
+.has-center-controls .video-scrub-play { display: none; }
+.video-center-controls { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 16px;
+    opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+.video-scrub:hover .video-center-controls, .video-scrub.show-scrub .video-center-controls, .video-center-controls:has(:focus-visible) { opacity: 1; }
+.video-scrub:hover .video-center-btn, .video-scrub.show-scrub .video-center-btn, .video-center-controls:has(:focus-visible) .video-center-btn { pointer-events: auto; }
+.video-center-btn { width: 64px; height: 64px; border: 1px solid rgba(255, 255, 255, 0.25); padding: 0; border-radius: 50%; background: rgba(0, 0, 0, 0.6);
+    color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 26px;
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: background 0.15s ease; }
+.video-center-btn:hover { background: rgba(0, 0, 0, 0.85); }
+@media (max-width: 700px) { .video-center-btn { width: 52px; height: 52px; font-size: 22px; } }
+/* After a replay click, hidden until the pointer leaves and returns */
+.video-scrub.controls-dismissed .video-scrub-bar, .video-scrub.controls-dismissed .video-center-controls { opacity: 0; pointer-events: none; }
+.video-scrub.controls-dismissed .video-center-btn { pointer-events: none; }
+
+/* Click-to-play videos (data-click-to-play): the still stays clean, with a play circle only on hover; controls follow hover in every state */
+.video-scrub.is-idle .video-center-btn:first-child { display: none; }
+.video-scrub.is-idle .video-scrub-bar { opacity: 0; pointer-events: none; }
+.video-scrub.is-idle video { cursor: pointer; }
+

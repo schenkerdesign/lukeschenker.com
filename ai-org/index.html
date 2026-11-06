@@ -6,7 +6,7 @@
     <title>AI Org | Luke Schenker</title>
 
     <meta property="og:title" content="My custom AI Organization and practices that shipped SHRP | Luke Schenker">
-    <!-- Link previews (Luke 2026-10-28): image = images/ai-org/og-image.jpg, 1200 x 630 -->
+    <!-- Link previews: image = images/ai-org/og-image.jpg, 1200 x 630 -->
     <meta name="description" content="How I shipped a product solo in five months with a custom AI org: defined roles, shared memory, and feedback loops.">
     <meta property="og:description" content="How I shipped a product solo in five months with a custom AI org: defined roles, shared memory, and feedback loops.">
     <meta property="og:image" content="https://lukeschenker.com/assets/images/ai-org/og-image.jpg">
@@ -27,13 +27,13 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-10-28-live">
-    <link rel="stylesheet" href="/assets/css/video-scrub.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-11-05-live">
+    <link rel="stylesheet" href="/assets/css/video-scrub.css?v=2026-11-05-live">
 
     <!-- Scripts -->
-    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
-    <script src="/assets/js/ai-org-diagram.js?v=2026-10-28-live"></script>
-    <script src="/assets/js/section-index.js?v=2026-10-28-live" defer></script>
+    <script src="/assets/js/animations.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/ai-org-diagram.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/section-index.js?v=2026-11-05-live" defer></script>
 
     <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,65 +48,88 @@
 </head>
 <body class="ai-org">
 
-    <div id="header">
-        <a href="/">Home</a>
-        <a href="/#testimonials">Testimonials</a>
-        <a href="/about/">About</a>
+    <!-- Same floating nav as the homepage and About; a case study sits under Work -->
+    <div id="header" class="header--pill">
+        <a href="/" class="nav-projects is-current">Work</a>
+        <a href="/about/" class="nav-about">About</a>
     </div>
 
-    <!-- Header loop: AI-org motion piece (built in motion/ai-org, PS session 2026-10-23). 1500 px wide MP4, muted autoplay loop. -->
+    <!-- Header: the session diagram as live vector on a flat gray. Copied from the homepage card. A separate class, because ai-org-diagram.js binds to the first .session-diagram. -->
     <div class="header-image-container">
-        <video src="/assets/images/ai-org/ai-org-loop.mp4?v=2112" poster="/assets/images/ai-org/ai-org-poster.jpg" class="header-image border" data-scrub autoplay muted loop playsinline aria-label="What I did and what AI did, across six stages: Problem, Design, Build, Ship, Learn, Operate"></video>
+        <div class="header-image border ai-header">
+            <svg class="ai-header-diagram" viewBox="0 3040 1512 640" role="img" aria-label="How a session works: boot up, the session, wind down, and the org filesystem layer they read from and save to"><rect data-part="B" transform="matrix(1 0 0 1 202.25 3399.5)" width="894" height="254.5" rx="24" class="sd-org"/><rect data-part="B" transform="matrix(1 0 0 1 243.75 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="B" transform="matrix(1 0 0 1 234 3493.816)" width="153" height="107.736083984375" rx="14" class="sd-group"/><rect data-part="B" transform="matrix(1 0 0 1 400.375 3493.816)" width="667.75" height="107.736083984375" rx="14" class="sd-group"/><rect data-part="B" transform="matrix(1 0 0 1 413.25 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="C" transform="matrix(1 0 0 1 582.75 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="B" transform="matrix(1 0 0 1 752.25 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><rect data-part="B" transform="matrix(1 0 0 1 921.75 3504.938)" width="134.75" height="87.56866455078125" rx="14" class="sd-box"/><text transform="matrix(1 0 0 1 963.125 3066.868)" class="sd-title"><tspan x="0" y="20.5">Wind down</tspan></text><text data-part="A" transform="matrix(1 0 0 1 262.125 3116.789)" class="sd-title"><tspan x="0" y="20.5">Boot up</tspan></text><text data-part="B" transform="matrix(1 0 0 1 839.438 3429.433)" class="sd-body"><tspan x="0" y="12.5">Org filesystem layer</tspan></text><text data-part="B" transform="matrix(1 0 0 1 235 3606.052)" class="sd-body"><tspan x="0" y="12.5">Code knowledge graphs</tspan></text><text data-part="B" transform="matrix(1 0 0 1 665.75 3606.052)" class="sd-body"><tspan x="0" y="12.5">Org knowledge graph</tspan></text><text data-part="B" transform="matrix(1 0 0 1 278.625 3540.723)" class="sd-body"><tspan x="0" y="12.5">Codebases</tspan></text><text data-part="B" transform="matrix(1 0 0 1 437.125 3540.723)" class="sd-body"><tspan x="0" y="12.5">Product docs</tspan></text><text data-part="C" transform="matrix(1 0 0 1 610.6 3540.723)" class="sd-body"><tspan x="0" y="12.5">Agent roles</tspan></text><text data-part="B" transform="matrix(1 0 0 1 790.625 3540.723)" class="sd-body"><tspan x="0" y="12.5">Org docs</tspan></text><text data-part="B" transform="matrix(1 0 0 1 945.625 3540.723)" class="sd-body"><tspan x="0" y="12.5">Company docs</tspan></text><text transform="matrix(1 0 0 1 10.125 3157)" class="sd-body"><tspan x="0" y="12.5">Session starts with user </tspan><tspan x="0" y="28.5">defined task, and goal </tspan><tspan x="0" y="44.5">criteria, and AI role</tspan></text><text data-part="A" transform="matrix(1 0 0 1 262.125 3157)" class="sd-body"><tspan x="0" y="12.5">Boots up AI role, and gains </tspan><tspan x="0" y="28.5">context from org based on </tspan><tspan x="0" y="44.5">task</tspan></text><text transform="matrix(1 0 0 1 562.188 3157)" class="sd-body"><tspan x="0" y="12.5">Session proceeds </tspan><tspan x="0" y="28.5">collaboratively</tspan></text><text transform="matrix(1 0 0 1 773.688 3165)" class="sd-body"><tspan x="0" y="12.5">Session completes </tspan><tspan x="0" y="28.5">stated goal</tspan></text><text transform="matrix(1 0 0 1 963.125 3106.747)" class="sd-body"><tspan x="0" y="12.5">AI logs full discussion, </tspan><tspan x="0" y="28.5">distills it, finishes pending </tspan><tspan x="0" y="44.5">writes, and pushes to Git</tspan></text><text data-part="D" transform="matrix(1 0 0 1 963.125 3229)" class="sd-body"><tspan x="0" y="12.5">AI walks through personal retro </tspan><tspan x="0" y="28.5">with me, discussing and logging </tspan><tspan x="0" y="44.5">friction points, what went </tspan><tspan x="0" y="60.5">well, what should improve, and </tspan><tspan x="0" y="76.5">themes.</tspan></text><text data-part="D" transform="matrix(1 0 0 1 1276 3229)" class="sd-body"><tspan x="0" y="12.5">Retro logs are used later to </tspan><tspan x="0" y="28.5">inform more significant changes </tspan><tspan x="0" y="44.5">to the org and roles.</tspan></text><text transform="matrix(1 0 0 1 1276 3119.789)" class="sd-body"><tspan x="0" y="12.5">Following session</tspan></text><text transform="matrix(1 0 0 1 1211.133 3079.868)" class="sd-body"><tspan x="0" y="12.5">optional </tspan><tspan x="0" y="28.5">handoff</tspan></text><text transform="matrix(1 0 0 1 668.094 3291.75)" class="sd-body"><tspan x="0" y="12.5">AI role gains </tspan><tspan x="0" y="28.5">additional context </tspan><tspan x="0" y="44.5">as needed</tspan></text><text data-part="D" transform="matrix(1 0 0 1 1049.25 3344.556)" class="sd-body"><tspan x="0" y="12.5">All saved durably </tspan><tspan x="0" y="28.5">in the org</tspan></text><text transform="matrix(1 0 0 1 447.313 3286.75)" class="sd-body"><tspan x="0" y="12.5">AI updates code, </tspan><tspan x="0" y="28.5">docs, etc according </tspan><tspan x="0" y="44.5">to instruction and </tspan><tspan x="0" y="60.5">defined practices.</tspan></text><text data-part="A" transform="matrix(1 0 0 1 177.492 3292.25)" class="sd-body"><tspan x="0" y="12.5">Subagent navigates </tspan><tspan x="0" y="28.5">the org and surfaces </tspan><tspan x="0" y="44.5">relevant context</tspan></text><path transform="matrix(1 0 0 1 197.75 3182)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 197.75 3182)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 473.625 3182)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 473.625 3182)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 705.5 3182)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 705.5 3182)" d="" class="sd-line"/><path data-part="D" transform="matrix(1 0 0 1 1212.5 3258)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="D" transform="matrix(1 0 0 1 1212.5 3258)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 1212.5 3130.789)" d="M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L2.04 1.00 L2.04 0.00 L2.04 -1.00 L0.00 -1.00 L0.00 0.00 Z M6.13 0.00 L6.13 1.00 L10.21 1.00 L10.21 0.00 L10.21 -1.00 L6.13 -1.00 L6.13 0.00 Z M14.29 0.00 L14.29 1.00 L18.38 1.00 L18.38 0.00 L18.38 -1.00 L14.29 -1.00 L14.29 0.00 Z M22.46 0.00 L22.46 1.00 L26.54 1.00 L26.54 0.00 L26.54 -1.00 L22.46 -1.00 L22.46 0.00 Z M30.63 0.00 L30.63 1.00 L34.71 1.00 L34.71 0.00 L34.71 -1.00 L30.63 -1.00 L30.63 0.00 Z M38.79 0.00 L38.79 1.00 L42.88 1.00 L42.88 0.00 L42.88 -1.00 L38.79 -1.00 L38.79 0.00 Z M46.96 0.00 L46.96 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L46.96 -1.00 L46.96 0.00 Z M49.71 0.71 C50.10 0.32 50.10 -0.32 49.71 -0.71 L43.34 -7.07 C42.95 -7.46 42.32 -7.46 41.93 -7.07 C41.54 -6.68 41.54 -6.05 41.93 -5.66 L47.59 0.00 L41.93 5.66 C41.54 6.05 41.54 6.68 41.93 7.07 C42.32 7.46 42.95 7.46 43.34 7.07 L49.71 0.71 Z M0.00 0.00 L0.00 1.00 L2.04 1.00 L2.04 0.00 L2.04 -1.00 L0.00 -1.00 L0.00 0.00 Z M6.13 0.00 L6.13 1.00 L10.21 1.00 L10.21 0.00 L10.21 -1.00 L6.13 -1.00 L6.13 0.00 Z M14.29 0.00 L14.29 1.00 L18.38 1.00 L18.38 0.00 L18.38 -1.00 L14.29 -1.00 L14.29 0.00 Z M22.46 0.00 L22.46 1.00 L26.54 1.00 L26.54 0.00 L26.54 -1.00 L22.46 -1.00 L22.46 0.00 Z M30.63 0.00 L30.63 1.00 L34.71 1.00 L34.71 0.00 L34.71 -1.00 L30.63 -1.00 L30.63 0.00 Z M38.79 0.00 L38.79 1.00 L42.88 1.00 L42.88 0.00 L42.88 -1.00 L38.79 -1.00 L38.79 0.00 Z M46.96 0.00 L46.96 1.00 L49.00 1.00 L49.00 0.00 L49.00 -1.00 L46.96 -1.00 L46.96 0.00 Z " class="sd-line"/><path transform="matrix(1 0 0 1 1212.5 3130.789)" d="" class="sd-line"/><path transform="matrix(0.707 -0.707 0.707 0.707 913.625 3170.748)" d="M50.21 0.71 C50.60 0.32 50.60 -0.32 50.21 -0.71 L43.84 -7.07 C43.45 -7.46 42.82 -7.46 42.43 -7.07 C42.04 -6.68 42.04 -6.05 42.43 -5.66 L48.08 0.00 L42.43 5.66 C42.04 6.05 42.04 6.68 42.43 7.07 C42.82 7.46 43.45 7.46 43.84 7.07 L50.21 0.71 Z M0.00 0.00 L0.00 1.00 L49.50 1.00 L49.50 0.00 L49.50 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(0.707 -0.707 0.707 0.707 913.625 3170.748)" d="" class="sd-line"/><path data-part="D" transform="matrix(0.707 0.707 0.707 -0.707 913.625 3194)" d="M50.21 0.71 C50.60 0.32 50.60 -0.32 50.21 -0.71 L43.84 -7.07 C43.45 -7.46 42.82 -7.46 42.43 -7.07 C42.04 -6.68 42.04 -6.05 42.43 -5.66 L48.08 0.00 L42.43 5.66 C42.04 6.05 42.04 6.68 42.43 7.07 C42.82 7.46 43.45 7.46 43.84 7.07 L50.21 0.71 Z M0.00 0.00 L0.00 1.00 L49.50 1.00 L49.50 0.00 L49.50 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="D" transform="matrix(0.707 0.707 0.707 -0.707 913.625 3194)" d="" class="sd-line"/><path data-part="A" transform="matrix(0 1 -1 0 326.25 3218)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="A" transform="matrix(0 1 -1 0 326.25 3218)" d="" class="sd-line"/><path transform="matrix(0 1 -1 0 600.75 3218)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(0 1 -1 0 600.75 3218)" d="" class="sd-line"/><path data-part="D" transform="matrix(0 1 -1 0 1032.625 3324.29)" d="M100.85 0.71 C101.24 0.32 101.24 -0.32 100.85 -0.71 L94.49 -7.07 C94.10 -7.46 93.46 -7.46 93.07 -7.07 C92.68 -6.68 92.68 -6.05 93.07 -5.66 L98.73 0.00 L93.07 5.66 C92.68 6.05 92.68 6.68 93.07 7.07 C93.46 7.46 94.10 7.46 94.49 7.07 L100.85 0.71 Z M0.00 0.00 L0.00 1.00 L100.14 1.00 L100.14 0.00 L100.14 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="D" transform="matrix(0 1 -1 0 1032.625 3324.29)" d="" class="sd-line"/><path transform="matrix(0 -1 -1 0 647.625 3450.433)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path transform="matrix(0 -1 -1 0 647.625 3450.433)" d="" class="sd-line"/><path data-part="A" transform="matrix(0 -1 1 0 368.75 3450.433)" d="M233.14 0.71 C233.53 0.32 233.53 -0.32 233.14 -0.71 L226.78 -7.07 C226.39 -7.46 225.75 -7.46 225.36 -7.07 C224.97 -6.68 224.97 -6.05 225.36 -5.66 L231.02 0.00 L225.36 5.66 C224.97 6.05 224.97 6.68 225.36 7.07 C225.75 7.46 226.39 7.46 226.78 7.07 L233.14 0.71 Z M0.00 0.00 L0.00 1.00 L232.43 1.00 L232.43 0.00 L232.43 -1.00 L0.00 -1.00 L0.00 0.00 Z " class="sd-line"/><path data-part="A" transform="matrix(0 -1 1 0 368.75 3450.433)" d="" class="sd-line"/><path transform="matrix(1 0 0 1 606.25 3109.583)" d="M9.63 12.04 L1.38 12.04 C1.01 12.04 0.66 11.90 0.40 11.64 C0.14 11.38 0.00 11.03 0.00 10.67 L0.00 2.42 C0.00 2.05 0.14 1.70 0.40 1.44 C0.66 1.19 1.01 1.04 1.38 1.04 C1.74 1.04 2.09 1.19 2.35 1.44 C2.61 1.70 2.75 2.05 2.75 2.42 L2.75 7.35 L5.26 4.83 C8.33 1.75 12.50 0.01 16.84 0.00 L16.93 0.00 C21.25 -0.01 25.39 1.68 28.46 4.70 C28.71 4.95 28.85 5.30 28.85 5.66 C28.85 6.02 28.71 6.36 28.46 6.62 C28.21 6.88 27.87 7.02 27.51 7.03 C27.15 7.04 26.80 6.91 26.54 6.66 C23.98 4.15 20.53 2.74 16.93 2.75 L16.86 2.75 C13.23 2.76 9.76 4.21 7.21 6.78 L4.69 9.29 L9.63 9.29 C9.99 9.29 10.34 9.44 10.60 9.69 C10.86 9.95 11.00 10.30 11.00 10.67 C11.00 11.03 10.86 11.38 10.60 11.64 C10.34 11.90 9.99 12.04 9.63 12.04 Z M31.63 20.29 L23.38 20.29 C23.01 20.29 22.66 20.44 22.40 20.69 C22.14 20.95 22.00 21.30 22.00 21.67 C22.00 22.03 22.14 22.38 22.40 22.64 C22.66 22.90 23.01 23.04 23.38 23.04 L28.31 23.04 L25.79 25.56 C23.24 28.12 19.77 29.57 16.14 29.58 L16.07 29.58 C12.47 29.59 9.02 28.19 6.46 25.67 C6.33 25.54 6.18 25.43 6.01 25.36 C5.84 25.29 5.66 25.26 5.48 25.26 C5.29 25.26 5.11 25.29 4.94 25.36 C4.78 25.43 4.62 25.54 4.49 25.67 C4.37 25.80 4.27 25.96 4.20 26.13 C4.13 26.30 4.10 26.48 4.10 26.66 C4.11 26.85 4.15 27.03 4.22 27.19 C4.30 27.36 4.41 27.51 4.54 27.64 C7.61 30.66 11.76 32.34 16.07 32.33 L16.16 32.33 C20.50 32.32 24.67 30.58 27.73 27.50 L30.25 24.99 L30.25 29.92 C30.25 30.28 30.39 30.63 30.65 30.89 C30.91 31.15 31.26 31.29 31.63 31.29 C31.99 31.29 32.34 31.15 32.60 30.89 C32.86 30.63 33.00 30.28 33.00 29.92 L33.00 21.67 C33.00 21.30 32.86 20.95 32.60 20.69 C32.34 20.44 31.99 20.29 31.63 20.29 Z " class="sd-line"/></svg>
+        </div>
     </div>
 
     <div class="content-container">
-        <h1>My custom AI Organization and practices that shipped SHRP</h1>
+        <h1>Custom AI organization for shipping a product solo</h1>
 
         <div class="info-container">
             <div class="info-box">
-                <p class="info-header">Company</p>
-                <p class="info-content">Personal work</p>
+                <p class="info-header">Product type</p>
+                <p class="info-content">Internal AI system</p>
+                <p class="info-content"><a class="info-link" href="/shrp/"><span>For building SHRP</span><i class="ph ph-arrow-square-out" aria-hidden="true"></i></a></p>
             </div>
             <div class="info-box">
-                <p class="info-header">Built by</p>
-                <p class="info-content">Me, solo</p>
+                <p class="info-header">Role</p>
+                <p class="info-content">Designer &amp; architect</p>
             </div>
             <div class="info-box">
                 <p class="info-header">Team</p>
-                <p class="info-content">3 AI roles: Product Strategist, Developer, Org Strategist</p>
+                <p class="info-content">3 AI roles: <span class="info-nowrap">Developer,</span> <span class="info-nowrap">Product Strategist,</span> <span class="info-nowrap">Org Strategist</span></p>
+            </div>
+            <div class="info-box">
+                <p class="info-header">Built with</p>
+                <p class="info-content">Claude Code 5x Max plan ($100/mo)</p>
             </div>
             <div class="info-box">
                 <p class="info-header">Timeline</p>
-                <p class="info-content">May-September 2026</p>
-            </div>
-            <div class="info-box">
-                <p class="info-header">Focus</p>
-                <p class="info-content">Automating practice, defining AI roles, building new workflows</p>
+                <p class="info-content">May 2026 - Present</p>
+                <p class="info-content">Core system in 4 weeks</p>
             </div>
         </div>
-
         <div id="article" data-index-sections-only>
 
-            <!-- Body generated from the AI-org lofi (59:614) by tools/gen-ai-org-body.mjs. Special elements are placeholders for now. -->
-            <!-- EXPERIMENT 2026-10-27: What is it / Why build it / What came of it as the SHRP-style 3-card summary row (copy unchanged except dropped trailing periods on the leads). Revert this commit to restore the stacked h3s. -->
-            <div class="summary-row fade">
-                <div class="summary-col">
-                    <p class="summary-label">What is it?</p>
-                    <p class="summary-lead">AI team with defined roles, a shared memory, and a self-optimizing feedback loop to assist my work</p>
-                    <p>I wanted a closed-loop system in which AI could navigate, manage, and improve over time, optimizing for collaborating with me and assisting me.</p>
+            <!-- Case-study top. -->
+            <div class="cs-top">
+                <div class="cs-beat">
+                    <p class="cs-label">Business problem</p>
+                    <p class="cs-head">Cutting the cost of building a product</p>
+                    <p class="cs-desc">Shipping a product takes engineering, research, design, business strategy, marketing, legal and compliance. I didn't have the capital to hire for all those roles, or the time to build a team.</p>
                 </div>
-                <div class="summary-col">
-                    <p class="summary-label">Why build it?</p>
-                    <p class="summary-lead">Expedite production while maintaining total ownership</p>
-                    <p>The production process prior to AI had many aspects that could be automated, based on AI’s current strengths today. I wanted to build a system that allowed me complete control, while handling rule-based work for which my own decisions are not as critical.</p>
+                <div class="cs-beat">
+                    <p class="cs-label">People problem</p>
+                    <p class="cs-head">How might a designer ship a market-ready product without every skill it takes?</p>
+                    <p class="cs-desc">I brought design, research, product strategy and management experience. The other skills required (full-stack engineering, legal, compliance, marketing) would have taken months or years to learn, and my time was finite and better spent on my strengths.</p>
                 </div>
-                <div class="summary-col">
-                    <p class="summary-label">What came of it?</p>
-                    <p class="summary-lead">A 0→1 product in five months, and a new way of working</p>
-                    <p>I integrated AI into every step of my production process, and found advantages across all of them. Some advantages were speed, some were regarding how thoroughly I could inform decisions, and many areas saw advantages in both.</p>
+                <div class="cs-beat">
+                    <p class="cs-label">Solution</p>
+                    <p class="cs-head">Build an AI system that extends one designer's skills and speed</p>
+                    <p class="cs-desc">I built specialized AI roles with a shared memory and a feedback loop that improves them over time. For skills I lacked, I set the task and criteria, and reviewed the work. For skills I had, AI was a collaborator: it offered assistance, ideas, and versions in addition to my own, leaving all final calls to me.</p>
                 </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Result</p>
+                    <p class="cs-head">One designer shipped a full product in 5 months, on a $100-a-month AI plan</p>
+                    <p class="cs-desc">SHRP went from nothing to an MVP with first users in 2 months, and public beta on iOS and Android in 5. It would have taken me an estimated 18 to 24 months without this system to reach the same point.</p>
+                </div>
+
+                <!-- Time cost, one row above the video so it reads with the rows above. SHRP's larger timeline stays below its video. -->
+                <div class="cs-beat">
+                    <p class="cs-label">Time cost</p>
+                    <p class="cs-head">Core system built in 4 weeks, alongside <a href="/shrp/">SHRP</a></p>
+                    <p class="cs-desc">Roles, shared memory, and workflows were in place within a month, while SHRP's production processes ran through them within the first week. In that first month it took about 10% of my working time, and the system was already saving more than it cost. After that it averaged about 4%, and has required minimal time since.</p>
+                </div>
+
+                <!-- The solution video sits after the result so the four text beats read as one block, as on SHRP. First half second moved to the end so it opens on Problem. -->
+                <div class="cs-beat cs-beat--visual">
+                    <div class="cs-media">
+                        <video src="/assets/images/ai-org/ai-org-loop-start.mp4?v=2026-11-05-live" poster="/assets/images/ai-org/ai-org-loop-first-frame.jpg?v=2026-11-05-live" class="header-image border" data-scrub data-play-in-view data-center-controls preload="auto" muted loop playsinline aria-label="What I did and what AI did, across six stages: Problem, Design, Build, Ship, Learn, Operate"></video>
+                    </div>
+                </div>
+
             </div>
-            <!-- Phones only: contents card under the summary card (Luke 2026-10-27, as on SHRP). Filled by /assets/js/section-index.js. -->
+
+            <!-- Phones only: contents card under the summary card. Filled by /assets/js/section-index.js. -->
             <nav class="section-index-inline fade" data-section-index-inline aria-label="Contents"></nav>
             <h3 class="centered-title fade">AI Impact Summary</h3>
             <div class="stage-grid fade">
@@ -215,7 +238,7 @@
                         </div>
                         <div>
                             <p class="stage-point-label">Store-specific pipelines</p>
-                            <p>AI runs the iOS and Android release pipelines end-to-end, enabling 30 releases in 3 months.</p>
+                            <p>AI runs the iOS and Android release pipelines end-to-end.</p>
                         </div>
                         <div>
                             <p class="stage-point-label">I own every release</p>
@@ -424,7 +447,7 @@
                 <li><p>Architectural Decision Records (ADRs): Provided comprehensive rationale for engineering decisions. Currently 38 in org.</p></li>
                 <li><p>Product Requirements Docs (PRDs): Provided feature requirements and product rationale.</p></li>
             </ul>
-            <!-- Hand-laid-out from the lofi citation-linking diagram (exact lofi wording; layout balanced per Luke 2026-10-22). 858 total added per Luke. -->
+            <!-- Hand-laid-out from the lofi citation-linking diagram. -->
             <div class="diagram-wrap diagram-wrap--column citation-wrap fade">
                 <div class="diagram-scroll">
                     <svg class="citation-diagram" viewBox="0 26 480 346" role="img" aria-label="Citation linking between ADRs, PRDs and code files"><defs><marker id="cd-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" class="cd-head"/></marker></defs><text x="240.0" y="50" text-anchor="middle" class="sd-title">Citation linking</text><text x="90" y="76" text-anchor="middle" class="sd-body">38 total</text><text x="390" y="76" text-anchor="middle" class="sd-body">7 total</text><rect x="20" y="82" width="140" height="96" rx="14" class="sd-box"/><text x="90" y="114" text-anchor="middle" class="sd-strong">ADRs</text><text text-anchor="middle" class="sd-body"><tspan x="90" y="138">Technical decisions</tspan><tspan x="90" y="153">and full rationale</tspan></text><rect x="320" y="82" width="140" height="96" rx="14" class="sd-box"/><text x="390" y="114" text-anchor="middle" class="sd-strong">PRDs</text><text text-anchor="middle" class="sd-body"><tspan x="390" y="138">Product requirements</tspan><tspan x="390" y="153">and rationale</tspan></text><rect x="170" y="250" width="140" height="96" rx="14" class="sd-box"/><text x="240" y="282" text-anchor="middle" class="sd-strong">Code files</text><text text-anchor="middle" class="sd-body"><tspan x="240" y="306">File specific</tspan><tspan x="240" y="321">decisions</tspan></text><text x="240" y="360" text-anchor="middle" class="sd-body">858 total</text><text text-anchor="middle" class="sd-small"><tspan x="240.0" y="109.0">11 ADRs cite PRDs</tspan></text><line x1="166.0" y1="119.0" x2="314.0" y2="119.0" class="cd-arrow" marker-end="url(#cd-head)"/><line x1="314.0" y1="133.0" x2="166.0" y2="133.0" class="cd-arrow" marker-end="url(#cd-head)"/><text text-anchor="middle" class="sd-small"><tspan x="240.0" y="148.0">1 PRD cites ADR</tspan></text><line x1="292.7" y1="240.3" x2="353.3" y2="191.7" class="cd-arrow" marker-end="url(#cd-head)"/><text text-anchor="start" class="sd-small"><tspan x="330.2" y="226.0">70 code files</tspan><tspan x="330.2" y="239.0">cite PRDs</tspan></text><line x1="185.4" y1="240.3" x2="119.7" y2="187.7" class="cd-arrow" marker-end="url(#cd-head)"/><line x1="142.1" y1="187.7" x2="207.8" y2="240.3" class="cd-arrow" marker-end="url(#cd-head)"/><text text-anchor="end" class="sd-small"><tspan x="140.3" y="220.0">395 of 858 code</tspan><tspan x="140.3" y="233.0">files cite ADRs</tspan></text><text text-anchor="start" class="sd-small"><tspan x="188.5" y="200.0">25 ADRs cite</tspan><tspan x="188.5" y="213.0">specific files</tspan></text></svg>
@@ -610,7 +633,7 @@
         <div class="related-work-container">
             <a class="fade grow case-study" href="/shrp/">
                 <div class="image-wrapper image-wrapper--outlined">
-                    <video src="/assets/images/shrp/shrp-loop-1056.mp4?v=2" poster="/assets/images/shrp/shrp-poster-1056.jpg" class="case-study-hero" autoplay muted loop playsinline aria-label="SHRP: see your friends' social media use, track your own, and check each other" style="display: block; width: 100%;"></video>
+                    <video src="/assets/images/shrp/shrp-loop-1056.mp4?v=2026-11-05-live" poster="/assets/images/shrp/shrp-poster-1056.jpg" class="case-study-hero" autoplay muted loop playsinline aria-label="SHRP: see your friends' social media use, track your own, and check each other" style="display: block; width: 100%;"></video>
                 </div>
                 <h3>SHRP: Social Screentime</h3>
                 <p>Social screentime app for cutting back on social media.</p>
@@ -622,6 +645,6 @@
         </div>
 
     </div>
-    <script src="/assets/js/video-scrub.js?v=2026-10-28-live" defer></script>
+    <script src="/assets/js/video-scrub.js?v=2026-11-05-live" defer></script>
 </body>
 </html>

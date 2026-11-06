@@ -1,27 +1,23 @@
-// Section index for the case studies (portfolio go-live, 2026-10-27; spec in the go-live build handoff, §3).
-// Purpose [Luke]: "If you skim the index, you can kind of get an idea of what the entire story here is."
-//
+// Section index for the case studies.
+// Purpose: skimming the index should give an idea of the entire story.
 // Built from the page's own headings at load, so it never drifts from the content:
-//   "Summary" first, jumping to just below the title and meta row [Luke 2026-10-27: "the summary should go
-//             underneath the meta information"];
+//   "Summary" first, jumping to just below the title and meta row;
 //   level 1 = the h2 sections;
 //   level 2 = the h3s directly in #article (not the centered table titles), the bet cards labelled
-//             "Bet #N: name" [Luke-decided: a bare name doesn't say it's a bet], the timeline cards, the
+//             "Bet #N: name", the timeline cards, the
 //             finding headers, and the AI-org lettered parts ("A. ...").
 // Everything before the first h2 is the summary (e.g. the SHRP results headline) and gets no entries of its own.
 // Set in the page's HTML: data-index-label on an h2 gives it a short index title ("The Design Bets"),
 // data-index-skip leaves an h2 and its subsections out, and data-index-sections-only on #article drops the
-// level-2 entries (SHRP: "just links to the main sections ... are good enough") [Luke 2026-10-27].
-//
+// level-2 entries.
 // The current section is bolded. Subsections open only while the mouse is over their section (CSS), never from
-// scrolling [Luke 2026-10-27: "I only want that to expand and be shown when the mouse is hovering"].
+// scrolling.
 // Wide screens (CSS, >= 1384px): on the left, starting level with the page title, scrolling up with the page and
 // pinning below the nav bar. A caret button folds it to a round button and back. It hides while a block wider
 // than the widest cards (the full-width AI-org diagrams) passes under it.
 // Narrower screens: a floating menu button that opens the same index as a card over the dimmed page
-// [Luke 2026-10-27].
 // Phones, where a page asks for it with [data-section-index-inline] (SHRP: under the summary cards): an inline
-// contents card of the section titles as well [Luke 2026-10-27].
+// contents card of the section titles as well.
 (function () {
     var article = document.getElementById('article');
     if (!article) return;
@@ -140,7 +136,7 @@
     document.body.appendChild(rail);
 
     // A round button above Summary hides the list and brings it back; the button stays put and only its icon
-    // changes [Luke 2026-10-27]. The choice is remembered in this browser (it may be unavailable, e.g. in a private
+    // changes. The choice is remembered in this browser (it may be unavailable, e.g. in a private
     // window; then the index simply starts open).
     var collapse = document.createElement('button');
     collapse.type = 'button';
@@ -150,7 +146,7 @@
         nav.classList.toggle('is-collapsed', collapsed);
         collapse.setAttribute('aria-expanded', String(!collapsed));
         collapse.setAttribute('aria-label', collapsed ? 'Show contents' : 'Hide contents');
-        // Folded it shows the menu icon, like the narrow-screen button [Luke 2026-10-27]; open, a caret to fold it.
+        // Folded it shows the menu icon, like the narrow-screen button; open, a caret to fold it.
         collapse.innerHTML = '<i class="ph-bold ' + (collapsed ? 'ph-list' : 'ph-caret-left') + '" aria-hidden="true"></i>';
         if (remember) {
             try { localStorage.setItem('section-index-collapsed', collapsed ? '1' : '0'); } catch (e) { /* not remembered */ }

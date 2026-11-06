@@ -9,6 +9,9 @@ const COLORS = [
 document.addEventListener("DOMContentLoaded", function () {
     gradient.initGradient("#" + "mesh-canvas", COLORS);
 
+    // Hold the gradient still for "reduce motion"
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     var x = 0;
     setInterval(function () {
         gradient?.changePosition(x);

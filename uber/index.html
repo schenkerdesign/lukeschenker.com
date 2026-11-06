@@ -21,10 +21,11 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-11-05-live">
 
     <!-- Scripts -->
-    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/animations.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/section-index.js?v=2026-11-05-live" defer></script>
 
     <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,12 +37,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
 
 </head>
-<body>
+<body class="uber-case">
 
-    <div id="header">
-        <a href="/">Home</a>
-        <a href="/#testimonials">Testimonials</a>
-        <a href="/about/">About</a>
+    <!-- Same floating nav as the homepage and About; a case study sits under Work -->
+    <div id="header" class="header--pill">
+        <a href="/" class="nav-projects is-current">Work</a>
+        <a href="/about/" class="nav-about">About</a>
     </div>
 
     <div class="header-image-container">
@@ -62,20 +63,20 @@
             </div>
         </div>
 
-        <div class="info-container">
-            <div class="info-box tldr">
-                 <a href="#footer-title" class="tldr-section">
-                    <p class="tldr-title">Impact Highlights found in case studies:</p>
-                    <p class="tldr-bullets">- 27% increase in overall efficiency, saving $72k/mo; features scaled to projected $400k+/mo in savings.
-                        <br/>- 70% faster conflict annotation workflows, enabling $80k/mo projected savings at India scale-out.
-                        <br/>- Up to 60% faster polyline creation with new geometry tools, reducing costly rework.
-                        <br/>- Embedded continuous research with 40+ local users, shaping fast iteration cycles.
-                    </p>
-                </a>
-            </div>
-        </div>
+        <div id="article" data-index-sections-only>
 
-        <div id="article">
+            <!-- Impact highlights, in the page's own heading and list styles and its column width. -->
+            <h3 class="fade">Impact highlights found in case studies</h3>
+            <ul class="fade">
+                <li><p><b>27%</b> increase in overall efficiency, saving $72k/mo; features scaled to projected $400k+/mo in savings.</p></li>
+                <li><p><b>70%</b> faster conflict annotation workflows, enabling $80k/mo projected savings at India scale-out.</p></li>
+                <li><p><b>Up to 60%</b> faster polyline creation with new geometry tools, reducing costly rework.</p></li>
+                <li><p>Embedded continuous research with <b>40+</b> local users, shaping fast iteration cycles.</p></li>
+            </ul>
+
+            <!-- Phones only: contents card under the summary. Filled by /assets/js/section-index.js. -->
+            <nav class="section-index-inline fade" data-section-index-inline aria-label="Contents"></nav>
+
 
             <i class="ph ph-map-trifold section-icon fade"></i>
 

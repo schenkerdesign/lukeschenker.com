@@ -3,7 +3,7 @@
 # Run nightly by .github/workflows/live-metric.yml; also runnable locally to refresh a preview.
 # Needs LIVE_METRIC_URL (the shrp-prod live-metric Edge Function) and LIVE_METRIC_TOKEN (its shared
 # token). Both are secrets: the site and this repo never contain them, so nothing public points at
-# production [Luke 2026-10-27]. Source of the number: SHRP repo, supabase/functions/live-metric/ and
+# production. Source of the number: SHRP repo, supabase/functions/live-metric/ and
 # supabase/migrations/20261027180000_live_metric_hours_saved.sql.
 # On any failure the existing file is left untouched (the site keeps showing the last good number with
 # its real date; the SHRP heartbeat alerts when that date is over 48 hours old).

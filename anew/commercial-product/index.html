@@ -21,10 +21,12 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-10-28-live">
+    <link rel="stylesheet" href="/assets/css/project-styles.css?v=2026-11-05-live">
 
     <!-- Scripts -->
-    <script src="/assets/js/animations.js?v=2026-10-28-live"></script>
+    <script src="/assets/js/animations.js?v=2026-11-05-live"></script>
+    <script src="/assets/js/section-index.js?v=2026-11-05-live" defer></script>
+    <script src="/assets/js/summary-fold.js?v=2026-11-05-live" defer></script>
 
     <!-- Jakarta, Open Sans, and Ubuntu Mono Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,12 +38,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"/>
 
 </head>
-<body>
+<body class="anew-case has-summary">
 
-    <div id="header">
-        <a href="/">Home</a>
-        <a href="/#testimonials">Testimonials</a>
-        <a href="/about/">About</a>
+    <!-- Same floating nav as the homepage and About; a case study sits under Work -->
+    <div id="header" class="header--pill">
+        <a href="/" class="nav-projects is-current">Work</a>
+        <a href="/about/" class="nav-about">About</a>
     </div>
 
     <div class="header-image-container">
@@ -79,52 +81,67 @@
             </div>
         </div>
 
-       <div class="info-container">
-            <div class="info-box tldr light-card">
-                 <a href="#problem" class="tldr-section light">
-                    <p class="tldr-title">Context & Problem: Pilot to Commercial product design</p>
-                    <p class="tldr-bullets">- Pilot confirmed efficacy (49% anxiety reduction), but UX split (desktop and mobile) caused major friction.
-                        <br/>- App blocking and routines drove outcomes; next step was validating market appetite under tight runway.
-                    </p>
-                </a>
-                <a href="#mvp" class="tldr-section light">
-                    <p class="tldr-title">MVP Launch & Feedback: Early validation and hard lessons</p>
-                    <p class="tldr-bullets">- Shipped mobile-only MVP in 3 months with core blocking and routines.
-                        <br/>- 5k visitors in 24h via 65k-member forum partnership validated unmet need.
-                        <br/>- Candid feedback: value prop was strong, but MVP flopped; missing polish, features, and stability assumed in this product category.
-                    </p>
-                </a>
-                <a href="#constraints" class="tldr-section light">
-                    <p class="tldr-title">New Constraints & Execution: Pivot to parity maintaining differentiation</p>
-                    <p class="tldr-bullets">- Re-scoped product to deliver product category parity, and treatment features together, while strategically reducing technical/design debt.
-                        <br/>- Brought on engineering advisor (5M+ user founder) and hosted CS/design internships to accelerate proof-of-concepts and validation.
-                    </p>
-                </a>
-                <a href="#validation" class="tldr-section light">
-                    <p class="tldr-title">Validation & Iteration: De-risking before engineering investment</p>
-                    <p class="tldr-bullets">- 5-month design cycle: lofi and hifi design docs tested with waitlist users, peers, and advisors.
-                        <br/>- Ran closed beta (30 users) to stage bug fixes and refine core experience before public release.
-                    </p>
-                </a>
-                <a href="#features" class="tldr-section light">
-                    <p class="tldr-title">Feature Adaptation From Pilot: Tradeoffs and refinement</p>
-                    <p class="tldr-bullets">- Mindsets: Simplified setup to reduce onboarding friction while preserving treatment impact.
-                        <br/>- Aesthetic Editor: Photo-editor-like mobile UX replaced tedious pilot customization flow.
-                        <br/>- Strategies App: Moved goal-setting from mandatory onboarding to optional and self-guided.
-                        <br/>- Wellness/Recommendations: Added data-driven guidance and therapist-approved model to assist user reflection and suggest high-impact changes.
-                    </p>
-                </a>
-                <a href="#impact" class="tldr-section light">
-                    <p class="tldr-title">Impact & Outcome: Strategic wind-down, lasting value</p>
-                    <p class="tldr-bullets">- Built and shipped a commercial-grade app on Google Play, validated by early adopters; product remains free and publicly accessible.
-                        <br/>- Runway expired before monetization features could be released; engineering overhead further extended timelines.
-                        <br/>- Proved: smartphone interventions can reduce anxiety, users will adopt them, and effective solutions can be built under extreme constraints.
-                    </p>
-                </a>
-            </div>
-        </div>
+        <div id="article" data-index-sections-only>
 
-        <div id="article">
+            <!-- Summary rows, same format as the SHRP and AI-org pages. The words are the page's original summary card. -->
+            <div class="cs-top is-foldable">
+                <div class="cs-beat">
+                    <p class="cs-label">Context & Problem</p>
+                    <p class="cs-head">Pilot to Commercial product design</p>
+                    <ul class="cs-list">
+                        <li>Pilot confirmed efficacy (49% anxiety reduction), but UX split (desktop and mobile) caused major friction.</li>
+                        <li>App blocking and routines drove outcomes; next step was validating market appetite under tight runway.</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">MVP Launch & Feedback</p>
+                    <p class="cs-head">Early validation and hard lessons</p>
+                    <ul class="cs-list">
+                        <li>Shipped mobile-only MVP in 3 months with core blocking and routines.</li>
+                        <li>5k visitors in 24h via 65k-member forum partnership validated unmet need.</li>
+                        <li>Candid feedback: value prop was strong, but MVP flopped; missing polish, features, and stability assumed in this product category.</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">New Constraints & Execution</p>
+                    <p class="cs-head">Pivot to parity maintaining differentiation</p>
+                    <ul class="cs-list">
+                        <li>Re-scoped product to deliver product category parity, and treatment features together, while strategically reducing technical/design debt.</li>
+                        <li>Brought on engineering advisor (5M+ user founder) and hosted CS/design internships to accelerate proof-of-concepts and validation.</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Validation & Iteration</p>
+                    <p class="cs-head">De-risking before engineering investment</p>
+                    <ul class="cs-list">
+                        <li>5-month design cycle: lofi and hifi design docs tested with waitlist users, peers, and advisors.</li>
+                        <li>Ran closed beta (30 users) to stage bug fixes and refine core experience before public release.</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Feature Adaptation From Pilot</p>
+                    <p class="cs-head">Tradeoffs and refinement</p>
+                    <ul class="cs-list">
+                        <li>Mindsets: Simplified setup to reduce onboarding friction while preserving treatment impact.</li>
+                        <li>Aesthetic Editor: Photo-editor-like mobile UX replaced tedious pilot customization flow.</li>
+                        <li>Strategies App: Moved goal-setting from mandatory onboarding to optional and self-guided.</li>
+                        <li>Wellness/Recommendations: Added data-driven guidance and therapist-approved model to assist user reflection and suggest high-impact changes.</li>
+                    </ul>
+                </div>
+                <div class="cs-beat">
+                    <p class="cs-label">Impact & Outcome</p>
+                    <p class="cs-head">Strategic wind-down, lasting value</p>
+                    <ul class="cs-list">
+                        <li>Built and shipped a commercial-grade app on Google Play, validated by early adopters; product remains free and publicly accessible.</li>
+                        <li>Runway expired before monetization features could be released; engineering overhead further extended timelines.</li>
+                        <li>Proved: smartphone interventions can reduce anxiety, users will adopt them, and effective solutions can be built under extreme constraints.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Phones only: contents card under the summary. Filled by /assets/js/section-index.js. -->
+            <nav class="section-index-inline fade" data-section-index-inline aria-label="Contents"></nav>
+
 
             <h2 id="problem" class="fade">Context & Problem</h2>
 
