@@ -1,4 +1,4 @@
-/* Color variables */
+
 :root {
     --black: #050505;
     --card-grey: #202020;
@@ -14,7 +14,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Text styles */
 h1 {
     margin: 15px 0;
     font-family: 'Plus Jakarta Sans';
@@ -69,7 +68,6 @@ hr {
     font-style: italic;
 }
 
-/* Animation styles */
 .fade {
     opacity: 0;
     transform: translateY(30px);
@@ -81,14 +79,12 @@ hr {
     transform: translateY(0);
 }
 
-/* Homepage container */
 .column {
-    width: 80%; /* 70% -> 80%, max 1100 -> 1280, so every project row (and SHRP's video) scales up together */
+    width: 80%; 
     max-width: 1280px;
     margin: 0 auto;
 }
 
-/* Animated gradient */
 #mesh-container {
     position: absolute;
     top: 0;
@@ -102,13 +98,11 @@ hr {
     right: 0;
     bottom: 0;
     left: 0;
-    height: 160px; /* adjust how tall the gradient is */
-    /* A middle stop to tune by hand. Defaults reproduce the original two-stop fade exactly.
-       --fade-mid-color: the color at the middle stop (alpha 0 = clear, 1 = solid page black)
-       --fade-mid-pos: where it sits, measured from the bottom (0% = bottom edge, 100% = top of the fade) */
+    height: 160px; 
+    
     --fade-mid-color: rgba(5, 5, 5, 0.5);
     --fade-mid-pos: 50%;
-    background: linear-gradient(to top, #020202, var(--fade-mid-color) var(--fade-mid-pos), rgba(0, 0, 0, 0)); /* bottom #020202 */
+    background: linear-gradient(to top, #020202, var(--fade-mid-color) var(--fade-mid-pos), rgba(0, 0, 0, 0)); 
 }
 
 #mesh-canvas {
@@ -119,7 +113,6 @@ hr {
     height: 100%;
 }
 
-/* Homepage header */
 .header-container {
     display: flex;
     flex-wrap: wrap;
@@ -129,12 +122,12 @@ hr {
 }
 
 .header-content {
-    flex: 1 1 300px; /* grow, shrink, min-width */
+    flex: 1 1 300px; 
     min-width: 300px;
 }
 
 .header-image {
-    flex: 0 0 257px; /* don't grow/shrink, stay 257px */
+    flex: 0 0 257px; 
     width: 257px;
     height: 257px;
     border: 1px solid #232323;
@@ -148,7 +141,7 @@ hr {
     display: flex;
     justify-content: center;
     margin-top: 18px;
-    margin-bottom: 40px; /* was 50 */
+    margin-bottom: 40px; 
 }
 
 #companies-container > img {
@@ -170,7 +163,6 @@ hr {
     font-style: normal;
 }
 
-/* Project container styles */
 .project-header {
     display: flex;
     flex-wrap: wrap;
@@ -200,7 +192,6 @@ p {
     color: #767676;
 }
 
-/* Project hero image */
 .image-wrapper {
     position: relative;
     width: 100%;
@@ -245,7 +236,6 @@ p {
     font-weight: 500;
 }
 
-/* Case studies row */
 .case-studies-container {
     display: flex;
     gap: 30px;
@@ -288,7 +278,6 @@ p {
     font-weight: 600;
 }
 
-/* Testimonials */
 .testimonials-container {
     display: flex;
     flex-wrap: wrap;
@@ -353,14 +342,13 @@ p {
     border-radius: 30px 30px 0 0;
 }
 
-/* Footer */
 #footer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    width: 80%; /* Matches .column (80%, max 1280px) so the footer lines up with the content */
+    width: 80%; 
     max-width: 1280px;
     height: 86px;
     margin: 30px auto;
@@ -413,7 +401,6 @@ p {
     opacity: 0;
 }
 
-/* Plain top bar, name left, About right, scrolls away with the page */
 #header.header--plain {
     position: absolute;
     top: 0;
@@ -446,7 +433,6 @@ p {
     text-transform: uppercase;
 }
 
-/* Centered hero */
 .hero-centered {
     display: flex;
     flex-direction: column;
@@ -478,8 +464,6 @@ p {
     letter-spacing: 0.3px;
 }
 
-
-
 .hero-note {
     margin-top: 36px;
     font-size: 15px;
@@ -498,7 +482,6 @@ p {
     color: #b1b1b1;
 }
 
-/* Mobile sizing adjustments */
 @media (max-width: 900px) {
     .project-title,
     .project-discription,
@@ -535,7 +518,7 @@ p {
     #footer {
         flex-direction: column;
         gap: 24px;
-        width: 95%; /* matches .column on narrow screens */
+        width: 95%; 
     }
 
     .right-container {
@@ -569,7 +552,7 @@ p {
         font-size: 42px;
     }
 }
-/* New 2026 case studies: two large tiles at the top of the work list */
+
 .home-tiles {
     display: flex;
     gap: 30px;
@@ -586,7 +569,7 @@ p {
 }
 
 .image-wrapper--outlined::after {
-    /* thin light outline so a dark video tile reads as a container on the dark page; overlay, so the tile size is unchanged */
+    
     content: "";
     position: absolute;
     inset: 0;
@@ -597,7 +580,7 @@ p {
 }
 
 .tile-expand {
-    /* hover hint on the SHRP homepage tile: "expand" = the click opens the case study, where the video plays full width */
+    
     position: absolute; top: 14px; left: 14px; z-index: 2; width: 32px; height: 32px; border-radius: 50%;
     background: rgba(0, 0, 0, 0.35); color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center;
     opacity: 0; transition: opacity 0.25s ease; pointer-events: none;
@@ -632,8 +615,6 @@ p {
     }
 }
 
-/* Divider between the AI-era work above and earlier work below */
-/* Section labels ("AI-driven case studies") and the header's "Open to US relocation" share one type style */
 .era-label,
 .header-note {
     color: #a0a0a0;
@@ -647,7 +628,6 @@ p {
     text-align: center;
 }
 
-/* Store buttons in one row, each with a tiny muted "Beta" label centred underneath */
 .store-button {
     display: flex;
     flex-direction: column;
@@ -664,13 +644,10 @@ p {
     text-transform: uppercase;
 }
 
-/* The label above the AI-era tiles sits just below its divider line */
 .era-label--top {
     margin: 36px 0 0 0 !important;
 }
 
-/* Live metric bubble: green "live" dot on the left, the total on top, refresh line below.
-   Static (no count-up). Values are filled by /assets/js/live-metric.js from the nightly shrp-prod row. */
 .live-bubble {
     display: inline-flex;
     align-items: center;
@@ -681,7 +658,6 @@ p {
     border-radius: 14px;
 }
 
-/* Shipped hidden; live-metric.js unhides it once the data loads. Beats the display rules above and below. */
 .live-bubble[hidden] {
     display: none;
 }
@@ -719,9 +695,6 @@ p {
     font-size: 12px;
 }
 
-/* Homepage live tag, version B: LIVE PICK.
-   One line, centered on the SHRP video's bottom edge; fixed 32px tall, margins net to zero so both tile titles stay aligned.
-   Use: <div class="live-bubble live-bubble--tag live-bubble--tag-edge"> right after the image-wrapper. */
 .live-bubble--tag-edge {
     position: relative;
     z-index: 2;
@@ -735,7 +708,6 @@ p {
     border-radius: 999px;
 }
 
-/* Homepage live tag, SAVED variant C: beside the SHRP title, two lines (total / "saved so far"). Markup in index.html comment. */
 .home-tile-title-row {
     display: flex;
     align-items: center;
@@ -745,7 +717,7 @@ p {
 
 .live-bubble--title {
     flex: none;
-    margin: -5px 0; /* don't make the title row taller, so the SHRP title stays aligned with the AI-org title */
+    margin: -5px 0; 
     padding: 7px 14px 7px 12px;
     gap: 10px;
     border-radius: 12px;
@@ -755,7 +727,6 @@ p {
     gap: 1px;
 }
 
-/* Homepage live tag, SAVED variant D: one line under the meta line, above the download buttons. Markup note in index.html. */
 .live-bubble--tag-meta {
     display: inline-flex;
     margin-top: 14px;
@@ -764,7 +735,6 @@ p {
     border-radius: 999px;
 }
 
-/* Homepage work list, one row per project: image beside a few short lines, alternating sides */
 .work-list {
     --row-gap: 88px;
     display: flex;
@@ -773,7 +743,6 @@ p {
     margin: 40px 0 96px 0;
 }
 
-/* "Current Work" / "Previous Work" labels, small caps with a hairline running to the right */
 .work-section-label {
     display: flex;
     align-items: center;
@@ -791,7 +760,6 @@ p {
     white-space: nowrap;
 }
 
-/* Phones: "Previous Work (before incorporating AI)" wraps instead of running off the screen */
 @media (max-width: 700px) {
     .work-section-label > span {
         white-space: normal;
@@ -812,7 +780,6 @@ p {
     gap: 48px;
 }
 
-/* Count only project rows (not the "Show individual projects" panels between them), so the sides keep alternating */
 .work-row:nth-child(even of .work-row) {
     flex-direction: row-reverse;
 }
@@ -836,7 +803,6 @@ p {
     object-fit: cover;
 }
 
-
 .work-row-text {
     flex: 1;
     min-width: 0;
@@ -852,7 +818,6 @@ p {
     text-transform: uppercase;
 }
 
-/* Type scale: title 30/40 semibold, summary 20/33 regular, a notch smaller for the dark page */
 .work-row-title {
     margin: 0;
     font-size: 30px;
@@ -873,7 +838,6 @@ p {
     text-decoration: none;
 }
 
-/* Dates lead each text block and are the strongest small line */
 .work-row-dates {
     margin: 0 0 10px 0;
     color: var(--text-color);
@@ -939,7 +903,6 @@ p {
     }
 }
 
-/* The AI-org row's still image is the case study's session diagram (inline SVG), letterboxed in the 16:10 frame */
 .work-row-media--diagram {
     display: flex;
     align-items: center;
@@ -963,21 +926,16 @@ p {
 .home-diagram .sd-letter { fill: var(--text-color); font-family: 'Plus Jakarta Sans'; font-size: 18px; font-weight: 600; }
 .home-diagram .sd-body { fill: #d2d2d2; font-family: 'Ubuntu Mono', monospace; font-size: 14px; }
 
-/* Role + company open the summary, a touch brighter so they can be scanned without being a separate element */
 .work-row-role {
     color: var(--text-color);
     font-family: inherit;
     font-weight: 600;
 }
 
-/* the title and image carry the link now that "Read case study" is gone */
 .work-row-title a:hover {
     color: #cfcfcf;
 }
 
-/* Hover state on the SHRP and AI-org media. The frame darkens (video keeps playing) and a centered group
-   appears: "Read case study" (the whole dark area links to the case study), then, on SHRP, "Try It Yourself" above two
-   store buttons with their own hover feedback. The group ignores pointer events except the buttons. */
 .media-overlay {
     position: absolute;
     inset: 0;
@@ -1026,7 +984,6 @@ p {
     text-transform: uppercase;
 }
 
-/* "Read case study" sits at the exact center of the frame; the store group hangs below it */
 .media-overlay-try {
     position: absolute;
     top: calc(50% + 38px);
@@ -1038,7 +995,6 @@ p {
     gap: 12px;
 }
 
-/* Hovering a store button dims "Read case study" to show the click goes to the store, not the case study */
 .media-overlay-content:has(.media-overlay-buttons a:hover) .media-overlay-label {
     color: #5c5c5c;
 }
@@ -1082,16 +1038,12 @@ p {
     background: #ffffff;
 }
 
-/* Touch screens have no hover: the hover group (label and secondary buttons) stays hidden, and a tap on the image opens the
-   case study through the overlay link */
 @media (hover: none) {
     .media-overlay-content {
         display: none;
     }
 }
 
-/* SHRP row, touch screens only: the store buttons sit between the video and the date, since phones are where people
-   install the app. Same pill style as the hover group's buttons. */
 .work-row-install {
     display: none;
 }
@@ -1103,10 +1055,6 @@ p {
         margin: 0 0 20px 0;
     }
 
-    /* Each button takes half the row; the icon hugs the left edge and the label centers in the button. The left padding
-       reserves the icon's space so the label can never run into it, and labels never wrap: when the two buttons can't
-       both fit their labels side by side (min-width), they stack, each full width. The label sits 6px right of true
-       center, which keeps both buttons on one row at standard phone widths (375px and up). */
     .work-row-install a {
         position: relative;
         flex: 1 1 0;
@@ -1122,7 +1070,6 @@ p {
     }
 }
 
-/* Keyword tags, small caps pills with a light tint of color. */
 .work-row-tags {
     display: flex;
     flex-wrap: wrap;
@@ -1148,13 +1095,10 @@ p {
 .tag--lead     { color: #f2cf8a; background: rgba(240, 180, 80, 0.13); }
 .tag--platform { color: #c9c9c9; background: rgba(255, 255, 255, 0.08); }
 
-/* Anew's and Uber's individual case studies, opened by the "View case studies" toggle in their row;
-   the panel opens smoothly (grid 0fr -> 1fr). */
 .work-expand {
-    margin-top: calc(-1 * var(--row-gap)); /* cancels the list gap while closed; the grid's own top margin spaces it when open */
+    margin-top: calc(-1 * var(--row-gap)); 
 }
 
-/* Previous Work: more air between unrelated projects; SHRP + AI org stay close as a pair */
 .work-list--spaced {
     --row-gap: 180px;
 }
@@ -1181,7 +1125,6 @@ p {
     border-radius: 20px;
 }
 
-/* Anew's individual projects, 2x2 full width; each a small image beside a plain title + "Read case study" */
 .sub-project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1250,8 +1193,6 @@ p {
     line-height: 1.55;
 }
 
-/* While a project's individual projects are open, its row shrinks into a header for them.
-   Image 54% -> 30%, title 30 -> 22px, in the same 0.4s as the panel opening. */
 .work-row-media,
 .work-row-title {
     transition: flex-basis 0.4s ease, font-size 0.4s ease;
@@ -1269,7 +1210,6 @@ p {
     font-size: 15px;
 }
 
-/* Stand-in where an image is still missing (John Hancock) */
 .img-placeholder {
     display: flex;
     align-items: center;
@@ -1289,7 +1229,6 @@ p {
     font-size: 14px;
 }
 
-/* The "View case studies" cta is a button (opens the projects below); same look as "Read case study" */
 button.work-row-cta {
     padding: 0;
     background: none;
@@ -1297,7 +1236,6 @@ button.work-row-cta {
     cursor: pointer;
 }
 
-/* The in-row toggle's caret points up while its case studies are open */
 .work-row-cta.work-expand-toggle i {
     transition: transform 0.3s ease;
 }
@@ -1306,18 +1244,14 @@ button.work-row-cta {
     transform: rotate(180deg);
 }
 
-/* The toggle's label is a <span>, which the global "span { color: white }" rule would force white; let it follow the cta's
-   gray-then-white-on-hover like "Read case study" */
 .work-row-cta > span {
     color: inherit;
 }
 
-/* Previous Work's label gets more room before its first row, in proportion to the wider row gap */
 .work-list--spaced {
     margin-top: 72px;
 }
 
-/* Dates above each individual case study title, same treatment as the row dates */
 .sub-project-dates {
     margin: 0 0 8px 0;
     color: #a0a0a0;
@@ -1328,7 +1262,6 @@ button.work-row-cta {
     text-transform: uppercase;
 }
 
-/* Anew's 2020-2021 note above its case studies, centered, light gray, same date treatment */
 .sub-project-prelude {
     max-width: 620px;
     margin: 32px auto 0 auto;
@@ -1341,12 +1274,11 @@ button.work-row-cta {
     font-size: 15px;
     line-height: 1.6;
 }
-/* The 2020 - 2021 note is two short paragraphs (designing, then funding): a half-line gap keeps them one note */
+
 .sub-project-prelude-text + .sub-project-prelude-text {
     margin-top: 0.5em;
 }
-/* Quiet video links to the Anew pitches on YouTube: the concept pitch under the
-   2020 - 2021 note, the YC pitch on the Commercializing card */
+
 .sub-project-prelude-link,
 .sub-project-video-link {
     display: inline-flex;
@@ -1368,8 +1300,6 @@ button.work-row-cta {
     color: #ffffff;
 }
 
-/* When a hover group has actions below the label, lift the whole group so it sits optically centered
-   (the label alone stays at true center on AI org). SHRP's group is taller ("or try it yourself" + buttons). */
 .media-overlay-content:has(.media-overlay-try) {
     transform: translateY(-22px);
 }
@@ -1386,8 +1316,6 @@ button.work-row-cta {
     transform: translateY(-40px);
 }
 
-/* "reduce motion": everything appears in place and state changes are instant
-   (the scroll reveal opts itself out in scroll-reveal.js; the gradient holds still in gradient.js) */
 @media (prefers-reduced-motion: reduce) {
     .fade {
         opacity: 1;
@@ -1402,7 +1330,6 @@ button.work-row-cta {
     }
 }
 
-/* Layout toggle above "Current Work" (large rows / compact list) */
 .work-view-toggle {
     display: flex;
     justify-content: flex-end;
@@ -1444,12 +1371,10 @@ button.work-row-cta {
     fill: var(--text-color);
 }
 
-/* the first section label now follows the toggle */
 .work-view-toggle + .work-section-label {
     margin-top: 16px;
 }
 
-/* Compact view: hide the large rows, show the slim list */
 .work-compact {
     display: none;
 }
@@ -1509,7 +1434,6 @@ body.view-compact .work-compact {
     margin-top: 14px;
 }
 
-/* Image strip: one row, scrolls sideways, fades out at the right edge */
 .cw-strip {
     display: flex;
     gap: 16px;
@@ -1548,7 +1472,6 @@ body.view-compact .work-compact {
     width: auto;
 }
 
-/* Hover on a linked image: darken it and say where it goes (same treatment as the large rows' hover) */
 .cw-thumb-hover {
     position: absolute;
     inset: 0;
@@ -1595,7 +1518,6 @@ a.cw-thumb:hover .cw-thumb-cap {
     }
 }
 
-/* John Hancock: says plainly there's nothing to open, in the action slot, without looking like a link */
 .work-row-note {
     margin: 24px 0 0 0;
     color: #8d8d8d;
@@ -1610,8 +1532,6 @@ a.cw-thumb:hover .cw-thumb-cap {
     margin-top: 14px;
 }
 
-/* Desktop (mouse): a visible, draggable scrollbar under each image strip. The right-edge fade is masked off the
-   bottom 14px so it doesn't fade the scrollbar too. */
 @media (hover: hover) and (pointer: fine) {
     .cw-strip {
         scrollbar-width: auto;
@@ -1645,7 +1565,6 @@ a.cw-thumb:hover .cw-thumb-cap {
         background: #6a6a6a;
     }
 
-    /* Firefox has no ::-webkit-scrollbar; give it the standard properties (Chrome ignores the custom bar if these are set) */
     @supports not selector(::-webkit-scrollbar) {
         .cw-strip {
             scrollbar-width: thin;
@@ -1654,7 +1573,6 @@ a.cw-thumb:hover .cw-thumb-cap {
     }
 }
 
-/* Denser compact view: dates on the title line, smaller images, tighter spacing */
 .cw-entry {
     margin-top: 28px;
 }
@@ -1739,21 +1657,16 @@ a.cw-thumb:hover .cw-thumb-cap {
     }
 }
 
-/* The image sets each card's width; the caption wraps to it instead of stretching the frame past the image
-   (at 120px tall the case-study images are narrower than their captions, which left a dark band beside them) */
 .cw-thumb-cap {
     width: 0;
     min-width: 100%;
     max-width: none;
 }
 
-/* Anew's case-study dates sit right under their titles, in the caption type */
 .cw-thumb-date {
     margin-top: -4px;
 }
 
-/* Compact view - the text block is one link to the case study; hovering anywhere on it lights up
-   "Read case study" exactly as hovering the action itself does */
 .cw-text {
     display: block;
     color: inherit;
@@ -1788,11 +1701,6 @@ button.cw-thumb {
     }
 }
 
-/* Full-screen viewer (images, videos, PDFs): moved to media-viewer.css (2026-11-03) */
-
-/* Compact hero. Everything scaled down together (about 70-80%) so the balance and breathing
-   room stay proportional while the first project rises into view. Remove the "hero-compact" class in index.html to
-   switch it off. */
 .hero-centered.hero-compact {
     margin: 128px 0 56px 0;
 }
@@ -1829,7 +1737,6 @@ button.cw-thumb {
     }
 }
 
-/* Nav styles. The plain style shows the name; the floating bar shows Projects instead. */
 #header .nav-projects {
     display: none;
 }
@@ -1842,8 +1749,6 @@ button.cw-thumb {
     display: inline;
 }
 
-/* Floating bar: the original centered, translucent, blurred pill (the base #header rule), with two tabs and the
-   current page marked */
 #header.header--pill {
     gap: 56px;
     padding: 10px 48px;
@@ -1872,3 +1777,49 @@ button.cw-thumb {
     background: var(--text-color);
     transform: translateX(-50%);
 }
+
+.work-row-status {
+    margin-left: 8px;
+    padding: 2px 8px;
+    border: 1px solid #5a5a5a;
+    border-radius: 999px;
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+.home-chat-thumb { width: 100%; height: 100%; }
+.home-chat-thumb .d-box { fill: #222222; }
+.home-chat-thumb .d-box--strong { fill: #3a3a3a; stroke: var(--text-color); stroke-width: 1.4; }
+.home-chat-thumb .d-strong { fill: var(--text-color); font-family: 'Plus Jakarta Sans'; font-size: 15px; font-weight: 600; }
+.home-chat-thumb .d-tag { fill: var(--subtext-color); font-family: 'Ubuntu Mono', monospace; font-size: 12px; letter-spacing: 0.02em; }
+.home-chat-thumb .d-tier { fill: var(--text-color); font-family: 'Plus Jakarta Sans'; font-size: 13px; font-weight: 700; }
+.home-chat-thumb .d-link { fill: none; stroke: #8a8a8a; stroke-width: 1.4; }
+.home-chat-thumb .d-link--dash { stroke-dasharray: 5 4; }
+.home-chat-thumb .d-dash { fill: none; stroke: #8a8a8a; stroke-width: 1.2; stroke-dasharray: 5 4; }
+.home-chat-thumb .d-head { fill: none; stroke: var(--text-color); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.home-chat-thumb .t-frame { fill: #6e7176; }
+.home-chat-thumb .t-bezel { fill: #050505; }
+.home-chat-thumb .t-screen { fill: #111111; }
+.home-chat-thumb .t-bar { fill: #161616; }
+.home-chat-thumb .t-title { fill: var(--text-color); font-family: 'Plus Jakarta Sans'; font-size: 17px; font-weight: 600; }
+.home-chat-thumb .t-msg { fill: #222222; }
+.home-chat-thumb .t-check { fill: #161616; stroke: #3a3a3a; stroke-width: 1.4; }
+.home-chat-thumb .t-text { fill: var(--text-color); font-family: 'Open Sans', sans-serif; font-size: 16px; }
+.home-chat-thumb .t-box { fill: none; stroke: #8a8a8a; stroke-width: 1.4; }
+.home-chat-thumb .t-box--on { fill: var(--text-color); stroke: var(--text-color); }
+.home-chat-thumb .t-tick { fill: none; stroke: #050505; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.home-chat-thumb .t-submit { fill: var(--text-color); }
+.home-chat-thumb .t-submit-text { fill: #050505; font-family: 'Plus Jakarta Sans'; font-size: 15px; font-weight: 600; }
+.home-chat-thumb .t-field { fill: #161616; stroke: #3a3a3a; stroke-width: 1.4; }
+
+.home-chat-thumb .t-title { font-size: 11px; }
+.home-chat-thumb .t-text { font-size: 10.5px; }
+.home-chat-thumb .t-submit-text { font-size: 10px; }
+.home-chat-thumb .t-box, .home-chat-thumb .t-check { stroke-width: 0.8; }
+.home-chat-thumb .t-tick { stroke-width: 1.4; }
+
+.work-row-media--chat { padding: 0; }
+.work-row-media--chat .home-chat-thumb { display: block; width: 100%; height: 100%; }
+
+.home-chat-thumb .d-tag { fill: #a0a0a0; }
+
+.work-row-lock { margin-right: 6px; font-size: 0.95em; vertical-align: -1px; }

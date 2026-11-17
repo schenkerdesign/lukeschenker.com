@@ -15,6 +15,9 @@
 // Wide screens (CSS, >= 1384px): on the left, starting level with the page title, scrolling up with the page and
 // pinning below the nav bar. A caret button folds it to a round button and back. It hides while a block wider
 // than the widest cards (the full-width AI-org diagrams) passes under it.
+// Tabbed pages (opt-in, data-index-tabs on #article; the AI chat case study): level 1 = the tabs, in order; level 2 = the
+// h2s inside a tab that has more than one. Picking an entry opens its tab first. The current entry follows the open tab
+// and, inside it, the scroll position.
 // Narrower screens: a floating menu button that opens the same index as a card over the dimmed page
 // Phones, where a page asks for it with [data-section-index-inline] (SHRP: under the summary cards): an inline
 // contents card of the section titles as well.
@@ -35,11 +38,26 @@
     }
 
     // One entry per index line: what it's called, which element it jumps to, and its level.
-    var entries = [{ label: 'Summary', target: article, level: 1, summary: true }];
+    var tabsMode = article.hasAttribute('data-index-tabs');
+    var tabRow = tabsMode ? document.querySelector('[role="tablist"]') : null;
+    var entries = tabsMode ? [] : [{ label: 'Summary', target: article, level: 1, summary: true }];
     var meta = article.parentElement.querySelector('.info-container'); // the Company / Role / Team ... row
     var sectionsOnly = article.hasAttribute('data-index-sections-only');
     var seenH2 = false, skipping = false;
-    document.querySelectorAll(SELECTOR).forEach(function (el) {
+    if (tabsMode && tabRow) {
+        tabRow.querySelectorAll('[role="tab"]').forEach(function (tab) {
+            var panel = document.getElementById(tab.getAttribute('aria-controls'));
+            if (!panel) return;
+            // The tab's own name, without the reading time under it
+            var name = [].filter.call(tab.childNodes, function (n) { return n.nodeType === 3; }).map(function (n) { return n.textContent; }).join(' ');
+            entries.push({ label: name.replace(/\s+/g, ' ').trim(), target: panel, level: 1, tab: tab });
+            var heads = [].filter.call(panel.children, function (el) { return el.tagName === 'H2' && !el.hasAttribute('data-index-skip'); });
+            if (heads.length > 1) heads.forEach(function (h) {
+                entries.push({ label: h.getAttribute('data-index-label') || text(h), target: h, level: 2, tab: tab });
+            });
+        });
+    }
+    if (!tabsMode) document.querySelectorAll(SELECTOR).forEach(function (el) {
         if (el.tagName === 'H2') {
             seenH2 = true;
             skipping = el.hasAttribute('data-index-skip');
@@ -75,6 +93,16 @@
     });
 
     function jump(entry) {
+        if (entry.tab) {
+            // Open the tab exactly as clicking its card does, then go to the cards (a tab) or the section (inside one)
+            // (The tab's panel shows synchronously, so the target already has its place in the page.)
+            if (entry.tab.getAttribute('aria-selected') !== 'true') entry.tab.click();
+            if (entry.level === 1) window.scrollTo({ top: tabRow.getBoundingClientRect().top + window.scrollY - 96, behavior: 'smooth' });
+            else entry.target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', '#' + entry.target.id);
+            relayout();
+            return;
+        }
         if (entry.summary && meta) {
             // The meta row's bottom edge at the top of the window: the usual 96px landing would leave its last line
             // peeking out behind the nav bar. The address stays bare rather than showing #article.
@@ -251,7 +279,13 @@
 
         // Current = the last section whose top has passed 35% of the screen; Summary until the first one has.
         var now = 0;
-        for (var i = 1; i < entries.length; i++) {
+        if (tabsMode) {
+            // The open tab, then the last of its sections whose top has passed 35% of the screen
+            entries.forEach(function (e, i) { if (e.level === 1 && e.tab.getAttribute('aria-selected') === 'true') now = i; });
+            for (var j = now + 1; j < entries.length && entries[j].level === 2; j++) {
+                if (entries[j].target.getBoundingClientRect().top <= vh * 0.35) now = j; else break;
+            }
+        } else for (var i = 1; i < entries.length; i++) {
             if (entries[i].target.getBoundingClientRect().top <= vh * 0.35) now = i; else break;
         }
         if (now !== current) {
@@ -294,7 +328,17 @@
     if (window.ResizeObserver) new ResizeObserver(relayout).observe(document.body);
 
     // A shared link to a generated id (#how-i-tested-it) loads before this script adds the id; jump to it now.
-    if (location.hash && used[location.hash.slice(1)]) {
+    if (tabsMode) {
+        // Tab changes move the page under the index without a scroll; re-check the current entry
+        tabRow.addEventListener('click', function () { setTimeout(relayout, 0); });
+        // A link to a section inside a closed tab: open the tab, then go to the section
+        var deep = location.hash && entries.filter(function (e) { return e.level === 2 && e.target.id === location.hash.slice(1); })[0];
+        if (deep) {
+            if (deep.tab.getAttribute('aria-selected') !== 'true') deep.tab.click();
+            history.replaceState(null, '', '#' + deep.target.id);
+            deep.target.scrollIntoView({ behavior: 'instant', block: 'start' });
+        }
+    } else if (location.hash && used[location.hash.slice(1)]) {
         var target = document.getElementById(location.hash.slice(1));
         if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' }); // instant: the page's CSS smooth scroll would glide from the top
     }

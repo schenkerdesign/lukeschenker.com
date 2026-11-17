@@ -9,5 +9,12 @@
       "poster": "/assets/images/shrp/shrp-loop-first-frame.jpg",
       "label": "SHRP product walkthrough: friends' use, your own use, checking a friend, and friends checking you"
     }
+  },
+  "/ai-chat/": {
+    "title": "AI chat that helps people identify and solve their problems with social media",
+    "lead": "This page covers unreleased product design. If you would like the password, *email me at luke@lukeschenker.com with your company email*, and I'll usually get back to you *in under 10 minutes*.",
+    "subject": "Password for your AI chat case study",
+    "body": "Hi Luke,\n\nI'd like the password for your AI chat case study.\n\nName:\nCompany:\nRole:\n\nThanks!",
+    "video": null
   }
 }
